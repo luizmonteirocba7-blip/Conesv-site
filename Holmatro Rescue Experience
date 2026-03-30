@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holmatro Rescue Experience</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuração do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-orange': '#E35219',
+                        'brand-dark': '#1A1C23',
+                        'brand-gray': '#32363F',
+                        'brand-light': '#FFF8F5',
+                        'brand-yellow': '#F59E0B'
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+                        'wiggle': 'wiggle 2s ease-in-out infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                    },
+                    keyframes: {
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'heartbeat': {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '14%': { transform: 'scale(1.2)' },
+                            '28%': { transform: 'scale(1)' },
+                            '42%': { transform: 'scale(1.2)' },
+                            '70%': { transform: 'scale(1)' },
+                        },
+                        'wiggle': {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-overlay {
+            background: linear-gradient(90deg, rgba(26,28,35,0.95) 0%, rgba(26,28,35,0.7) 50%, transparent 100%);
+        }
+        .section-overlay {
+            background: linear-gradient(135deg, rgba(50,54,63,0.95) 0%, rgba(227,82,25,0.85) 100%);
+        }
+        @media (max-width: 1024px) {
+            .hero-overlay {
+                background: linear-gradient(180deg, rgba(26,28,35,0.8) 0%, rgba(26,28,35,0.95) 100%);
+            }
+        }
+        /* Ajuste para navegação com a barra fixa superior */
+        html { scroll-padding-top: 120px; }
+        
+        /* Estilo FAQ Accordion */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- Barra de urgência fixa -->
+    <div class="fixed top-0 w-full z-[60] bg-brand-orange text-white text-center py-2 px-4 text-xs sm:text-sm font-bold tracking-wide shadow-md flex justify-center items-center gap-2 flex-wrap">
+        <span>Inscrições abertas até 14 de junho</span>
+        <span class="hidden sm:inline">•</span>
+        <span class="text-brand-dark bg-white px-2 py-0.5 rounded text-xs uppercase">Vagas limitadas</span>
+        <a href="#inscricoes" class="hover:underline ml-2 flex items-center gap-1">Garantir minha vaga <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-8 w-full z-50 bg-brand-dark/95 backdrop-blur-md text-white border-b border-white/10 shadow-lg transition-all duration-300">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logótipo -->
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <span class="font-black text-xl md:text-2xl tracking-wider uppercase"><span class="text-brand-orange">Holmatro</span> Rescue Experience</span>
+                </div>
+                
+                <!-- Links de Navegação -->
+                <div class="hidden xl:flex items-center text-[10px] uppercase xl:text-xs font-medium tracking-widest text-gray-300">
+                    <a href="#sobre" class="hover:text-brand-orange transition-colors">Sobre o desafio</a>
+                    <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
+                    <a href="#como-funciona" class="hover:text-brand-orange transition-colors">Como funciona</a>
+                    <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
+                    <a href="#instrutores" class="hover:text-brand-orange transition-colors">Instrutores</a>
+                    <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
+                    <a href="#local" class="hover:text-brand-orange transition-colors">Data e Local</a>
+                    <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
+                    <a href="#inscricoes" class="hover:text-brand-orange transition-colors text-white font-bold">Inscrições</a>
+                </div>
+
+                <!-- Botões Mobile -->
+                <div class="xl:hidden">
+                    <button class="text-white hover:text-brand-orange focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative w-full min-h-screen bg-brand-dark flex items-center pt-28 overflow-hidden">
+        <div class="absolute inset-0 w-full h-full z-0">
+            <img src="https://drive.google.com/thumbnail?id=1XsW3IVnjGj59edyCXEUr4TzaGEH0y0ke&sz=w1920" alt="Resgate Veicular" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 flex flex-col h-full py-20">
+            <div class="w-full lg:w-[85%] xl:w-[75%]">
+                
+                <h1 class="text-white leading-[1.1] tracking-tight mb-6 font-black uppercase drop-shadow-lg text-4xl sm:text-5xl lg:text-7xl">
+                    O equipamento é <span class="text-brand-orange">Holmatro.</span><br>
+                    O preparo <span class="text-brand-orange">também.</span>
+                </h1>
+                
+                <p class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mb-8 leading-relaxed">
+                    <strong class="text-white">24 e 25 de junho de 2026 • Cuiabá MT</strong><br>
+                    Treinamento intensivo em resgate veicular para bombeiros, estudantes de medicina e enfermagem e equipes de concessionárias de rodovias.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mt-2">
+                    <a href="#inscricoes" class="bg-brand-orange hover:bg-orange-600 text-white rounded-full px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(227,82,25,0.4)]">
+                        Garantir minha vaga
+                    </a>
+                    <a href="#sobre" class="bg-transparent border-2 border-white hover:bg-white hover:text-brand-dark text-white rounded-full px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300">
+                        Entender o evento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="py-20 bg-brand-orange text-white text-center px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-4xl font-light leading-snug mb-8">
+                Todo ano, milhares de pessoas morrem em acidentes de trânsito no Brasil — <strong class="font-black">não pelo impacto, mas pelos minutos seguintes.</strong>
+            </h2>
+            <p class="text-lg md:text-2xl font-medium mb-8">
+                Quando não há preparo, há hesitação.<br>Quando há hesitação, há consequência.
+            </p>
+            <p class="text-xl md:text-3xl font-black uppercase tracking-wide bg-brand-dark text-white p-6 rounded-lg shadow-2xl inline-block">
+                O Holmatro Rescue Experience existe para que você nunca chegue a uma cena sem saber o que fazer.
+            </p>
+        </div>
+    </section>
+
+    <!-- Cards de Persona -->
+    <section class="py-24 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Bombeiros -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-orange hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-fire-extinguisher text-5xl text-brand-orange mb-6"></i>
+                    <h3 class="text-2xl font-black uppercase text-brand-dark mb-4">Bombeiros</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Eleve seu protocolo de resgate veicular ao padrão internacional Holmatro. Dois dias de prática real com o equipamento que define o resgate no mundo.
+                    </p>
+                </div>
+
+                <!-- Estudantes -->
+                <div class="bg-brand-dark rounded-2xl p-8 shadow-lg border-t-4 border-brand-orange hover:-translate-y-2 transition-transform duration-300 text-white">
+                    <i class="fas fa-user-md text-5xl text-brand-orange mb-6"></i>
+                    <h3 class="text-2xl font-black uppercase mb-4">Estudantes de Medicina e Enfermagem</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Prepare-se para a cena antes de se formar. A teoria não te prepara para o que acontece no asfalto. Aqui você treina APH em condição real.
+                    </p>
+                </div>
+
+                <!-- Concessionárias -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-orange hover:-translate-y-2 transition-transform duration-300">
+                    <i class="fas fa-road text-5xl text-brand-orange mb-6"></i>
+                    <h3 class="text-2xl font-black uppercase text-brand-dark mb-4">Concessionárias de Rodovias</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Sua equipe está na rodovia. A pergunta é: sabe o que fazer quando o carro para de se mover? Conformidade operacional e preparo real, na mesma experiência.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="text-center">
+                <a href="#como-funciona" class="inline-block text-brand-orange font-bold uppercase tracking-widest hover:text-brand-dark transition-colors border-b-2 border-brand-orange pb-1">
+                    Ver como funciona o treinamento &darr;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Números -->
+    <section class="py-16 bg-brand-dark text-white border-b border-white/10">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 text-center">
+                <div>
+                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2">+100</span>
+                    <span class="text-sm uppercase tracking-widest font-medium">Países equipados<br>pela Holmatro</span>
+                </div>
+                <div>
+                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2">3</span>
+                    <span class="text-sm uppercase tracking-widest font-medium">Estações de<br>treinamento</span>
+                </div>
+                <div>
+                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2">2</span>
+                    <span class="text-sm uppercase tracking-widest font-medium">Dias de imersão<br>total</span>
+                </div>
+                <div>
+                    <i class="fas fa-exclamation-triangle block text-4xl md:text-5xl text-brand-yellow mb-2"></i>
+                    <span class="text-sm uppercase tracking-widest font-medium">Vagas<br>Limitadas</span>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center bg-white/5 p-8 rounded-xl border border-white/10">
+                <p class="text-xl md:text-2xl font-light mb-6">
+                    <strong class="font-bold">24 e 25 de junho. Cuiabá.</strong> Inscrições até 14 de junho.
+                </p>
+                <a href="#inscricoes" class="inline-block bg-brand-orange text-white rounded-full px-8 py-3 uppercase font-black hover:bg-orange-600 transition-colors">
+                    Garantir minha vaga agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre o Desafio -->
+    <section id="sobre" class="py-24 bg-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm text-brand-orange font-black uppercase tracking-widest mb-4">Sobre o Desafio</h2>
+                <h3 class="text-3xl md:text-5xl font-light text-brand-dark leading-tight">
+                    Não é um curso. Não é uma palestra.
+                </h3>
+                <p class="mt-6 text-lg md:text-xl text-gray-600">
+                    É o único espaço no Brasil onde você treina resgate veicular com o equipamento de referência mundial em cenários baseados em casos reais, <strong class="text-brand-dark">sob pressão real.</strong>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h4 class="text-2xl font-black uppercase text-brand-dark mb-4">A Origem</h4>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        A Holmatro passa décadas definindo o padrão de como o resgate veicular é feito no mundo, equipando corporações em mais de 100 países. O Rescue Experience é a extensão natural dessa missão: trazer esse padrão para o bombeiro brasileiro, na prática, com o equipamento real.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Em parceria com o Corpo de Bombeiros do Mato Grosso — a corporação que sedia e valida o evento, cada edição forma bombeiros que operam em outro nível.
+                    </p>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-2xl border-l-4 border-brand-orange relative">
+                    <i class="fas fa-quote-left text-4xl text-gray-300 absolute top-4 right-4"></i>
+                    <p class="text-xl font-medium text-brand-dark italic mb-6 relative z-10">
+                        "O Holmatro Rescue Experience representa o padrão de capacitação que buscamos para os bombeiros do Brasil."
+                    </p>
+                    <p class="text-sm font-bold text-gray-500 uppercase">
+                        [Comandante]<br>Corpo de Bombeiros do Mato Grosso
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-brand-dark text-white p-10 rounded-3xl mb-16 text-center">
+                <h4 class="text-2xl font-black uppercase text-brand-orange mb-4">Histórico</h4>
+                <p class="text-lg font-light leading-relaxed max-w-3xl mx-auto">
+                    As edições anteriores reuniram [X] bombeiros de [Y] estados. Cada turma saiu com uma referência de resgate que nenhum curso convencional entrega. Esta é a edição de 2026. <strong class="font-bold text-brand-orange">As anteriores esgotaram.</strong>
+                </p>
+            </div>
+
+            <!-- Depoimentos -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                    <div class="flex text-brand-yellow mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-700 font-medium italic mb-4">"[Frase direta sobre o que mudou na operação e a confiança adquirida na cena do acidente.]"</p>
+                    <p class="text-sm font-bold text-brand-dark">- [Nome], [Corporação], [Estado] <span class="text-brand-orange font-normal">| Edição [ano]</span></p>
+                </div>
+                <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
+                    <div class="flex text-brand-yellow mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-700 font-medium italic mb-4">"[Frase direta sobre o equipamento e a integração da equipe de resgate.]"</p>
+                    <p class="text-sm font-bold text-brand-dark">- [Nome], [Instituição], [Estado] <span class="text-brand-orange font-normal">| Edição [ano]</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Currículo dos Instrutores -->
+    <section id="instrutores" class="py-24 bg-brand-gray relative border-t border-white/10">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-wide mb-6">
+                    Quem ensina <span class="text-brand-orange">já viveu a cena</span>
+                </h2>
+                <p class="text-gray-300 text-lg md:text-xl font-light">
+                    Os instrutores do Rescue Experience não vieram da sala de aula. Vieram da cena. Cada um deles já esteve exatamente onde você vai estar — e sabe o que a teoria não ensina.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Instrutor 1 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-white/10 group hover:border-brand-orange transition-colors">
+                    <div class="h-64 bg-gray-700 relative overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-user-astronaut text-6xl text-gray-500 opacity-50"></i>
+                        <!-- <img src="foto.jpg" alt="Instrutor" class="w-full h-full object-cover"> -->
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-black text-white uppercase mb-1">[Nome do Instrutor]</h3>
+                        <p class="text-brand-orange font-bold text-sm mb-4">[Patente / Titulação]</p>
+                        <p class="text-sm text-gray-400 mb-2"><strong class="text-white">Especialidade:</strong> [Técnicas de Salvamento Veicular]</p>
+                        <p class="text-sm text-gray-300 mb-4 leading-relaxed">
+                            [3 linhas de histórico operacional real - experiência prática na rua, grandes ocorrências, não apenas histórico acadêmico]
+                        </p>
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide font-bold mb-1">Certificações</p>
+                            <p class="text-xs text-gray-400">[Formação internacional Holmatro, etc]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instrutor 2 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-white/10 group hover:border-brand-orange transition-colors">
+                    <div class="h-64 bg-gray-700 relative overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-user-ninja text-6xl text-gray-500 opacity-50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-black text-white uppercase mb-1">[Nome do Instrutor]</h3>
+                        <p class="text-brand-orange font-bold text-sm mb-4">[Patente / Titulação]</p>
+                        <p class="text-sm text-gray-400 mb-2"><strong class="text-white">Especialidade:</strong> [Atendimento Pré-Hospitalar]</p>
+                        <p class="text-sm text-gray-300 mb-4 leading-relaxed">
+                            [3 linhas de histórico operacional real - experiência prática na rua, grandes ocorrências, não apenas histórico acadêmico]
+                        </p>
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide font-bold mb-1">Certificações</p>
+                            <p class="text-xs text-gray-400">[Formação internacional, especializações médicas]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instrutor 3 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-white/10 group hover:border-brand-orange transition-colors">
+                    <div class="h-64 bg-gray-700 relative overflow-hidden flex items-center justify-center">
+                        <i class="fas fa-user-shield text-6xl text-gray-500 opacity-50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-black text-white uppercase mb-1">[Nome do Instrutor]</h3>
+                        <p class="text-brand-orange font-bold text-sm mb-4">[Patente / Titulação]</p>
+                        <p class="text-sm text-gray-400 mb-2"><strong class="text-white">Especialidade:</strong> [Comando e Gestão de Cena]</p>
+                        <p class="text-sm text-gray-300 mb-4 leading-relaxed">
+                            [3 linhas de histórico operacional real - experiência prática na rua, grandes ocorrências, não apenas histórico acadêmico]
+                        </p>
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide font-bold mb-1">Certificações</p>
+                            <p class="text-xs text-gray-400">[Gestão de desastres, ICS, etc]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-white text-lg font-medium mb-6">Esses são os profissionais que vão conduzir seu treinamento em Cuiabá, nos dias 24 e 25 de junho.</p>
+                <a href="#inscricoes" class="inline-block bg-brand-orange text-white rounded-full px-8 py-3 uppercase font-black hover:bg-orange-600 transition-colors shadow-lg">
+                    Garantir minha vaga
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="py-24 bg-white relative">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm text-brand-orange font-black uppercase tracking-widest mb-4">A Metodologia</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-brand-dark uppercase tracking-tight">
+                    2 Dias. 3 Estações.<br>
+                    <span class="text-brand-orange">1 Padrão que muda como você age.</span>
+                </h3>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Estação 01 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gray-200 text-brand-dark font-black text-6xl opacity-20 -mr-4 -mt-4 p-4 rounded-bl-full">01</div>
+                    <div class="w-16 h-16 bg-brand-orange text-white rounded-xl flex items-center justify-center text-3xl mb-6 shadow-md relative z-10">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h4 class="text-xl font-black uppercase text-brand-dark mb-3 relative z-10">Comando</h4>
+                    <p class="text-gray-600 leading-relaxed relative z-10">
+                        Gestão de cena, comunicação entre equipes e tomada de decisão sob pressão. Você aprende a liderar a resposta — não apenas executar. Porque na cena real, alguém precisa assumir o controle. Esse alguém é você.
+                    </p>
+                </div>
+
+                <!-- Estação 02 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gray-200 text-brand-dark font-black text-6xl opacity-20 -mr-4 -mt-4 p-4 rounded-bl-full">02</div>
+                    <div class="w-16 h-16 bg-brand-orange text-white rounded-xl flex items-center justify-center text-3xl mb-6 shadow-md relative z-10">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4 class="text-xl font-black uppercase text-brand-dark mb-3 relative z-10">Atendimento Pré-Hospitalar</h4>
+                    <p class="text-gray-600 leading-relaxed relative z-10">
+                        Protocolos de estabilização de vítima dentro e fora do veículo. Integração entre equipe de resgate e equipe médica. Para bombeiros e profissionais de saúde: aqui a teoria vira prática, e a prática vira instinto.
+                    </p>
+                </div>
+
+                <!-- Estação 03 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gray-200 text-brand-dark font-black text-6xl opacity-20 -mr-4 -mt-4 p-4 rounded-bl-full">03</div>
+                    <div class="w-16 h-16 bg-brand-orange text-white rounded-xl flex items-center justify-center text-3xl mb-6 shadow-md relative z-10">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <h4 class="text-xl font-black uppercase text-brand-dark mb-3 relative z-10">Salvamento Veicular</h4>
+                    <p class="text-gray-600 leading-relaxed relative z-10">
+                        Operação do equipamento Holmatro em cenários reais simulados. Acesso à vítima, estabilização do veículo e extricação segura. Aqui você coloca a mão no equipamento e entende o que separa um resgate eficiente de um improvisado.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Blocos de Texto Secundários -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-brand-dark text-white p-8 rounded-2xl">
+                    <h5 class="text-brand-orange font-black uppercase mb-2"><i class="fas fa-clipboard-check mr-2"></i> Metodologia</h5>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        Todas as situações treinadas são baseadas em casos reais documentados. Não há teoria isolada — cada protocolo é praticado dentro de um cenário com vítima simulada, equipe completa, tempo contado e pressão real. Você sai diferente não porque assistiu. Porque viveu.
+                    </p>
+                </div>
+                <div class="bg-brand-dark text-white p-8 rounded-2xl">
+                    <h5 class="text-brand-orange font-black uppercase mb-2"><i class="fas fa-certificate mr-2"></i> Certificação</h5>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        Ao concluir o evento, você recebe certificado de participação no Holmatro Rescue Experience — formação reconhecida e associada ao padrão internacional Holmatro.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Destaque Concessionárias -->
+            <div class="mt-8 bg-brand-orange text-white p-8 rounded-2xl flex flex-col md:flex-row items-center gap-6">
+                <div class="text-5xl opacity-80"><i class="fas fa-hard-hat"></i></div>
+                <div>
+                    <h5 class="font-black uppercase text-xl mb-2 text-brand-dark">Equipes de concessionárias de rodovias:</h5>
+                    <p class="font-medium leading-relaxed">
+                        O treinamento cobre os protocolos de primeira resposta que sua equipe precisa dominar antes da chegada do socorro especializado. Conformidade operacional e preparo real, na mesma experiência dos bombeiros e profissionais de saúde.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Data e Local -->
+    <section id="local" class="py-24 bg-gray-100 border-t border-gray-300 relative overflow-hidden">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-5 gap-12 items-start">
+                
+                <!-- Info Central (Esquerda) -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-4xl md:text-5xl font-black uppercase text-brand-dark mb-8">Data e Local</h2>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-brand-orange mb-6">
+                        <div class="flex items-start gap-4 mb-4">
+                            <i class="fas fa-calendar-alt text-brand-orange text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 uppercase">Quando</h4>
+                                <p class="text-gray-600">24 e 25 de junho de 2026</p>
+                                <p class="text-sm text-gray-500 mt-1">Horários: [A confirmar]</p>
+                            </div>
+                        </div>
+                        <hr class="border-gray-100 mb-4">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-brand-orange text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-800 uppercase">Onde</h4>
+                                <p class="text-gray-600">Cuiabá - Mato Grosso</p>
+                                <p class="text-sm text-gray-500 mt-1">Local: [Endereço completo]</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-dark text-white p-6 rounded-xl shadow-md">
+                        <p class="font-bold text-brand-orange mb-2"><i class="fas fa-sun mr-2"></i> Clima e Dicas</p>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Junho em Cuiabá é período de seca — temperatura média de [X°C], clima seco e ensolarado. Recomendamos roupa leve e confortável para atividade física em ambiente externo, calçado fechado e protetor solar. Tudo que você precisa estará no local.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Logística (Direita) -->
+                <div class="lg:col-span-3 grid sm:grid-cols-2 gap-6">
+                    <!-- Como Chegar -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                        <h4 class="font-black uppercase text-brand-dark mb-4 flex items-center gap-2">
+                            <i class="fas fa-plane text-brand-orange"></i> Como chegar
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Cuiabá é servida pelo Aeroporto Marechal Rondon, com voos diretos das principais capitais do Brasil.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li><strong class="text-gray-700">Distância:</strong> [X km, aprox. Y min]</li>
+                            <li><strong class="text-gray-700">Translado:</strong> Aplicativo, táxi e [van/transfer oficial].</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hospedagem -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                        <h4 class="font-black uppercase text-brand-dark mb-4 flex items-center gap-2">
+                            <i class="fas fa-bed text-brand-orange"></i> Onde se hospedar
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Três opções próximas ao evento:
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-3">
+                            <li class="flex items-center gap-2"><div class="w-2 h-2 bg-green-500 rounded-full"></div> <span><strong class="text-gray-700">[Hotel 1]</strong> - Econômico (X km)</span></li>
+                            <li class="flex items-center gap-2"><div class="w-2 h-2 bg-blue-500 rounded-full"></div> <span><strong class="text-gray-700">[Hotel 2]</strong> - Intermediário (X km)</span></li>
+                            <li class="flex items-center gap-2"><div class="w-2 h-2 bg-purple-500 rounded-full"></div> <span><strong class="text-gray-700">[Hotel 3]</strong> - Superior (X km)</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="sm:col-span-2 bg-brand-orange/10 border border-brand-orange/30 p-6 rounded-xl text-center">
+                        <p class="text-brand-dark font-medium">
+                            Mais de <strong class="text-brand-orange font-black text-xl">[X]</strong> estados já confirmaram presença.<br>
+                            A logística é parte do investimento — e ela cabe no seu planejamento.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Inscrições -->
+    <section id="inscricoes" class="py-24 relative bg-brand-dark text-white border-t-8 border-brand-orange">
+        <div class="max-w-[60rem] mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-black uppercase mb-6 leading-tight">
+                    Treine no padrão que define o resgate veicular no mundo.
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-300 font-light">
+                    24 e 25 de junho. Cuiabá - MT.<br>
+                    <strong class="text-brand-orange">Inscrições até 14 de junho.</strong>
+                </p>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 p-8 rounded-2xl mb-12">
+                <h3 class="text-xl font-bold uppercase text-brand-orange mb-6 text-center">O que está incluído na sua vaga:</h3>
+                <ul class="space-y-4 max-w-2xl mx-auto">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-brand-orange text-xl mt-0.5"></i>
+                        <span class="text-gray-200">Acesso completo às 3 estações de treinamento prático</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-brand-orange text-xl mt-0.5"></i>
+                        <span class="text-gray-200">Operação direta com equipamento Holmatro real</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-brand-orange text-xl mt-0.5"></i>
+                        <span class="text-gray-200">Metodologia baseada em casos reais documentados</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-brand-orange text-xl mt-0.5"></i>
+                        <span class="text-gray-200">Certificado de participação Holmatro Rescue Experience</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-gray-500 text-xl mt-0.5"></i>
+                        <span class="text-gray-400 italic">[Alimentação, kit do participante e demais itens a confirmar]</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-center mb-16">
+                <a href="#" class="inline-block bg-brand-orange text-white text-xl md:text-2xl px-12 py-5 rounded-full uppercase font-black hover:bg-orange-600 transition-all shadow-[0_0_30px_rgba(227,82,25,0.4)] hover:scale-105 mb-4">
+                    Quero garantir minha vaga
+                </a>
+                <p class="text-sm text-gray-400 max-w-lg mx-auto leading-relaxed">
+                    <strong class="text-white">Urgência justificada:</strong> As inscrições encerram em 14 de junho porque precisamos organizar logística, equipamento e equipe de instrutores com antecedência. <span class="text-brand-orange font-bold">Não haverá exceções nem lista de espera.</span>
+                </p>
+            </div>
+
+            <!-- FAQ -->
+            <div class="max-w-3xl mx-auto">
+                <h3 class="text-2xl font-black uppercase text-center mb-8 border-b border-white/10 pb-4">Perguntas Frequentes</h3>
+                
+                <div class="space-y-4">
+                    <!-- Pergunta 1 -->
+                    <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold p-5">
+                            Preciso ter experiência prévia em resgate veicular?
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-brand-orange"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-300 p-5 pt-0 border-t border-white/10 mt-2 text-sm leading-relaxed">
+                            Sim. O Holmatro Rescue Experience é um treinamento de nível avançado, voltado para profissionais que já atuam ou estão em formação na área de resgate e salvamento. É necessário ter experiência prévia em resgate veicular ou salvamento para participar.
+                        </div>
+                    </details>
+
+                    <!-- Pergunta 2 -->
+                    <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold p-5">
+                            O certificado tem validade institucional?
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-brand-orange"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-300 p-5 pt-0 border-t border-white/10 mt-2 text-sm leading-relaxed">
+                            O certificado é emitido pela Holmatro e reconhecido como formação associada ao padrão internacional da marca. <span class="italic text-gray-500">[Complementar com informações de reconhecimento institucional, se aplicável.]</span>
+                        </div>
+                    </details>
+
+                    <!-- Pergunta 3 -->
+                    <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold p-5">
+                            Posso inscrever uma equipe?
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-brand-orange"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-300 p-5 pt-0 border-t border-white/10 mt-2 text-sm leading-relaxed">
+                            Sim. Para inscrições de grupos, entre em contato pelo <a href="#contatos" class="text-brand-orange underline">[canal de atendimento]</a> para condições específicas.
+                        </div>
+                    </details>
+
+                    <!-- Pergunta 4 -->
+                    <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold p-5">
+                            Como funciona o pagamento?
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-brand-orange"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-300 p-5 pt-0 border-t border-white/10 mt-2 text-sm leading-relaxed italic">
+                            [A preencher com as opções disponíveis - boleto, cartão, transferência, nota fiscal para PJ.]
+                        </div>
+                    </details>
+
+                    <!-- Pergunta 5 -->
+                    <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold p-5">
+                            E se eu precisar cancelar?
+                            <span class="transition group-open:rotate-180">
+                                <i class="fas fa-chevron-down text-brand-orange"></i>
+                            </span>
+                        </summary>
+                        <div class="text-gray-300 p-5 pt-0 border-t border-white/10 mt-2 text-sm leading-relaxed italic">
+                            [A preencher com a política de cancelamento e reembolso.]
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Fechamento Inscrições -->
+            <div class="mt-20 text-center">
+                <p class="text-2xl md:text-3xl font-light italic mb-8 text-gray-300 max-w-3xl mx-auto">
+                    "Depois do Rescue Experience, minha referência de resgate mudou."
+                    <span class="block text-sm font-bold text-brand-orange not-italic mt-4 uppercase tracking-widest">— Participante, edição anterior</span>
+                </p>
+                <a href="#" class="inline-block border-2 border-brand-orange bg-brand-orange text-white text-lg px-10 py-4 rounded-full uppercase font-black hover:bg-transparent hover:text-brand-orange transition-colors">
+                    Garantir minha vaga agora
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contatos" class="bg-[#111217] text-white pt-16 pb-8 border-t border-brand-orange">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-10 items-center mb-12 text-center md:text-left">
+                
+                <!-- Info Footer -->
+                <div>
+                    <h3 class="text-2xl font-black uppercase tracking-widest mb-2">
+                        Holmatro <br><span class="text-brand-orange">Rescue Experience</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm font-medium">24 e 25 de junho de 2026 • Cuiabá-MT</p>
+                </div>
+
+                <!-- Logos Placeholder -->
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <p class="text-xs uppercase tracking-widest text-gray-500 font-bold">Em parceria com</p>
+                    <div class="flex items-center gap-6">
+                        <div class="bg-white/10 p-3 rounded text-sm text-gray-400 border border-white/20">[Logo Holmatro]</div>
+                        <div class="bg-white/10 p-3 rounded text-sm text-gray-400 border border-white/20">[Logo CBMT]</div>
+                    </div>
+                </div>
+
+                <!-- CTA Footer -->
+                <div class="md:text-right">
+                    <p class="text-brand-orange font-bold uppercase mb-2">Inscrições até 14 de junho</p>
+                    <a href="#inscricoes" class="inline-block bg-white text-brand-dark px-6 py-2 rounded-full font-bold uppercase text-sm hover:bg-gray-200 transition-colors">
+                        Link de inscrição
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-white/10 mb-8">
+
+            <div class="text-center text-sm text-gray-500 font-medium">
+                <p>© 2026 Holmatro Rescue Experience. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para Rolagem Suave -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ajusta altura dependendo da barra de urgência
+            const getNavOffset = () => {
+                const navbar = document.querySelector('nav');
+                const topbar = document.querySelector('.fixed.top-0');
+                let offset = 0;
+                if(topbar) offset += topbar.offsetHeight;
+                if(navbar) offset += navbar.offsetHeight;
+                return offset;
+            };
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - getNavOffset();
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
