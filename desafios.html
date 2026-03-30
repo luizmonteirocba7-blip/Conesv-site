@@ -36,6 +36,7 @@
                         'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
                         'wiggle': 'wiggle 2s ease-in-out infinite',
                         'spin-slow': 'spin 8s linear infinite',
+                        'fade-in': 'fade-in 0.4s ease-out forwards',
                     },
                     keyframes: {
                         'float': {
@@ -52,6 +53,10 @@
                         'wiggle': {
                             '0%, 100%': { transform: 'rotate(-3deg)' },
                             '50%': { transform: 'rotate(3deg)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
                         }
                     }
                 }
@@ -80,15 +85,16 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logótipo -->
                 <div class="flex items-center gap-3 flex-shrink-0">
+                    <img src="https://drive.google.com/thumbnail?id=1Z9ELCe6dgEypA8xWHw0S807H_lCDmQSl&sz=w400" alt="Logo" class="h-10 w-auto object-contain">
                     <span class="font-black text-2xl tracking-wider uppercase">CONESV</span>
                 </div>
                 
                 <!-- Links de Navegação -->
                 <div class="hidden lg:flex items-center text-xs xl:text-sm font-semibold tracking-wider space-x-6">
-                    <a href="#inicio" class="hover:text-brand-orange transition-colors uppercase">O Desafio</a>
-                    <a href="#sobre" class="hover:text-brand-orange transition-colors uppercase">Sobre</a>
-                    <a href="#como-funciona" class="hover:text-brand-orange transition-colors uppercase">Como Funciona</a>
-                    <a href="#participantes" class="hover:text-brand-orange transition-colors uppercase">Participantes</a>
+                    <a href="index.html" class="hover:text-brand-orange transition-colors uppercase">Início</a>
+                    <a href="#sobre" class="hover:text-brand-orange transition-colors uppercase nav-tab-link">Sobre</a>
+                    <a href="#como-funciona" class="hover:text-brand-orange transition-colors uppercase nav-tab-link">Como Funciona</a>
+                    <a href="#participantes" class="hover:text-brand-orange transition-colors uppercase nav-tab-link">Participantes</a>
                     <a href="#equipes" class="hover:text-brand-orange transition-colors uppercase">Equipes</a>
                 </div>
 
@@ -163,129 +169,142 @@
         </div>
     </section>
 
-    <!-- === WRAPPER FUNDO CONTÍNUO (Sobre o Desafio até Equipes) === -->
+    <!-- === WRAPPER FUNDO CONTÍNUO (Tabs até Equipes) === -->
     <div class="relative w-full bg-gray-50 overflow-hidden">
         <!-- Imagem de Fundo Global para o Bloco -->
         <div class="absolute inset-0 w-full h-full z-0 opacity-80">
             <img src="https://drive.google.com/thumbnail?id=1yLx1N8HBEU2bXsSS4PXJAIwWVgVsQKEf&sz=w1920" alt="Fundo Textura" class="w-full h-full object-cover object-center">
         </div>
 
-        <!-- Sobre o Desafio -->
-        <section id="sobre" class="pt-20 pb-12 relative z-10">
-            <div class="text-center mb-10 flex flex-col items-center">
-                <div class="bg-brand-orange text-white font-medium text-3xl md:text-5xl px-8 py-2 md:py-3 rounded-2xl inline-block transform -rotate-3 mb-1 shadow-sm tracking-wide hover:rotate-0 hover:scale-105 transition-all duration-300">
-                    SOBRE O
-                </div>
-                <h2 class="text-6xl md:text-[7rem] font-black text-brand-dark uppercase tracking-tighter leading-none mt-2">
-                    DESAFIO
-                </h2>
-            </div>
+        <!-- Seção de Abas do Desafio -->
+        <section id="detalhes-desafio" class="pt-20 pb-12 relative z-10">
             
-            <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <div class="max-w-4xl mx-auto space-y-6 text-gray-700 text-lg md:text-xl font-light leading-relaxed">
-                    <p>
-                        O <strong class="text-brand-dark">Desafio Nacional de Salvamento Veicular e Trauma</strong> é uma competição que ocorre em todo o país e atrai competidores internacionais.
-                    </p>
-                    <p>
-                        Durante a prova, os participantes lidam com <span class="font-bold text-white bg-brand-orange px-3 py-1 rounded hover:bg-orange-600 transition-colors">cenários simulados</span>, abordando desencarceramento, estabilização veicular e atendimento médico às vítimas.
-                    </p>
-                    <p class="text-2xl font-medium italic mt-8 text-brand-dark">
-                        "Mais do que uma competição, promove o aprimoramento, troca de experiências e fortalecimento das práticas que salvam vidas."
-                    </p>
+            <!-- Menu de Abas Horizontais (Como solicitado) -->
+            <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+                <div class="flex flex-wrap items-center justify-center bg-brand-dark rounded-xl p-2 shadow-xl gap-2 md:gap-4 w-fit mx-auto">
+                    <button class="tab-btn active px-6 py-3 rounded-lg font-black text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-brand-orange bg-white/10 shadow-sm" data-target="tab-sobre">
+                        Sobre
+                    </button>
+                    <button class="tab-btn px-6 py-3 rounded-lg font-black text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-300 hover:text-white hover:bg-white/5" data-target="tab-como">
+                        Como Funciona
+                    </button>
+                    <button class="tab-btn px-6 py-3 rounded-lg font-black text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-300 hover:text-white hover:bg-white/5" data-target="tab-participantes">
+                        Participantes
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Como Funciona -->
-        <section id="como-funciona" class="pt-12 pb-24 relative z-10">
-            <div class="w-full bg-brand-dark py-4 md:py-5 mb-10 flex justify-center items-center shadow-md hover:bg-[#2A2E35] transition-colors">
-                <h2 class="text-3xl md:text-4xl text-white uppercase tracking-widest">
-                    <span class="font-light">Como</span> <span class="font-black">Funciona</span>
-                </h2>
-            </div>
-
-            <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <div class="inline-block bg-brand-orange text-white font-bold text-lg md:text-xl px-6 py-2.5 rounded-xl shadow-md tracking-wide hover:scale-105 transition-transform duration-300">
-                        Cenários realistas. Tempo limitado. Decisões críticas.
-                    </div>
-                </div>
-
-                <div class="max-w-5xl mx-auto text-center">
-                    <p class="text-gray-600 text-lg leading-relaxed mb-4">
-                        As equipes enfrentarão diferentes cenários simulados de acidentes veiculares, com vítimas e situações que exigem resposta rápida, segura e eficiente.
-                    </p>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-10">
-                        Cada prova será cronometrada e acompanhada por avaliadores especializados, que irão pontuar aspectos técnicos e operacionais.
-                    </p>
-                    
-                    <div class="inline-block bg-brand-orange text-white font-bold text-xl px-6 py-2.5 rounded-xl mb-10 shadow-md tracking-wide hover:scale-105 transition-transform">
-                        Categorias do desafio:
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                        <div class="bg-gray-50 border-t-4 md:border-t-0 md:border-l-4 border-brand-orange p-6 sm:p-8 rounded-xl md:rounded-l-none md:rounded-r-xl shadow-md flex flex-col sm:flex-row gap-5 items-center sm:items-start text-center sm:text-left group hover:-translate-y-1 transition-all duration-300">
-                            <div class="w-14 h-14 bg-brand-orange text-white rounded-full flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                                <i class="fas fa-car-crash"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-black text-xl text-brand-dark uppercase">Salvamento Veicular</h3>
-                                <p class="text-gray-600 mt-2">Foco no desencarceramento, criação de acessos rápidos e manuseio de ferramentas hidráulicas de forma precisa e segura.</p>
-                            </div>
+            <!-- Área de Conteúdo das Abas -->
+            <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <!-- ABA: SOBRE -->
+                <div id="tab-sobre" class="tab-content block animate-fade-in py-8">
+                    <div class="text-center mb-10 flex flex-col items-center">
+                        <div class="bg-brand-orange text-white font-medium text-3xl md:text-5xl px-8 py-2 md:py-3 rounded-2xl inline-block transform -rotate-3 mb-1 shadow-sm tracking-wide hover:rotate-0 hover:scale-105 transition-all duration-300">
+                            SOBRE O
                         </div>
-
-                        <div class="bg-gray-50 border-t-4 md:border-t-0 md:border-l-4 border-brand-dark p-6 sm:p-8 rounded-xl md:rounded-l-none md:rounded-r-xl shadow-md flex flex-col sm:flex-row gap-5 items-center sm:items-start text-center sm:text-left group hover:-translate-y-1 transition-all duration-300">
-                            <div class="w-14 h-14 bg-brand-dark text-white rounded-full flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                <i class="fas fa-star-of-life animate-heartbeat text-brand-orange"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-black text-xl text-brand-dark uppercase">Atendimento ao Trauma</h3>
-                                <p class="text-gray-600 mt-2">Foco na estabilização clínica, manutenção de vias aéreas e extração segura da vítima respeitando o suporte básico e avançado de vida.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quem Pode Participar -->
-        <section id="participantes" class="py-24 relative z-10 border-t border-gray-200/50">
-            <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Alterado de grid com 2 colunas para max-w para centralizar o conteúdo após remover a avaliação -->
-                <div class="max-w-4xl mx-auto">
-                    
-                    <!-- Quem Pode Participar -->
-                    <div>
-                        <h2 class="text-3xl md:text-4xl font-black text-brand-dark uppercase mb-8 flex items-center justify-center md:justify-start gap-3">
-                            <i class="fas fa-users text-brand-orange animate-pulse-slow"></i> Quem Pode Participar
+                        <h2 class="text-6xl md:text-[7rem] font-black text-brand-dark uppercase tracking-tighter leading-none mt-2">
+                            DESAFIO
                         </h2>
+                    </div>
+                    
+                    <div class="max-w-4xl mx-auto space-y-6 text-gray-700 text-lg md:text-xl font-light leading-relaxed text-center bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-lg border border-white">
+                        <p>
+                            O <strong class="text-brand-dark">Desafio Nacional de Salvamento Veicular e Trauma</strong> é uma competição que ocorre em todo o país e atrai competidores internacionais.
+                        </p>
+                        <p>
+                            Durante a prova, os participantes lidam com <span class="font-bold text-white bg-brand-orange px-3 py-1 rounded hover:bg-orange-600 transition-colors">cenários simulados</span>, abordando desencarceramento, estabilização veicular e atendimento médico às vítimas.
+                        </p>
+                        <p class="text-2xl font-medium italic mt-8 text-brand-dark">
+                            "Mais do que uma competição, promove o aprimoramento, troca de experiências e fortalecimento das práticas que salvam vidas."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ABA: COMO FUNCIONA -->
+                <div id="tab-como" class="tab-content hidden animate-fade-in py-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl md:text-5xl font-black text-brand-dark uppercase tracking-tight">Como Funciona</h2>
+                        <div class="w-24 h-2 bg-brand-orange mx-auto mt-4 rounded-full"></div>
+                    </div>
+
+                    <div class="text-center mb-12">
+                        <div class="inline-block bg-brand-orange text-white font-bold text-lg md:text-xl px-6 py-2.5 rounded-xl shadow-md tracking-wide hover:scale-105 transition-transform duration-300">
+                            Cenários realistas. Tempo limitado. Decisões críticas.
+                        </div>
+                    </div>
+
+                    <div class="max-w-5xl mx-auto text-center bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-lg border border-white">
+                        <p class="text-gray-600 text-lg leading-relaxed mb-4">
+                            As equipes enfrentarão diferentes cenários simulados de acidentes veiculares, com vítimas e situações que exigem resposta rápida, segura e eficiente.
+                        </p>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-10">
+                            Cada prova será cronometrada e acompanhada por avaliadores especializados, que irão pontuar aspectos técnicos e operacionais.
+                        </p>
                         
+                        <div class="inline-block bg-brand-dark text-white font-bold text-xl px-6 py-2.5 rounded-xl mb-10 shadow-md tracking-wide">
+                            Categorias do desafio:
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                            <div class="bg-gray-50 border-l-4 border-brand-orange p-6 sm:p-8 rounded-xl shadow-sm flex flex-col sm:flex-row gap-5 items-center sm:items-start text-center sm:text-left group hover:-translate-y-1 transition-all duration-300">
+                                <div class="w-14 h-14 bg-brand-orange text-white rounded-full flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                                    <i class="fas fa-car-crash"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-black text-xl text-brand-dark uppercase">Salvamento Veicular</h3>
+                                    <p class="text-gray-600 mt-2">Foco no desencarceramento, criação de acessos rápidos e manuseio de ferramentas hidráulicas de forma precisa e segura.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 border-l-4 border-brand-dark p-6 sm:p-8 rounded-xl shadow-sm flex flex-col sm:flex-row gap-5 items-center sm:items-start text-center sm:text-left group hover:-translate-y-1 transition-all duration-300">
+                                <div class="w-14 h-14 bg-brand-dark text-white rounded-full flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-star-of-life animate-heartbeat text-brand-orange"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-black text-xl text-brand-dark uppercase">Atendimento ao Trauma</h3>
+                                    <p class="text-gray-600 mt-2">Foco na estabilização clínica, manutenção de vias aéreas e extração segura da vítima respeitando o suporte básico e avançado de vida.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABA: PARTICIPANTES -->
+                <div id="tab-participantes" class="tab-content hidden animate-fade-in py-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-4xl md:text-5xl font-black text-brand-dark uppercase tracking-tight">Participantes</h2>
+                        <div class="w-24 h-2 bg-brand-orange mx-auto mt-4 rounded-full"></div>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-lg border border-white">
                         <ul class="space-y-4 mb-8">
-                            <li class="group flex items-center gap-3 text-lg font-medium text-gray-700 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
-                                <i class="fas fa-check-circle text-brand-orange group-hover:scale-125 transition-transform duration-300"></i> Corpos de Bombeiros Militares
+                            <li class="group flex items-center gap-3 text-lg font-medium text-gray-700 bg-gray-50 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
+                                <i class="fas fa-check-circle text-brand-orange text-xl group-hover:scale-125 transition-transform duration-300"></i> Corpos de Bombeiros Militares
                             </li>
-                            <li class="group flex items-center gap-3 text-lg font-medium text-gray-700 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
-                                <i class="fas fa-check-circle text-brand-orange group-hover:scale-125 transition-transform duration-300"></i> Concessionárias de Rodovias
+                            <li class="group flex items-center gap-3 text-lg font-medium text-gray-700 bg-gray-50 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
+                                <i class="fas fa-check-circle text-brand-orange text-xl group-hover:scale-125 transition-transform duration-300"></i> Concessionárias de Rodovias
                             </li>
-                            <li class="group flex items-center gap-3 text-lg font-medium text-gray-700 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
-                                <i class="fas fa-check-circle text-brand-orange group-hover:scale-125 transition-transform duration-300"></i> SAMU
+                            <li class="group flex items-center gap-3 text-lg font-medium text-gray-700 bg-gray-50 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
+                                <i class="fas fa-check-circle text-brand-orange text-xl group-hover:scale-125 transition-transform duration-300"></i> SAMU
                             </li>
-                            <li class="group flex items-center gap-3 text-lg font-medium text-gray-700 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
-                                <i class="fas fa-check-circle text-brand-orange group-hover:scale-125 transition-transform duration-300"></i> Órgãos públicos e privados de resgate
+                            <li class="group flex items-center gap-3 text-lg font-medium text-gray-700 bg-gray-50 p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-default">
+                                <i class="fas fa-check-circle text-brand-orange text-xl group-hover:scale-125 transition-transform duration-300"></i> Órgãos públicos e privados de resgate
                             </li>
                         </ul>
 
-                        <div class="group bg-brand-orange/10 border-l-4 border-brand-orange p-4 rounded-r text-brand-dark text-sm font-semibold hover:bg-brand-orange/20 transition-colors">
-                            <i class="fas fa-info-circle mr-2 text-brand-orange group-hover:animate-wiggle inline-block"></i> As equipes devem ser compostas por profissionais devidamente capacitados e ativos em suas instituições.
+                        <div class="group bg-brand-orange/10 border-l-4 border-brand-orange p-5 rounded-r-xl text-brand-dark text-base font-semibold hover:bg-brand-orange/20 transition-colors flex items-start gap-3">
+                            <i class="fas fa-info-circle mt-1 text-brand-orange text-xl group-hover:animate-wiggle"></i> 
+                            <span>As equipes devem ser compostas por profissionais devidamente capacitados e ativos em suas instituições.</span>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </section>
 
-        <!-- Equipes Confirmadas -->
-        <section id="equipes" class="pt-12 pb-24 relative z-10">
+        <!-- Equipes Confirmadas (Logo a seguir às abas) -->
+        <section id="equipes" class="pb-24 relative z-10 pt-10">
             <div class="w-full bg-brand-dark py-4 md:py-5 mb-16 flex justify-center items-center shadow-md hover:bg-[#2A2E35] transition-colors">
                 <h2 class="text-3xl md:text-4xl text-white uppercase tracking-widest">
                     <span class="font-light">Equipes</span> <span class="font-black">Confirmadas</span>
@@ -296,79 +315,79 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-4 max-w-5xl mx-auto">
                     
                     <!-- 01 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">01</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-brand-dark uppercase leading-tight">TRT St. Georgen im Attergau</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Áustria</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Áustria</div>
                     </div>
 
                     <!-- 02 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">02</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-brand-dark uppercase leading-tight">Rozpieramy</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Polônia</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Polônia</div>
                     </div>
 
                     <!-- 03 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">03</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-brand-dark uppercase leading-tight">North Collier XT</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-americas mr-1 group-hover:animate-spin-slow inline-block"></i> EUA</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-americas mr-1 group-hover:animate-spin-slow inline-block"></i> EUA</div>
                     </div>
 
                     <!-- 04 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">04</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-brand-dark uppercase leading-tight">Hellenic Fire Academy</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Grécia</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Grécia</div>
                     </div>
 
                     <!-- 05 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">05</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-brand-dark uppercase leading-tight">Nordeste Rescue Team</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Portugal</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Portugal</div>
                     </div>
 
                     <!-- 06 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">06</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-brand-dark uppercase leading-tight">Technical Rescue Team Rhein-Berg</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Alemanha</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Alemanha</div>
                     </div>
 
                     <!-- 07 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">07</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-brand-dark uppercase leading-tight">TRT Brandweer Zone Antwerpen</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Bélgica</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Bélgica</div>
                     </div>
 
                     <!-- 08 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">08</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-xs sm:text-sm lg:text-base text-brand-dark uppercase leading-tight">Javna vatrogasna postrojba grada Karlovca / Karlovac Technical Rescue Team</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Croácia</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> Croácia</div>
                     </div>
 
                     <!-- 09 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">09</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-gray-400 uppercase italic leading-tight">To Be Announced Soon</h4>
@@ -376,12 +395,12 @@
                     </div>
 
                     <!-- 10 -->
-                    <div class="group flex items-center bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="group flex items-center bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <div class="text-2xl font-black text-gray-300 w-12 text-center mr-2 shrink-0 group-hover:text-brand-orange transition-colors">10</div>
                         <div class="flex-grow">
                             <h4 class="font-bold text-sm sm:text-base lg:text-lg text-brand-dark uppercase leading-tight">Les Lupins / SDIS 77</h4>
                         </div>
-                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-200 px-2 sm:px-3 py-1 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> França</div>
+                        <div class="text-xs sm:text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0 ml-2"><i class="fas fa-globe-europe mr-1 group-hover:animate-spin-slow inline-block"></i> França</div>
                     </div>
 
                 </div>
@@ -447,7 +466,7 @@
                 </div>
 
                 <div class="inline-block border-[2px] border-brand-dark rounded-full p-1.5 hover:scale-110 transition-transform duration-300 bg-white shadow-[0_0_20px_rgba(227,82,25,0.3)] hover:shadow-[0_0_30px_rgba(227,82,25,0.6)]">
-                    <a href="#" class="inline-block bg-brand-orange text-white text-xl md:text-2xl px-10 py-3 md:py-4 rounded-full shadow-lg hover:bg-orange-600 transition-colors">
+                    <a href="#inscricoes" class="inline-block bg-brand-orange text-white text-xl md:text-2xl px-10 py-3 md:py-4 rounded-full shadow-lg hover:bg-orange-600 transition-colors">
                         <span class="font-bold">Inscrever</span> <span class="font-light">equipe</span>
                     </a>
                 </div>
@@ -486,28 +505,148 @@
         </div>
     </footer>
 
-    <!-- Script para Rolagem Suave (Resolve o problema de iframes/Google Sites) -->
+    <!-- Modal Inscrições Em Breve -->
+    <div id="modal-inscricoes" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-500 ease-in-out">
+        <div class="absolute inset-0 bg-brand-dark/80 backdrop-blur-sm modal-backdrop transition-opacity"></div>
+        <div class="relative bg-white w-full max-w-lg rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.4)] p-8 md:p-12 text-center transform scale-95 transition-all duration-500 ease-out modal-content border-t-8 border-brand-orange overflow-hidden">
+            <!-- Artes modernas bg -->
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-brand-dark/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <button id="close-modal" class="absolute top-6 right-6 text-gray-400 hover:text-brand-orange transition-transform hover:rotate-90 hover:scale-110 focus:outline-none z-10">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+
+            <div class="relative inline-flex items-center justify-center w-24 h-24 mb-6">
+                <div class="absolute inset-0 bg-brand-orange/20 rounded-full animate-ping opacity-75"></div>
+                <div class="relative bg-brand-orange text-white w-20 h-20 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(227,82,25,0.4)] transform hover:rotate-12 hover:scale-110 transition-all duration-300">
+                    <i class="fas fa-rocket text-4xl ml-1 mt-1"></i>
+                </div>
+            </div>
+
+            <h3 class="text-4xl md:text-5xl font-black text-brand-dark uppercase tracking-tight mb-3">Em Breve</h3>
+            <div class="w-16 h-1.5 bg-brand-orange mx-auto rounded-full mb-6"></div>
+            
+            <p class="text-gray-600 text-base md:text-lg font-medium leading-relaxed mb-8 relative z-10">
+                As inscrições para o <strong class="text-brand-dark">Desafio Nacional de Salvamento Veicular e Trauma</strong> abrirão no dia <span class="font-bold text-brand-orange">14 de junho de 2026</span>.<br><br>Prepare a sua equipe!
+            </p>
+
+            <button id="btn-ok-modal" class="relative z-10 bg-brand-dark hover:bg-gray-800 text-white font-bold py-3.5 px-10 rounded-full transition-all duration-300 uppercase tracking-widest text-sm md:text-base shadow-lg hover:shadow-xl hover:-translate-y-1 w-full sm:w-auto">
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    <!-- Script para Lógica das Abas e Rolagem Suave -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.querySelector('nav');
             
+            // --- Lógica do Modal Em Breve ---
+            const modal = document.getElementById('modal-inscricoes');
+            const modalContent = modal.querySelector('.modal-content');
+            const closeModalBtns = document.querySelectorAll('#close-modal, #btn-ok-modal');
+            const backdrop = modal.querySelector('.modal-backdrop');
+
+            function openModal() {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }
+
+            function closeModal() {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+            }
+
+            closeModalBtns.forEach(btn => btn.addEventListener('click', closeModal));
+            backdrop.addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', function(e) {
+                if(e.key === 'Escape' && !modal.classList.contains('opacity-0')) {
+                    closeModal();
+                }
+            });
+
+            // --- Lógica das Abas ---
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            function activateTab(targetId) {
+                // Remove estilos de ativo de todos os botões e esconde conteúdos
+                tabBtns.forEach(btn => {
+                    btn.classList.remove('text-brand-orange', 'bg-white/10', 'active');
+                    btn.classList.add('text-gray-300');
+                });
+                tabContents.forEach(content => {
+                    content.classList.remove('block');
+                    content.classList.add('hidden');
+                });
+
+                // Ativa a aba alvo
+                const activeBtn = document.querySelector(`.tab-btn[data-target="${targetId}"]`);
+                if(activeBtn) {
+                    activeBtn.classList.add('text-brand-orange', 'bg-white/10', 'active');
+                    activeBtn.classList.remove('text-gray-300');
+                }
+                const activeContent = document.getElementById(targetId);
+                if(activeContent) {
+                    activeContent.classList.remove('hidden');
+                    activeContent.classList.add('block');
+                }
+            }
+
+            // Click listener para os botões das abas
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.getAttribute('data-target');
+                    activateTab(target);
+                });
+            });
+
+            // --- Lógica de Rolagem e Integração Menu <-> Abas ---
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     if(targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
-                        // Calcula o espaço exato subtraindo a altura do menu
+
+                    // Intercepta os cliques de inscrição para abrir o modal
+                    if(targetId === '#inscricoes') {
+                        openModal();
+                        return;
+                    }
+
+                    // Mapeia os links do menu para as abas correspondentes
+                    const tabMap = {
+                        '#sobre': 'tab-sobre',
+                        '#como-funciona': 'tab-como',
+                        '#participantes': 'tab-participantes'
+                    };
+
+                    // Se o link pertencer a uma das abas
+                    if (tabMap[targetId]) {
+                        activateTab(tabMap[targetId]);
+                        const tabsContainer = document.getElementById('detalhes-desafio');
                         const navHeight = navbar ? navbar.offsetHeight : 80;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - navHeight;
-                        
                         window.scrollTo({
-                            top: offsetPosition,
+                            top: tabsContainer.getBoundingClientRect().top + window.pageYOffset - navHeight - 20,
                             behavior: 'smooth'
                         });
+                    } else {
+                        // Rolagem suave normal para as outras seções (Equipes, Inicio, etc)
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            const navHeight = navbar ? navbar.offsetHeight : 80;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
             });
