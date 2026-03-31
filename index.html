@@ -117,11 +117,12 @@
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 flex flex-col lg:flex-row">
             
             <div class="w-full lg:w-[60%] pt-16 lg:pt-28 pb-40 sm:pb-32">
-                <h1 class="text-brand-dark leading-[1.05] tracking-tight">
-                    <span class="block text-3xl sm:text-5xl lg:text-[4rem] font-black">2º CONGRESSO</span>
-                    <span class="block text-3xl sm:text-4xl lg:text-[3rem] font-light mt-1 md:mt-2">NACIONAL DE</span>
-                    <span class="block text-3xl sm:text-4xl lg:text-[4rem] font-black text-brand-orange mt-2 md:mt-3">EMERGÊNCIAS E</span>
-                    <span class="block text-3xl sm:text-4xl lg:text-[4rem] font-black text-brand-orange mt-1">SEGURANÇA VIÁRIA</span>
+                <!-- AJUSTE AQUI: Remoção do leading restrito e adição de espaçamentos adequados entre as linhas -->
+                <h1 class="text-brand-dark tracking-tight">
+                    <span class="block text-3xl sm:text-5xl lg:text-[4rem] font-black leading-tight">2º CONGRESSO</span>
+                    <span class="block text-3xl sm:text-4xl lg:text-[3rem] font-light leading-tight mt-2 md:mt-3">NACIONAL DE</span>
+                    <span class="block text-3xl sm:text-4xl lg:text-[4rem] font-black text-brand-orange leading-tight mt-4 md:mt-6">EMERGÊNCIAS E</span>
+                    <span class="block text-3xl sm:text-4xl lg:text-[4rem] font-black text-brand-orange leading-tight mt-2 md:mt-3">SEGURANÇA VIÁRIA</span>
                 </h1>
                 
                 <p class="mt-6 md:mt-8 text-sm md:text-base lg:text-lg text-brand-dark max-w-2xl leading-relaxed">
@@ -371,6 +372,7 @@
                             </div>
                         </div>
 
+                        <!-- Bloco da Tarde -->
                         <div class="flex flex-col md:flex-row gap-4 bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 group hover:border-brand-orange/50 transition-colors">
                             <div class="flex items-start pt-1 gap-3 w-36 md:w-44 flex-shrink-0">
                                 <i class="fas fa-clock text-gray-400 group-hover:text-brand-orange transition-colors mt-0.5"></i>
@@ -414,6 +416,7 @@
 
                     <div id="dia25" class="tab-content hidden space-y-4 md:space-y-5 animate-fade-in">
                         
+                        <!-- Bloco da Manhã -->
                         <div class="flex flex-col md:flex-row gap-4 bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 group hover:border-brand-orange/50 transition-colors">
                             <div class="flex items-start pt-1 gap-3 w-36 md:w-44 flex-shrink-0">
                                 <i class="fas fa-clock text-gray-400 group-hover:text-brand-orange transition-colors mt-0.5"></i>
@@ -457,6 +460,7 @@
                             </div>
                         </div>
 
+                        <!-- Bloco da Tarde -->
                         <div class="flex flex-col md:flex-row gap-4 bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 group hover:border-brand-orange/50 transition-colors">
                             <div class="flex items-start pt-1 gap-3 w-36 md:w-44 flex-shrink-0">
                                 <i class="fas fa-clock text-gray-400 group-hover:text-brand-orange transition-colors mt-0.5"></i>
@@ -492,6 +496,7 @@
 
                     <div id="dia26" class="tab-content hidden space-y-4 md:space-y-5 animate-fade-in">
                         
+                        <!-- Bloco da Manhã -->
                         <div class="flex flex-col md:flex-row gap-4 bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 group hover:border-brand-orange/50 transition-colors">
                             <div class="flex items-start pt-1 gap-3 w-36 md:w-44 flex-shrink-0">
                                 <i class="fas fa-clock text-gray-400 group-hover:text-brand-orange transition-colors mt-0.5"></i>
@@ -535,6 +540,7 @@
                             </div>
                         </div>
 
+                        <!-- Bloco da Tarde -->
                         <div class="flex flex-col md:flex-row gap-4 bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 group hover:border-brand-orange/50 transition-colors">
                             <div class="flex items-start pt-1 gap-3 w-36 md:w-44 flex-shrink-0">
                                 <i class="fas fa-clock text-gray-400 group-hover:text-brand-orange transition-colors mt-0.5"></i>
@@ -642,14 +648,26 @@
                         
                         <div class="p-8 md:p-12 flex flex-col gap-8 md:gap-10 flex-grow">
                             
-                            <div>
-                                <div class="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                                    <i class="fas fa-phone-alt text-brand-orange text-xl md:text-3xl animate-wiggle"></i>
-                                    <h4 class="font-black text-brand-dark text-lg md:text-2xl uppercase tracking-wide">Telefone</h4>
+                            <div class="flex flex-col gap-6">
+                                <div>
+                                    <div class="flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
+                                        <i class="fas fa-envelope text-brand-orange text-xl md:text-3xl hover:animate-wiggle"></i>
+                                        <h4 class="font-black text-brand-dark text-lg md:text-2xl uppercase tracking-wide">Email</h4>
+                                    </div>
+                                    <p class="text-gray-600 font-medium text-sm md:text-base lg:text-lg ml-8 md:ml-10">
+                                        conesvbr@gmail.com
+                                    </p>
                                 </div>
-                                <p class="text-gray-600 font-medium text-sm md:text-base lg:text-lg ml-8 md:ml-10">
-                                    (65) 3612-5000
-                                </p>
+                                
+                                <div>
+                                    <div class="flex items-center gap-3 md:gap-4 mb-2 md:mb-3">
+                                        <i class="fas fa-phone-alt text-brand-orange text-xl md:text-3xl animate-wiggle"></i>
+                                        <h4 class="font-black text-brand-dark text-lg md:text-2xl uppercase tracking-wide">Telefone</h4>
+                                    </div>
+                                    <p class="text-gray-600 font-medium text-sm md:text-base lg:text-lg ml-8 md:ml-10">
+                                        (65) 9 9222 - 3305
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="w-full h-1 bg-brand-orange/50 my-1 md:my-2 rounded-full"></div>
