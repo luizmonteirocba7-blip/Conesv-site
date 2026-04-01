@@ -59,6 +59,11 @@
                 background: linear-gradient(90deg, #FFF8F5 0%, rgba(255,248,245,0.95) 75%, transparent 100%);
             }
         }
+        
+        /* Ajuste do Carrossel */
+        .sponsor-carousel-container {
+            transition: all 0.5s ease;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
@@ -684,6 +689,7 @@
         </div>
     </section>
 
+    <!-- NOVA SEÇÃO DE PATROCINADORES COM CARROSSEL MODERNO -->
     <section id="patrocinadores" class="relative w-full py-20 md:py-28 bg-gray-50">
         <div class="absolute inset-0 w-full h-full z-0 opacity-80 overflow-hidden">
             <img src="https://drive.google.com/thumbnail?id=1yLx1N8HBEU2bXsSS4PXJAIwWVgVsQKEf&sz=w1920" alt="Fundo Patrocinadores" class="w-full h-full object-cover object-center opacity-70">
@@ -700,21 +706,51 @@
                 </p>
             </div>
 
-            <div class="relative max-w-3xl mx-auto mt-20 md:mt-28">
-                <div class="absolute -top-16 md:-top-24 left-1/2 -translate-x-1/2 flex flex-col items-center z-30">
-                    <img src="https://drive.google.com/thumbnail?id=1qkG1GBqQFC10KOvpKqrrtskDzeA_f3-g&sz=w400" alt="Selo Patrocinador Principal" class="w-32 md:w-48 h-auto drop-shadow-lg">
+            <!-- Container do Carrossel de Patrocinadores -->
+            <div class="relative max-w-4xl mx-auto mt-20 md:mt-28 sponsor-carousel-container h-[520px] sm:h-[550px] md:h-[600px] rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl border-[3px] md:border-[4px] border-brand-dark/90 bg-white">
+                
+                <!-- Slide 1: Diamante (Milwaukee) -->
+                <div class="sponsor-slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#f8fdff] to-[#e6f7ff] transition-opacity duration-1000 opacity-100 z-10 p-6 md:p-12">
+                    
+                    <!-- Badge Diamante -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black text-xs md:text-sm uppercase tracking-widest py-2 md:py-3 px-6 md:px-10 rounded-b-2xl shadow-lg flex items-center gap-2 z-20">
+                        <i class="fas fa-gem text-cyan-200"></i> Patrocinador Diamante
+                    </div>
+                    
+                    <img src="https://drive.google.com/thumbnail?id=1m8YE4ywZWg_5WhAF8urzBkl1iiJDO3_a&sz=w800" alt="Milwaukee Tool" class="h-28 md:h-40 w-auto object-contain mt-12 md:mt-8 mb-4 md:mb-6 drop-shadow-md">
+                    
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark uppercase tracking-wide mb-3 md:mb-4">Milwaukee</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-lg mb-6 md:mb-10">
+                        Ferramentas de altíssima performance, durabilidade extrema e soluções inovadoras para profissionais exigentes.
+                    </p>
+                    <a href="https://milwaukeetool.com.br/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-cyan-500 hover:to-blue-600 text-white font-bold py-3 md:py-4 px-8 md:px-10 text-sm md:text-base lg:text-lg rounded-full shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all transform hover:scale-105 mb-6 md:mb-4">
+                        ACESSAR <span class="font-black">EMPRESA</span>
+                    </a>
                 </div>
 
-                <div class="bg-[#F2F2F2] rounded-3xl md:rounded-[2.5rem] shadow-2xl border-[3px] md:border-[4px] border-brand-dark/90 p-8 md:p-20 flex flex-col items-center text-center relative z-20 pt-24 md:pt-28">
-                    <img src="https://drive.google.com/thumbnail?id=1Z9ELCe6dgEypA8xWHw0S807H_lCDmQSl&sz=w800" alt="Logo Patrocinador" class="h-32 md:h-48 w-auto object-contain mb-6 md:mb-8 drop-shadow-md">
+                <!-- Slide 2: Ouro (Resgatecnica) -->
+                <div class="sponsor-slide absolute inset-0 flex flex-col items-center justify-center text-center bg-gradient-to-br from-[#fffdf5] to-[#fdf4e3] transition-opacity duration-1000 opacity-0 z-0 p-6 md:p-12">
                     
-                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark uppercase tracking-wide mb-3 md:mb-4">CONESV</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-md mb-8 md:mb-10">
-                        Líder global em soluções tecnológicas para prevenção, monitoramento e combate a<br class="hidden md:block">incêndios florestais.
+                    <!-- Badge Ouro -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-amber-600 text-white font-black text-xs md:text-sm uppercase tracking-widest py-2 md:py-3 px-6 md:px-10 rounded-b-2xl shadow-lg flex items-center gap-2 z-20">
+                        <i class="fas fa-medal text-yellow-100"></i> Patrocinador Ouro
+                    </div>
+                    
+                    <img src="https://drive.google.com/thumbnail?id=1HrsKXeUbl4KN9aJ09ft1udn8XhWvCujr&sz=w800" alt="Resgatecnica" class="h-28 md:h-40 w-auto object-contain mt-12 md:mt-8 mb-4 md:mb-6 drop-shadow-md">
+                    
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark uppercase tracking-wide mb-3 md:mb-4">Resgatecnica</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-lg mb-6 md:mb-10">
+                        Excelência, inovação e tecnologia avançada fornecendo os melhores equipamentos de resgate e salvamento.
                     </p>
-                    <a href="#" class="bg-brand-orange hover:bg-orange-600 text-white font-bold py-3 md:py-4 px-8 md:px-10 text-sm md:text-base lg:text-lg rounded-full shadow-xl transition-colors border-2 border-brand-dark">
-                        VISITE O <span class="font-black">SITE</span>
+                    <a href="https://resgatecnica.com.br/" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-white font-bold py-3 md:py-4 px-8 md:px-10 text-sm md:text-base lg:text-lg rounded-full shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all transform hover:scale-105 mb-6 md:mb-4">
+                        ACESSAR <span class="font-black">EMPRESA</span>
                     </a>
+                </div>
+
+                <!-- Indicadores do Carrossel -->
+                <div class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+                    <button class="w-3 md:w-4 h-3 md:h-4 rounded-full bg-cyan-500 shadow-md transition-all transform scale-125 sponsor-dot" data-index="0" aria-label="Slide 1"></button>
+                    <button class="w-3 md:w-4 h-3 md:h-4 rounded-full bg-gray-300 shadow-md transition-all sponsor-dot" data-index="1" aria-label="Slide 2"></button>
                 </div>
             </div>
 
@@ -954,7 +990,6 @@
                     
                     const targetElement = document.querySelector(targetId);
                     if(targetElement) {
-                        // Calcula o espaço exato subtraindo a altura do menu
                         const navHeight = navbar ? navbar.offsetHeight : 80;
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - navHeight;
@@ -974,7 +1009,6 @@
 
             function openInscricoesModal() {
                 overlay.classList.remove('hidden');
-                // Pequeno delay para garantir que a transição de opacidade ocorra
                 setTimeout(() => {
                     overlay.classList.remove('opacity-0', 'pointer-events-none');
                     modal.classList.remove('scale-90');
@@ -984,7 +1018,6 @@
             function closeInscricoesModal() {
                 overlay.classList.add('opacity-0', 'pointer-events-none');
                 modal.classList.add('scale-90');
-                // Aguarda a transição terminar antes de ocultar com display:none
                 setTimeout(() => {
                     overlay.classList.add('hidden');
                 }, 300);
@@ -992,14 +1025,12 @@
 
             closeBtn.addEventListener('click', closeInscricoesModal);
 
-            // Fecha ao clicar fora do modal (no overlay)
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
                     closeInscricoesModal();
                 }
             });
 
-            // Fecha ao pressionar Esc
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
                     closeInscricoesModal();
@@ -1013,7 +1044,6 @@
             if (tabBtns.length > 0 && tabContents.length > 0) {
                 tabBtns.forEach(btn => {
                     btn.addEventListener('click', () => {
-                        // Reseta todas as abas
                         tabBtns.forEach(b => {
                             b.classList.remove('text-white');
                             b.classList.add('text-gray-400');
@@ -1025,7 +1055,6 @@
                             c.classList.add('hidden');
                         });
 
-                        // Ativa a clicada
                         btn.classList.remove('text-gray-400');
                         btn.classList.add('text-white');
                         btn.querySelector('.tab-indicator').classList.remove('hidden');
@@ -1036,6 +1065,65 @@
                         document.getElementById(targetId).classList.add('block');
                     });
                 });
+            }
+
+            // NOVA LÓGICA DO CARROSSEL DE PATROCINADORES
+            const sponsorSlides = document.querySelectorAll('.sponsor-slide');
+            const sponsorDots = document.querySelectorAll('.sponsor-dot');
+            let currentSponsorSlide = 0;
+            let sponsorCarouselInterval;
+
+            function showSponsorSlide(index) {
+                // Esconde todos
+                sponsorSlides.forEach((slide, i) => {
+                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.add('opacity-0', 'z-0');
+                    
+                    // Reseta os dots
+                    sponsorDots[i].classList.remove('bg-cyan-500', 'bg-yellow-500', 'scale-125');
+                    sponsorDots[i].classList.add('bg-gray-300');
+                });
+
+                // Mostra o ativo
+                sponsorSlides[index].classList.remove('opacity-0', 'z-0');
+                sponsorSlides[index].classList.add('opacity-100', 'z-10');
+                
+                // Pinta o dot apropriadamente de acordo com o tier (0 = Diamante, 1 = Ouro)
+                sponsorDots[index].classList.remove('bg-gray-300');
+                if (index === 0) {
+                    sponsorDots[index].classList.add('bg-cyan-500', 'scale-125'); // Cor Diamante
+                } else {
+                    sponsorDots[index].classList.add('bg-yellow-500', 'scale-125'); // Cor Ouro
+                }
+                
+                currentSponsorSlide = index;
+            }
+
+            function nextSponsorSlide() {
+                let next = (currentSponsorSlide + 1) % sponsorSlides.length;
+                showSponsorSlide(next);
+            }
+
+            if (sponsorSlides.length > 0) {
+                // Inicia o auto-play (Troca a cada 5 segundos)
+                sponsorCarouselInterval = setInterval(nextSponsorSlide, 5000);
+
+                // Permite clique manual nas bolinhas
+                sponsorDots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(sponsorCarouselInterval); // Pausa o auto-play ao clicar
+                        showSponsorSlide(i);
+                        // Retoma o auto-play
+                        sponsorCarouselInterval = setInterval(nextSponsorSlide, 5000);
+                    });
+                });
+
+                // Pausar auto-play quando o mouse passa por cima do carrossel
+                const carouselContainer = document.querySelector('.sponsor-carousel-container');
+                if(carouselContainer) {
+                    carouselContainer.addEventListener('mouseenter', () => clearInterval(sponsorCarouselInterval));
+                    carouselContainer.addEventListener('mouseleave', () => sponsorCarouselInterval = setInterval(nextSponsorSlide, 5000));
+                }
             }
         });
     </script>
