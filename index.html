@@ -123,27 +123,27 @@
 
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 flex flex-col">
             
-            <!-- DESTAQUE BANNER GIGANTE DOS PATROCINADORES NO TOPO (ALINHADO À ESQUERDA) -->
+            <!-- DESTAQUE BANNER GIGANTE DOS PATROCINADORES NO TOPO (SEM FUNDO BRANCO E MAIOR) -->
             <div class="relative w-full h-[250px] sm:h-[350px] md:h-[420px] lg:h-[480px] mb-12 sm:mb-16 mt-2 z-30 hero-carousel-container group">
                 
-                <!-- Slide 1: Diamante (Resgatecnica - TAMANHO AUMENTADO) -->
-                <div class="hero-slide absolute inset-0 flex items-center justify-start py-4 sm:py-10 md:py-14 lg:py-16 pr-4 sm:pr-10 md:pr-14 lg:pr-16 transition-opacity duration-1000 opacity-100 z-10 bg-transparent">
-                    <div class="w-full max-w-4xl h-full bg-white rounded-xl sm:rounded-3xl shadow-2xl flex flex-col items-center justify-center p-6 sm:p-12 transform transition-transform group-hover:scale-[1.02] relative overflow-hidden border border-gray-100">
-                        <img src="https://drive.google.com/thumbnail?id=1HrsKXeUbl4KN9aJ09ft1udn8XhWvCujr&sz=w1000" alt="Resgatecnica" class="w-full h-full max-h-[150px] sm:max-h-[220px] md:max-h-[280px] lg:max-h-[340px] object-contain drop-shadow-md relative z-10 animate-float">
+                <!-- Slide 1: Diamante (Resgatecnica - SEM FUNDO E AUMENTADO) -->
+                <div class="hero-slide absolute inset-0 flex items-center justify-start transition-opacity duration-1000 opacity-100 z-10 bg-transparent">
+                    <div class="w-full max-w-4xl h-full flex flex-col items-center justify-center p-2 transform transition-transform group-hover:scale-[1.05] relative overflow-hidden">
+                        <img src="https://drive.google.com/thumbnail?id=1HrsKXeUbl4KN9aJ09ft1udn8XhWvCujr&sz=w1200" alt="Resgatecnica" class="w-full h-full max-h-[180px] sm:max-h-[260px] md:max-h-[340px] lg:max-h-[420px] object-contain drop-shadow-2xl relative z-10 animate-float">
                     </div>
                 </div>
 
-                <!-- Slide 2: Ouro (Milwaukee - TAMANHO AUMENTADO) -->
-                <div class="hero-slide absolute inset-0 flex items-center justify-start py-4 sm:py-10 md:py-14 lg:py-16 pr-4 sm:pr-10 md:pr-14 lg:pr-16 transition-opacity duration-1000 opacity-0 z-0 bg-transparent">
-                    <div class="w-full max-w-4xl h-full bg-white rounded-xl sm:rounded-3xl shadow-2xl flex flex-col items-center justify-center p-6 sm:p-12 transform transition-transform group-hover:scale-[1.02] relative overflow-hidden border border-gray-100">
-                        <img src="https://drive.google.com/thumbnail?id=1m8YE4ywZWg_5WhAF8urzBkl1iiJDO3_a&sz=w1000" alt="Milwaukee Tool" class="w-full h-full max-h-[110px] sm:max-h-[160px] md:max-h-[200px] lg:max-h-[240px] object-contain drop-shadow-md relative z-10 animate-float">
+                <!-- Slide 2: Ouro (Milwaukee - SEM FUNDO E AUMENTADO) -->
+                <div class="hero-slide absolute inset-0 flex items-center justify-start transition-opacity duration-1000 opacity-0 z-0 bg-transparent">
+                    <div class="w-full max-w-4xl h-full flex flex-col items-center justify-center p-2 transform transition-transform group-hover:scale-[1.05] relative overflow-hidden">
+                        <img src="https://drive.google.com/thumbnail?id=1m8YE4ywZWg_5WhAF8urzBkl1iiJDO3_a&sz=w1200" alt="Milwaukee Tool" class="w-full h-full max-h-[140px] sm:max-h-[200px] md:max-h-[260px] lg:max-h-[320px] object-contain drop-shadow-2xl relative z-10 animate-float">
                     </div>
                 </div>
 
-                <!-- Dots do Hero Carousel (ALINHADOS AO BANNER) -->
+                <!-- Dots do Hero Carousel -->
                 <div class="absolute bottom-0 left-0 w-full max-w-4xl flex justify-center gap-2 sm:gap-4 z-30">
                     <button class="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 rounded-full bg-brand-orange shadow-md transition-all transform scale-125 hero-dot" data-index="0" aria-label="Slide 1"></button>
-                    <button class="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 rounded-full bg-gray-300 hover:bg-brand-orange/70 shadow-md transition-all hero-dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 rounded-full bg-gray-400 hover:bg-brand-orange/70 shadow-md transition-all hero-dot" data-index="1" aria-label="Slide 2"></button>
                 </div>
             </div>
 
@@ -1094,13 +1094,13 @@
                     slide.classList.add('opacity-0', 'z-0');
                     
                     heroDots[i].classList.remove('bg-brand-orange', 'scale-125');
-                    heroDots[i].classList.add('bg-gray-300');
+                    heroDots[i].classList.add('bg-gray-400');
                 });
 
                 heroSlides[index].classList.remove('opacity-0', 'z-0');
                 heroSlides[index].classList.add('opacity-100', 'z-10');
                 
-                heroDots[index].classList.remove('bg-gray-300');
+                heroDots[index].classList.remove('bg-gray-400');
                 heroDots[index].classList.add('bg-brand-orange', 'scale-125');
                 
                 currentHeroSlide = index;
