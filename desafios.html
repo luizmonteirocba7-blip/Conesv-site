@@ -96,6 +96,7 @@
                     <a href="#sobre" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300">Sobre</a>
                     <a href="#como-funciona" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300">Como Funciona</a>
                     <a href="#participantes" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300">Participantes</a>
+                    <a href="#timetable" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300">Timetable</a>
                     <a href="#equipes" class="hover:text-brand-orange transition-colors uppercase text-gray-300">Equipes</a>
                 </div>
 
@@ -120,6 +121,7 @@
                 <a href="#sobre" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Sobre</a>
                 <a href="#como-funciona" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Como Funciona</a>
                 <a href="#participantes" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Participantes</a>
+                <a href="#timetable" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Timetable</a>
                 <a href="#equipes" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Equipes</a>
                 <div class="pt-4 flex justify-center w-full">
                     <a href="#inscricoes" class="mobile-link inline-block border-[2px] border-brand-orange bg-brand-orange text-white px-8 py-3 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-transparent hover:text-brand-orange transition-all duration-300">
@@ -197,11 +199,11 @@
     </section>
 
     <!-- === WRAPPER FUNDO CONTÍNUO (Tabs até Equipes) === -->
-    <div class="relative w-full bg-gray-50 overflow-hidden border-t border-gray-200">
+    <div class="relative w-full bg-brand-dark overflow-hidden border-t border-brand-orange/30">
         <!-- Imagem de Fundo Global para o Bloco -->
         <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
-            <div class="absolute inset-0 bg-white/90 z-10"></div>
-            <img src="https://drive.google.com/thumbnail?id=1yLx1N8HBEU2bXsSS4PXJAIwWVgVsQKEf&sz=w1920" alt="Fundo Textura" class="w-full h-full object-cover object-center relative z-0 opacity-40">
+            <div class="absolute inset-0 bg-brand-dark/70 z-10 backdrop-blur-[2px]"></div>
+            <img src="https://drive.google.com/thumbnail?id=1EWWHrxqL-960BgHjc9-6vJdYhOIUT9oB&sz=w1920" alt="Fundo Textura" class="w-full h-full object-cover object-center relative z-0">
         </div>
 
         <!-- Seção de Abas do Desafio -->
@@ -209,7 +211,7 @@
             
             <!-- Menu de Abas Horizontais -->
             <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 w-full overflow-x-auto pb-4 hide-scrollbar">
-                <div class="flex flex-nowrap sm:flex-wrap items-center justify-start sm:justify-center bg-brand-dark border border-brand-dark/10 rounded-xl p-2 shadow-xl gap-2 w-max sm:w-fit mx-auto min-w-full sm:min-w-0">
+                <div class="flex flex-nowrap sm:flex-wrap items-center justify-start sm:justify-center bg-brand-dark/80 backdrop-blur-md border border-white/10 rounded-xl p-2 shadow-xl gap-2 w-max sm:w-fit mx-auto min-w-full sm:min-w-0">
                     <button class="tab-btn active px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-brand-orange bg-white/10 shadow-sm border border-white/5 whitespace-nowrap" data-target="tab-sobre">
                         Sobre
                     </button>
@@ -218,6 +220,9 @@
                     </button>
                     <button class="tab-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 whitespace-nowrap" data-target="tab-participantes">
                         Participantes
+                    </button>
+                    <button class="tab-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 whitespace-nowrap" data-target="tab-timetable">
+                        Timetable
                     </button>
                 </div>
             </div>
@@ -231,7 +236,7 @@
                         <div class="bg-brand-orange text-white font-medium text-2xl sm:text-3xl md:text-5xl px-6 sm:px-8 py-2 md:py-3 rounded-xl sm:rounded-2xl inline-block transform -rotate-3 mb-1 shadow-sm tracking-wide hover:rotate-0 hover:scale-105 transition-all duration-300">
                             SOBRE O
                         </div>
-                        <h2 class="text-4xl sm:text-6xl md:text-[7rem] font-black text-brand-dark uppercase tracking-tighter leading-none mt-2 drop-shadow-sm">
+                        <h2 class="text-4xl sm:text-6xl md:text-[7rem] font-black text-white uppercase tracking-tighter leading-none mt-2 drop-shadow-sm">
                             DESAFIO
                         </h2>
                     </div>
@@ -252,7 +257,7 @@
                 <!-- ABA: COMO FUNCIONA -->
                 <div id="tab-como" class="tab-content hidden animate-fade-in py-4 sm:py-8">
                     <div class="text-center mb-8 sm:mb-12">
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark uppercase tracking-tight drop-shadow-sm break-words">Como Funciona</h2>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tight drop-shadow-sm break-words">Como Funciona</h2>
                         <div class="w-16 sm:w-24 h-1.5 sm:h-2 bg-brand-orange mx-auto mt-3 sm:mt-4 rounded-full"></div>
                     </div>
 
@@ -301,7 +306,7 @@
                 <!-- ABA: PARTICIPANTES -->
                 <div id="tab-participantes" class="tab-content hidden animate-fade-in py-4 sm:py-8">
                     <div class="text-center mb-8 sm:mb-12">
-                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-brand-dark uppercase tracking-tight drop-shadow-sm">Participantes</h2>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tight drop-shadow-sm">Participantes</h2>
                         <div class="w-16 sm:w-24 h-1.5 sm:h-2 bg-brand-orange mx-auto mt-3 sm:mt-4 rounded-full"></div>
                     </div>
 
@@ -328,13 +333,31 @@
                     </div>
                 </div>
 
+                <!-- ABA: TIMETABLE -->
+                <div id="tab-timetable" class="tab-content hidden animate-fade-in py-4 sm:py-8">
+                    <div class="text-center mb-8 sm:mb-12">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tight drop-shadow-sm">Timetable</h2>
+                        <div class="w-16 sm:w-24 h-1.5 sm:h-2 bg-brand-orange mx-auto mt-3 sm:mt-4 rounded-full"></div>
+                    </div>
+
+                    <div class="max-w-3xl mx-auto bg-white p-6 sm:p-10 md:p-16 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center text-center">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-orange/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                            <i class="fas fa-calendar-alt text-brand-orange text-2xl sm:text-3xl animate-pulse-slow"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-brand-dark uppercase mb-3 sm:mb-4">Em Breve</h3>
+                        <p class="text-gray-500 text-base sm:text-lg font-medium leading-relaxed">
+                            Em breve disponibilizaremos todas as informações e o cronograma completo das equipes participantes!
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- Equipes Confirmadas -->
         <section id="equipes" class="pb-16 sm:pb-24 relative z-20 pt-6 sm:pt-10">
-            <div class="w-full bg-white py-4 md:py-5 mb-10 sm:mb-16 flex justify-center items-center shadow-md border-y border-gray-200 hover:bg-gray-50 transition-colors px-4 text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl text-brand-dark uppercase tracking-widest break-words">
+            <div class="w-full bg-brand-dark/80 backdrop-blur-sm py-4 md:py-5 mb-10 sm:mb-16 flex justify-center items-center shadow-md border-y border-white/10 px-4 text-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl text-white uppercase tracking-widest break-words">
                     <span class="font-light">Equipes</span> <span class="font-black">Confirmadas</span>
                 </h2>
             </div>
@@ -593,7 +616,8 @@
                     const tabMap = {
                         '#sobre': 'tab-sobre',
                         '#como-funciona': 'tab-como',
-                        '#participantes': 'tab-participantes'
+                        '#participantes': 'tab-participantes',
+                        '#timetable': 'tab-timetable'
                     };
 
                     // Se o link pertencer a uma das abas
