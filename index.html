@@ -50,7 +50,7 @@
         }
     </script>
     <style>
-        /* Gradiente adaptável ajustado para não conflitar com texto em notebooks */
+        /* Gradiente adaptável restaurado para o estilo antigo (texto à esquerda) */
         .hero-gradient {
             background: linear-gradient(90deg, #FFF8F5 0%, #FFF8F5 60%, transparent 100%);
         }
@@ -109,46 +109,62 @@
         </div>
     </nav>
 
-    <!-- SEÇÃO INICIAL COM BANNER GIGANTE NO TOPO -->
+    <!-- SEÇÃO INICIAL COM BANNER NO TOPO E TEXTO À ESQUERDA -->
     <section id="inicio" class="relative w-full min-h-screen bg-brand-light pt-28 md:pt-36 pb-32 overflow-hidden flex flex-col justify-start">
         
         <div class="absolute inset-0 w-full h-full flex z-0">
-            <div class="absolute inset-0 z-10 hero-gradient w-full lg:w-[65%]"></div>
             <div class="absolute right-0 top-0 w-full lg:w-3/4 h-full z-0">
                 <img src="https://drive.google.com/thumbnail?id=1_7E8kEqzLm7t7IttUz9jJmoEoNHHYVSx&sz=w1920" alt="Bombeiros em Ação" class="w-full h-full object-cover object-center">
             </div>
+            <div class="absolute inset-0 z-10 hero-gradient w-full lg:w-[65%]"></div>
             <div class="absolute right-[10%] bottom-[10%] w-[80vw] max-w-[800px] aspect-square rounded-full border border-dashed border-white/50 z-0 pointer-events-none animate-spin-slow"></div>
             <div class="absolute right-[15%] bottom-[15%] w-[60vw] max-w-[600px] aspect-square rounded-full border-[2px] border-dotted border-white/60 z-0 pointer-events-none animate-spin-reverse"></div>
         </div>
 
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 flex flex-col">
             
-            <!-- DESTAQUE BANNER GIGANTE DOS PATROCINADORES NO TOPO (SEM FUNDO BRANCO E MAIOR) -->
-            <div class="relative w-full h-[250px] sm:h-[350px] md:h-[420px] lg:h-[480px] mb-12 sm:mb-16 mt-2 z-30 hero-carousel-container group">
+            <!-- DESTAQUE BANNER GIGANTE DOS PATROCINADORES NO TOPO COM SETAS -->
+            <div class="relative w-full max-w-6xl mx-auto bg-white rounded-3xl md:rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-gray-100 h-[220px] sm:h-[300px] md:h-[380px] lg:h-[440px] mb-12 sm:mb-16 mt-2 z-30 group">
                 
-                <!-- Slide 1: Diamante (Resgatecnica - SEM FUNDO E AUMENTADO) -->
-                <div class="hero-slide absolute inset-0 flex items-center justify-start transition-opacity duration-1000 opacity-100 z-10 bg-transparent">
-                    <div class="w-full max-w-4xl h-full flex flex-col items-center justify-center p-2 transform transition-transform group-hover:scale-[1.05] relative overflow-hidden">
-                        <img src="https://drive.google.com/thumbnail?id=1HrsKXeUbl4KN9aJ09ft1udn8XhWvCujr&sz=w1200" alt="Resgatecnica" class="w-full h-full max-h-[180px] sm:max-h-[260px] md:max-h-[340px] lg:max-h-[420px] object-contain drop-shadow-2xl relative z-10 animate-float">
+                <div class="w-full h-full relative overflow-hidden rounded-3xl md:rounded-[40px] hero-carousel-container">
+                    <!-- Slide 1: Diamante (Resgatecnica) -->
+                    <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-10 bg-transparent">
+                        <div class="w-full h-full transform transition-transform duration-700 group-hover:scale-[1.03] relative overflow-hidden">
+                            <!-- Técnica de background-image com Escala bem maior para ocupar todo o espaço do container -->
+                            <div class="w-full h-full bg-center bg-no-repeat animate-float scale-[1.6] sm:scale-[2.0] md:scale-[2.5] lg:scale-[2.8]" 
+                                 style="background-image: url('https://drive.google.com/thumbnail?id=1OYkBj2S4wwsT1Ku4BslCIF-CCgKN0Ddu&sz=w1200'); background-size: contain; filter: drop-shadow(0 15px 15px rgba(0,0,0,0.15));">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Ouro (Milwaukee) -->
+                    <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0 bg-transparent">
+                        <div class="w-full h-full transform transition-transform duration-700 group-hover:scale-[1.03] relative overflow-hidden p-8 sm:p-12 md:p-20">
+                            <!-- Técnica de background-image -->
+                            <div class="w-full h-full bg-center bg-no-repeat animate-float" 
+                                 style="background-image: url('https://drive.google.com/thumbnail?id=1m8YE4ywZWg_5WhAF8urzBkl1iiJDO3_a&sz=w1200'); background-size: contain; filter: drop-shadow(0 15px 15px rgba(0,0,0,0.15));">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dots do Hero Carousel -->
+                    <div class="absolute bottom-4 sm:bottom-6 left-0 w-full flex justify-center gap-2 sm:gap-4 z-30">
+                        <button class="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 rounded-full bg-brand-orange shadow-md transition-all transform scale-125 hero-dot" data-index="0" aria-label="Slide 1"></button>
+                        <button class="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 rounded-full bg-gray-300 hover:bg-brand-orange/70 shadow-md transition-all hero-dot" data-index="1" aria-label="Slide 2"></button>
                     </div>
                 </div>
 
-                <!-- Slide 2: Ouro (Milwaukee - SEM FUNDO E AUMENTADO) -->
-                <div class="hero-slide absolute inset-0 flex items-center justify-start transition-opacity duration-1000 opacity-0 z-0 bg-transparent">
-                    <div class="w-full max-w-4xl h-full flex flex-col items-center justify-center p-2 transform transition-transform group-hover:scale-[1.05] relative overflow-hidden">
-                        <img src="https://drive.google.com/thumbnail?id=1m8YE4ywZWg_5WhAF8urzBkl1iiJDO3_a&sz=w1200" alt="Milwaukee Tool" class="w-full h-full max-h-[140px] sm:max-h-[200px] md:max-h-[260px] lg:max-h-[320px] object-contain drop-shadow-2xl relative z-10 animate-float">
-                    </div>
-                </div>
-
-                <!-- Dots do Hero Carousel -->
-                <div class="absolute bottom-0 left-0 w-full max-w-4xl flex justify-center gap-2 sm:gap-4 z-30">
-                    <button class="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 rounded-full bg-brand-orange shadow-md transition-all transform scale-125 hero-dot" data-index="0" aria-label="Slide 1"></button>
-                    <button class="w-2.5 sm:w-3.5 h-2.5 sm:h-3.5 rounded-full bg-gray-400 hover:bg-brand-orange/70 shadow-md transition-all hero-dot" data-index="1" aria-label="Slide 2"></button>
-                </div>
+                <!-- Setas de navegação nas laterais -->
+                <button id="prev-hero" class="absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-6 md:-left-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-gray-400/80 hover:bg-gray-500 flex items-center justify-center text-white text-lg sm:text-xl md:text-2xl shadow-[0_4px_15px_rgba(0,0,0,0.15)] transition-colors z-40 focus:outline-none">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-hero" class="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-6 md:-right-8 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-full bg-gray-400/80 hover:bg-gray-500 flex items-center justify-center text-white text-lg sm:text-xl md:text-2xl shadow-[0_4px_15px_rgba(0,0,0,0.15)] transition-colors z-40 focus:outline-none">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
 
-            <!-- TEXTO HERO - ALINHADO COM O BANNER ACIMA -->
-            <div class="w-full lg:w-[65%] xl:w-[60%] pb-10">
+            <!-- TEXTO HERO - ALINHADO À ESQUERDA (ESTILO ANTIGO) -->
+            <div class="w-full lg:w-[65%] xl:w-[60%] pb-10 relative z-30">
                 <h1 class="text-brand-dark tracking-tight">
                     <span class="block text-3xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-black leading-tight">2º CONGRESSO</span>
                     <span class="block text-3xl sm:text-4xl lg:text-[2.5rem] xl:text-[3rem] font-light leading-tight mt-2 md:mt-3">NACIONAL DE</span>
@@ -743,8 +759,8 @@
                         <div class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-black text-xs md:text-sm uppercase tracking-widest py-1.5 px-5 rounded-full shadow-md mb-6 whitespace-nowrap">
                             <i class="fas fa-gem mr-1"></i> Diamante
                         </div>
-                        <a href="https://resgatecnica.com.br/" target="_blank" class="block">
-                            <img src="https://drive.google.com/thumbnail?id=1HrsKXeUbl4KN9aJ09ft1udn8XhWvCujr&sz=w800" alt="Resgatecnica" class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain drop-shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer">
+                        <a href="https://resgatecnica.com.br/" target="_blank" class="block group">
+                            <img src="https://drive.google.com/thumbnail?id=1OYkBj2S4wwsT1Ku4BslCIF-CCgKN0Ddu&sz=w800" alt="Resgatecnica" class="h-24 sm:h-28 md:h-36 lg:h-44 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300 cursor-pointer">
                         </a>
                     </div>
 
@@ -876,10 +892,33 @@
 
             <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-20 flex flex-col md:flex-row items-center md:items-end justify-center gap-10 md:gap-24">
                 
-                <!-- SUBSTITUIÇÃO APLICADA AQUI (Imagem proporcional do Desafio Nacional) -->
+                <!-- SUBSTITUIÇÃO APLICADA AQUI (Imagem substituída por texto estilizado) -->
                 <div class="flex flex-col items-start pb-6 md:pb-12 w-full max-w-xl">
-                    <img src="https://drive.google.com/thumbnail?id=18wSBBarUhoSBfXMFVarJmETrQjXDkL5t&sz=w1000" alt="Desafio Nacional de Salvamento Veicular" class="w-full h-auto object-contain mb-6 md:mb-12 drop-shadow-md hover:scale-[1.02] transition-transform duration-300">
                     
+                    <!-- Novo bloco substituindo a imagem do banner -->
+                    <div class="flex flex-col items-start mb-8 md:mb-12 w-full">
+                        <div style="font-style: italic;">
+                            <h2 class="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] font-black text-brand-dark uppercase leading-[0.9] tracking-tighter">
+                                DESAFIO NACIONAL<br>DE
+                            </h2>
+                        </div>
+                        
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-4 mt-2 sm:mt-4">
+                            <div class="bg-brand-orange text-white px-3 sm:px-5 py-1.5 sm:py-2 rounded-md shadow-md">
+                                <span class="block text-[1.8rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black uppercase tracking-tighter leading-none" style="font-style: italic;">
+                                    SALVAMENTO
+                                </span>
+                            </div>
+                            <span class="text-brand-orange text-[1.8rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-black uppercase tracking-tighter leading-none drop-shadow-md" style="font-style: italic;">
+                                VEICULAR
+                            </span>
+                        </div>
+
+                        <div class="mt-6 bg-[#e5e7eb] text-brand-dark text-xs sm:text-sm md:text-base font-bold uppercase px-4 sm:px-6 py-2 rounded shadow-sm">
+                            24 A <span class="font-black">26</span> DE JUNHO DE <span class="font-black">2026</span> <span class="text-brand-orange mx-2 font-black">|</span> CUIABÁ-MT
+                        </div>
+                    </div>
+
                     <a href="desafios.html" class="bg-white text-brand-dark text-xs sm:text-sm md:text-base font-bold px-6 md:px-8 py-2.5 md:py-3.5 rounded-full border-[2px] md:border-[3px] border-brand-dark uppercase shadow-xl hover:bg-gray-100 transition-colors">
                         Inscrições <span class="font-black">Aqui</span>
                     </a>
@@ -1085,6 +1124,8 @@
             // LÓGICA DO NOVO BANNER CARROSSEL GIGANTE DO TOPO (HERO)
             const heroSlides = document.querySelectorAll('.hero-slide');
             const heroDots = document.querySelectorAll('.hero-dot');
+            const prevHeroBtn = document.getElementById('prev-hero');
+            const nextHeroBtn = document.getElementById('next-hero');
             let currentHeroSlide = 0;
             let heroCarouselInterval;
 
@@ -1093,15 +1134,19 @@
                     slide.classList.remove('opacity-100', 'z-10');
                     slide.classList.add('opacity-0', 'z-0');
                     
-                    heroDots[i].classList.remove('bg-brand-orange', 'scale-125');
-                    heroDots[i].classList.add('bg-gray-400');
+                    if(heroDots[i]) {
+                        heroDots[i].classList.remove('bg-brand-orange', 'scale-125');
+                        heroDots[i].classList.add('bg-gray-400');
+                    }
                 });
 
                 heroSlides[index].classList.remove('opacity-0', 'z-0');
                 heroSlides[index].classList.add('opacity-100', 'z-10');
                 
-                heroDots[index].classList.remove('bg-gray-400');
-                heroDots[index].classList.add('bg-brand-orange', 'scale-125');
+                if(heroDots[index]) {
+                    heroDots[index].classList.remove('bg-gray-400');
+                    heroDots[index].classList.add('bg-brand-orange', 'scale-125');
+                }
                 
                 currentHeroSlide = index;
             }
@@ -1111,16 +1156,39 @@
                 showHeroSlide(next);
             }
 
+            function prevHeroSlide() {
+                let prev = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+                showHeroSlide(prev);
+            }
+
             if (heroSlides.length > 0) {
                 heroCarouselInterval = setInterval(nextHeroSlide, 5000);
 
-                heroDots.forEach((dot, i) => {
-                    dot.addEventListener('click', () => {
+                if(heroDots.length > 0) {
+                    heroDots.forEach((dot, i) => {
+                        dot.addEventListener('click', () => {
+                            clearInterval(heroCarouselInterval);
+                            showHeroSlide(i);
+                            heroCarouselInterval = setInterval(nextHeroSlide, 5000);
+                        });
+                    });
+                }
+
+                if(prevHeroBtn) {
+                    prevHeroBtn.addEventListener('click', () => {
                         clearInterval(heroCarouselInterval);
-                        showHeroSlide(i);
+                        prevHeroSlide();
                         heroCarouselInterval = setInterval(nextHeroSlide, 5000);
                     });
-                });
+                }
+
+                if(nextHeroBtn) {
+                    nextHeroBtn.addEventListener('click', () => {
+                        clearInterval(heroCarouselInterval);
+                        nextHeroSlide();
+                        heroCarouselInterval = setInterval(nextHeroSlide, 5000);
+                    });
+                }
 
                 const heroCarouselContainer = document.querySelector('.hero-carousel-container');
                 if(heroCarouselContainer) {
