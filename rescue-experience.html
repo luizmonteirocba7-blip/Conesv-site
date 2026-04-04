@@ -16,6 +16,9 @@
     <!-- Font Awesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Configuração do Tailwind -->
     <script>
         tailwind.config = {
@@ -37,6 +40,7 @@
                         'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
                         'wiggle': 'wiggle 2s ease-in-out infinite',
                         'spin-slow': 'spin 8s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
                     },
                     keyframes: {
                         'float': {
@@ -53,6 +57,10 @@
                         'wiggle': {
                             '0%, 100%': { transform: 'rotate(-3deg)' },
                             '50%': { transform: 'rotate(3deg)' },
+                        },
+                        'glow': {
+                            '0%': { boxShadow: '0 0 10px rgba(227,82,25,0.3)', transform: 'scale(1)' },
+                            '100%': { boxShadow: '0 0 30px rgba(227,82,25,0.8)', transform: 'scale(1.02)' },
                         }
                     }
                 }
@@ -101,9 +109,9 @@
                 
                 <!-- Links de Navegação -->
                 <div class="hidden xl:flex items-center text-[10px] uppercase xl:text-xs font-medium tracking-widest text-gray-300">
-                    <a href="#sobre" class="hover:text-brand-orange transition-colors">Sobre o desafio</a>
-                    <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
                     <a href="#como-funciona" class="hover:text-brand-orange transition-colors">Como funciona</a>
+                    <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
+                    <a href="#sobre" class="hover:text-brand-orange transition-colors">Sobre o desafio</a>
                     <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
                     <!-- Link de Instrutores Removido -->
                     <a href="#local" class="hover:text-brand-orange transition-colors">Data e Local</a>
@@ -123,27 +131,27 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="relative w-full min-h-screen bg-brand-dark flex items-center pt-28 overflow-hidden">
-        <div class="absolute inset-0 w-full h-full z-0">
+        <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
             <!-- NOVA IMAGEM DE FUNDO (Substituída aqui) -->
-            <img src="https://drive.google.com/thumbnail?id=1fDUm09guuy5UZjYqD4jzQCdwYHqzaH0N&sz=w1920" alt="Resgate Veicular" class="w-full h-full object-cover object-center">
+            <img src="https://drive.google.com/thumbnail?id=1fDUm09guuy5UZjYqD4jzQCdwYHqzaH0N&sz=w1920" alt="Resgate Veicular" class="w-full h-[120%] object-cover object-center relative -top-[10%] parallax-bg">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
 
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 flex flex-col h-full py-20">
-            <div class="w-full lg:w-[85%] xl:w-[75%]">
+            <div class="w-full lg:w-[85%] xl:w-[75%]" data-aos="fade-up">
                 
                 <h1 class="text-white leading-[1.1] tracking-tight mb-6 font-black uppercase drop-shadow-lg text-4xl sm:text-5xl lg:text-7xl">
                     O equipamento é <span class="text-brand-orange">Holmatro.</span><br>
                     O preparo <span class="text-brand-orange">também.</span>
                 </h1>
                 
-                <p class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mb-8 leading-relaxed">
+                <p class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
                     <strong class="text-white">24 a 26 de junho de 2026 • Cuiabá MT</strong><br>
                     Treinamento intensivo em resgate veicular (com foco em veículos pesados: caminhões e ônibus) para bombeiros e equipes de concessionárias de rodovias.
                 </p>
 
-                <div class="flex flex-wrap gap-4 mt-2">
-                    <a href="#inscricoes" class="bg-brand-orange hover:bg-orange-600 text-white rounded-full px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(227,82,25,0.4)]">
+                <div class="flex flex-wrap gap-4 mt-2" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#inscricoes" class="bg-brand-orange text-white rounded-full px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300 animate-glow">
                         Garantir minha vaga
                     </a>
                     <a href="#sobre" class="bg-transparent border-2 border-white hover:bg-white hover:text-brand-dark text-white rounded-full px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300">
@@ -152,10 +160,17 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Divisória Diagonal -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-30 transform translate-y-1">
+            <svg class="relative block w-full h-[40px] md:h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120H0V0l1200 120z" class="fill-brand-orange"></path>
+            </svg>
+        </div>
     </section>
 
     <!-- FAIXA DIVISÓRIA -->
-    <div class="bg-brand-orange w-full py-3 sm:py-4 relative z-30 shadow-[0_4px_20px_rgba(0,0,0,0.5)] border-y-2 border-orange-700">
+    <div class="bg-brand-orange w-full py-3 sm:py-4 relative z-30 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between items-center text-white text-xs sm:text-sm font-black uppercase tracking-widest gap-y-2">
                 <span class="flex items-center gap-2"><i class="fas fa-exclamation-triangle"></i> Vagas Limitadas</span>
@@ -168,15 +183,15 @@
 
     <!-- Manifesto -->
     <section class="py-24 relative text-white text-center px-4 overflow-hidden">
-        <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-0 overflow-hidden">
             <!-- VÍDEO DE FUNDO -->
-            <video autoplay loop muted playsinline class="w-full h-full object-cover object-center grayscale opacity-80">
+            <video autoplay loop muted playsinline class="w-full h-[120%] relative -top-[10%] object-cover object-center grayscale opacity-80 parallax-bg">
                 <source src="https://res.cloudinary.com/db8vrcbof/video/upload/q_auto/f_auto/v1775263177/videoplayback_jnamww.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-brand-dark/85"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-brand-orange/20 to-transparent"></div>
         </div>
-        <div class="max-w-4xl mx-auto relative z-10">
+        <div class="max-w-4xl mx-auto relative z-10" data-aos="zoom-in">
             <h2 class="text-2xl md:text-4xl font-light leading-snug mb-8 text-gray-200">
                 Todo ano, milhares de pessoas morrem em sinistros de trânsito no Brasil - <strong class="font-black text-white">não só pelo impacto, mas também pelos minutos seguintes.</strong>
             </h2>
@@ -188,6 +203,190 @@
                     O Holmatro Rescue Experience existe para que você nunca chegue a uma cena sem saber o que fazer.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="py-24 bg-white relative">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm text-brand-orange font-black uppercase tracking-widest mb-4">A Metodologia</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-brand-dark uppercase tracking-tight">
+                    3 Dias. 8 Bases Práticas.<br>
+                    <span class="text-brand-orange">1 Padrão que muda como você age.</span>
+                </h3>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto font-medium">
+                    Treinamento hiper-realista com <strong class="text-brand-orange">foco exclusivo no diferencial de resgate em veículos pesados (caminhões e ônibus)</strong>, sem deixar de lado as complexidades das operações em linha leve.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                
+                <!-- Base 01 -->
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-transparent overflow-hidden group hover:-translate-y-3 hover:border-brand-orange hover:shadow-[0_10px_30px_rgba(227,82,25,0.4)] transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://drive.google.com/thumbnail?id=1VACbUf9Oe9wrg9K-O5Jir0lpA5ZoaSqD&sz=w800" alt="Base 01" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent group-hover:opacity-60 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
+                            <span class="text-xs font-black uppercase tracking-widest text-brand-dark bg-brand-orange px-2 py-1 rounded shadow-md">Base 01</span>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <h4 class="text-lg font-black uppercase text-brand-dark line-clamp-1 group-hover:text-brand-orange transition-colors duration-300">Comando e Gestão</h4>
+                    </div>
+                </div>
+
+                <!-- Base 02 -->
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-transparent overflow-hidden group hover:-translate-y-3 hover:border-brand-orange hover:shadow-[0_10px_30px_rgba(227,82,25,0.4)] transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://drive.google.com/thumbnail?id=1aE9fbWWQkJfGJdFnbTxQ3oPlLy744EEt&sz=w800" alt="Base 02" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent group-hover:opacity-60 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
+                            <span class="text-xs font-black uppercase tracking-widest text-brand-dark bg-brand-orange px-2 py-1 rounded shadow-md">Base 02</span>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                            <i class="fas fa-truck-monster"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <h4 class="text-lg font-black uppercase text-brand-dark line-clamp-1 group-hover:text-brand-orange transition-colors duration-300">Estabilização de Pesados</h4>
+                    </div>
+                </div>
+
+                <!-- Base 03 -->
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-transparent overflow-hidden group hover:-translate-y-3 hover:border-brand-orange hover:shadow-[0_10px_30px_rgba(227,82,25,0.4)] transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://drive.google.com/thumbnail?id=1SwBXvL41cNlv3VR8am_vsGWuG8zKlum8&sz=w800" alt="Base 03" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent group-hover:opacity-60 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
+                            <span class="text-xs font-black uppercase tracking-widest text-brand-dark bg-brand-orange px-2 py-1 rounded shadow-md">Base 03</span>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <h4 class="text-lg font-black uppercase text-brand-dark line-clamp-1 group-hover:text-brand-orange transition-colors duration-300">Acesso em Ônibus</h4>
+                    </div>
+                </div>
+
+                <!-- Base 04 -->
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-transparent overflow-hidden group hover:-translate-y-3 hover:border-brand-orange hover:shadow-[0_10px_30px_rgba(227,82,25,0.4)] transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://drive.google.com/thumbnail?id=1YjgNGQ-qSBk0KCZ8FrQkdQnR6np6jNBW&sz=w800" alt="Base 04" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent group-hover:opacity-60 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
+                            <span class="text-xs font-black uppercase tracking-widest text-brand-dark bg-brand-orange px-2 py-1 rounded shadow-md">Base 04</span>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                            <i class="fas fa-weight-hanging"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <h4 class="text-lg font-black uppercase text-brand-dark line-clamp-1 group-hover:text-brand-orange transition-colors duration-300">Elevação de Cargas</h4>
+                    </div>
+                </div>
+
+                <!-- Base 05 -->
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-transparent overflow-hidden group hover:-translate-y-3 hover:border-brand-orange hover:shadow-[0_10px_30px_rgba(227,82,25,0.4)] transition-all duration-500" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://drive.google.com/thumbnail?id=1XuoLuOAheCX0N01AVfhy8ieDJ8rzs7_K&sz=w800" alt="Base 05" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent group-hover:opacity-60 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
+                            <span class="text-xs font-black uppercase tracking-widest text-brand-dark bg-brand-orange px-2 py-1 rounded shadow-md">Base 05</span>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <h4 class="text-lg font-black uppercase text-brand-dark line-clamp-1 group-hover:text-brand-orange transition-colors duration-300">APH Integrado</h4>
+                    </div>
+                </div>
+
+                <!-- Base 06 -->
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-transparent overflow-hidden group hover:-translate-y-3 hover:border-brand-orange hover:shadow-[0_10px_30px_rgba(227,82,25,0.4)] transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://drive.google.com/thumbnail?id=1xXEB6DC37Dwx3FDikX_rokJub7Kwqacd&sz=w800" alt="Base 06" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent group-hover:opacity-60 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
+                            <span class="text-xs font-black uppercase tracking-widest text-brand-dark bg-brand-orange px-2 py-1 rounded shadow-md">Base 06</span>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <h4 class="text-lg font-black uppercase text-brand-dark line-clamp-1 group-hover:text-brand-orange transition-colors duration-300">Desencarceramento</h4>
+                    </div>
+                </div>
+
+                <!-- Base 07 -->
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-transparent overflow-hidden group hover:-translate-y-3 hover:border-brand-orange hover:shadow-[0_10px_30px_rgba(227,82,25,0.4)] transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://drive.google.com/thumbnail?id=1w6xwp-Hpd9bKK3Xko1buBzgWzYlxD83A&sz=w800" alt="Base 07" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent group-hover:opacity-60 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
+                            <span class="text-xs font-black uppercase tracking-widest text-brand-dark bg-brand-orange px-2 py-1 rounded shadow-md">Base 07</span>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                            <i class="fas fa-truck-moving"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <h4 class="text-lg font-black uppercase text-brand-dark line-clamp-1 group-hover:text-brand-orange transition-colors duration-300">Manobras sob Carrinhas</h4>
+                    </div>
+                </div>
+
+                <!-- Base 08 -->
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-transparent overflow-hidden group hover:-translate-y-3 hover:border-brand-orange hover:shadow-[0_10px_30px_rgba(227,82,25,0.4)] transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://drive.google.com/thumbnail?id=1p-YijXYzl6kwA2Wv-a4xz6NwoZsjDpYN&sz=w800" alt="Base 08" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent group-hover:opacity-60 transition-opacity duration-500"></div>
+                        <div class="absolute bottom-4 left-4 text-white transform group-hover:-translate-y-1 transition-transform duration-300">
+                            <span class="text-xs font-black uppercase tracking-widest text-brand-dark bg-brand-orange px-2 py-1 rounded shadow-md">Base 08</span>
+                        </div>
+                        <div class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full flex items-center justify-center shadow-lg group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center transform group-hover:-translate-y-1 transition-transform duration-300">
+                        <h4 class="text-lg font-black uppercase text-brand-dark line-clamp-1 group-hover:text-brand-orange transition-colors duration-300">Cenário Integrado</h4>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Blocos de Texto Secundários -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-brand-dark text-white p-8 rounded-2xl">
+                    <h5 class="text-brand-orange font-black uppercase mb-2"><i class="fas fa-clipboard-check mr-2"></i> Metodologia</h5>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        As 8 bases práticas coverem situações baseadas em casos reais documentados, com foco especial em resgates complexos envolvendo veículos pesados (caminhões e ônibus). Cada protocolo é praticado com vítima simulada, tempo contado e pressão real.
+                    </p>
+                </div>
+                <div class="bg-brand-dark text-white p-8 rounded-2xl">
+                    <h5 class="text-brand-orange font-black uppercase mb-2"><i class="fas fa-certificate mr-2"></i> Certificação</h5>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        Ao concluir os 3 dias de evento, você recebe certificado de participação no Holmatro Rescue Experience — formação reconhecida e associada ao padrão internacional Holmatro.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Destaque Concessionárias -->
+            <div class="mt-8 bg-brand-orange text-white p-8 rounded-2xl flex flex-col md:flex-row items-center gap-6">
+                <div class="text-5xl opacity-80"><i class="fas fa-hard-hat"></i></div>
+                <div>
+                    <h5 class="font-black uppercase text-xl mb-2 text-brand-dark">Equipes de concessionárias de rodovias:</h5>
+                    <p class="font-medium leading-relaxed">
+                        O treinamento cobre os protocolos de primeira resposta que sua equipe precisa dominar antes da chegada do socorro especializado, lidando ativamente com os desafios das frotas pesadas do nosso país.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -227,7 +426,7 @@
 
             <div class="text-center">
                 <a href="#como-funciona" class="inline-block text-brand-orange font-bold uppercase tracking-widest hover:text-brand-dark transition-colors border-b-2 border-brand-orange pb-1">
-                    Ver como funciona o treinamento ↓
+                    Ver como funciona o treinamento ↑
                 </a>
             </div>
         </div>
@@ -237,29 +436,29 @@
     <section class="py-16 bg-brand-dark text-white border-b border-white/10">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 text-center">
-                <div>
-                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2">+100</span>
+                <div data-aos="zoom-in" data-aos-delay="0">
+                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2">+<span class="counter-value" data-target="100">0</span></span>
                     <span class="text-sm uppercase tracking-widest font-medium">Países equipados<br>pela Holmatro</span>
                 </div>
-                <div>
-                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2">8</span>
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2"><span class="counter-value" data-target="8">0</span></span>
                     <span class="text-sm uppercase tracking-widest font-medium">Estações de<br>treinamento</span>
                 </div>
-                <div>
-                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2">3</span>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <span class="block text-4xl md:text-5xl font-black text-brand-orange mb-2"><span class="counter-value" data-target="3">0</span></span>
                     <span class="text-sm uppercase tracking-widest font-medium">Dias de imersão<br>total</span>
                 </div>
-                <div>
-                    <i class="fas fa-exclamation-triangle block text-4xl md:text-5xl text-brand-yellow mb-2"></i>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-exclamation-triangle block text-4xl md:text-5xl text-brand-yellow mb-2 animate-pulse-slow"></i>
                     <span class="text-sm uppercase tracking-widest font-medium">Vagas<br>Limitadas</span>
                 </div>
             </div>
             
-            <div class="mt-16 text-center bg-white/5 p-8 rounded-xl border border-white/10">
+            <div class="mt-16 text-center bg-white/5 p-8 rounded-xl border border-white/10" data-aos="fade-up">
                 <p class="text-xl md:text-2xl font-light mb-6">
                     <strong class="font-bold">24 a 26 de junho. Cuiabá.</strong> Inscrições até 14 de junho.
                 </p>
-                <a href="#inscricoes" class="inline-block bg-brand-orange text-white rounded-full px-8 py-3 uppercase font-black hover:bg-orange-600 transition-colors">
+                <a href="#inscricoes" class="inline-block bg-brand-orange text-white rounded-full px-8 py-3 uppercase font-black hover:bg-orange-600 transition-all animate-glow">
                     Garantir minha vaga agora
                 </a>
             </div>
@@ -359,85 +558,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Como Funciona -->
-    <section id="como-funciona" class="py-24 bg-white relative">
-        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-sm text-brand-orange font-black uppercase tracking-widest mb-4">A Metodologia</h2>
-                <h3 class="text-3xl md:text-5xl font-black text-brand-dark uppercase tracking-tight">
-                    3 Dias. 8 Bases Práticas.<br>
-                    <span class="text-brand-orange">1 Padrão que muda como você age.</span>
-                </h3>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-8 mb-16">
-                <!-- Base / Pilar 01 -->
-                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gray-200 text-brand-dark font-black text-6xl opacity-20 -mr-4 -mt-4 p-4 rounded-bl-full">01</div>
-                    <div class="w-16 h-16 bg-brand-orange text-white rounded-xl flex items-center justify-center text-3xl mb-6 shadow-md relative z-10">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h4 class="text-xl font-black uppercase text-brand-dark mb-3 relative z-10">Comando</h4>
-                    <p class="text-gray-600 leading-relaxed relative z-10">
-                        Gestão de cena, comunicação entre equipes e tomada de decisão sob pressão. Você aprende a liderar a resposta — não apenas executar. Porque na cena real, alguém precisa assumir o controle. Esse alguém é você.
-                    </p>
-                </div>
-
-                <!-- Base / Pilar 02 -->
-                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gray-200 text-brand-dark font-black text-6xl opacity-20 -mr-4 -mt-4 p-4 rounded-bl-full">02</div>
-                    <div class="w-16 h-16 bg-brand-orange text-white rounded-xl flex items-center justify-center text-3xl mb-6 shadow-md relative z-10">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <h4 class="text-xl font-black uppercase text-brand-dark mb-3 relative z-10">Atendimento Pré-Hospitalar</h4>
-                    <p class="text-gray-600 leading-relaxed relative z-10">
-                        Protocolos de estabilização de vítima dentro e fora do veículo. Integração entre equipe de resgate e equipe médica. Para bombeiros e profissionais de saúde: aqui a teoria vira prática, e a prática vira instinto.
-                    </p>
-                </div>
-
-                <!-- Base / Pilar 03 -->
-                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-gray-200 text-brand-dark font-black text-6xl opacity-20 -mr-4 -mt-4 p-4 rounded-bl-full">03</div>
-                    <div class="w-16 h-16 bg-brand-orange text-white rounded-xl flex items-center justify-center text-3xl mb-6 shadow-md relative z-10">
-                        <i class="fas fa-truck-monster"></i>
-                    </div>
-                    <h4 class="text-xl font-black uppercase text-brand-dark mb-3 relative z-10">Resgate em Veículos Pesados</h4>
-                    <p class="text-gray-600 leading-relaxed relative z-10">
-                        Operação do equipamento Holmatro em cenários simulados com caminhões e ônibus. Acesso à vítima, estabilização de veículos de grande porte e extricação segura em situações de alta complexidade.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Blocos de Texto Secundários -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-brand-dark text-white p-8 rounded-2xl">
-                    <h5 class="text-brand-orange font-black uppercase mb-2"><i class="fas fa-clipboard-check mr-2"></i> Metodologia</h5>
-                    <p class="text-gray-300 font-light leading-relaxed">
-                        As 8 bases práticas coverem situações baseadas em casos reais documentados, com foco especial em resgates complexos envolvendo veículos pesados (caminhões e ônibus). Cada protocolo é praticado com vítima simulada, tempo contado e pressão real.
-                    </p>
-                </div>
-                <div class="bg-brand-dark text-white p-8 rounded-2xl">
-                    <h5 class="text-brand-orange font-black uppercase mb-2"><i class="fas fa-certificate mr-2"></i> Certificação</h5>
-                    <p class="text-gray-300 font-light leading-relaxed">
-                        Ao concluir os 3 dias de evento, você recebe certificado de participação no Holmatro Rescue Experience — formação reconhecida e associada ao padrão internacional Holmatro.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Destaque Concessionárias -->
-            <div class="mt-8 bg-brand-orange text-white p-8 rounded-2xl flex flex-col md:flex-row items-center gap-6">
-                <div class="text-5xl opacity-80"><i class="fas fa-hard-hat"></i></div>
-                <div>
-                    <h5 class="font-black uppercase text-xl mb-2 text-brand-dark">Equipes de concessionárias de rodovias:</h5>
-                    <p class="font-medium leading-relaxed">
-                        O treinamento cobre os protocolos de primeira resposta que sua equipe precisa dominar antes da chegada do socorro especializado, lidando ativamente com os desafios das frotas pesadas do nosso país.
-                    </p>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -577,8 +697,8 @@
                 </ul>
             </div>
 
-            <div class="text-center mb-16">
-                <a href="#" class="inline-block bg-brand-orange text-white text-xl md:text-2xl px-12 py-5 rounded-full uppercase font-black hover:bg-orange-600 transition-all shadow-[0_0_30px_rgba(227,82,25,0.4)] hover:scale-105 mb-4">
+            <div class="text-center mb-16" data-aos="zoom-in">
+                <a href="#" class="inline-block bg-brand-orange text-white text-xl md:text-2xl px-12 py-5 rounded-full uppercase font-black hover:bg-orange-600 transition-all hover:scale-105 mb-4 animate-glow">
                     Quero garantir minha vaga
                 </a>
             </div>
@@ -712,9 +832,56 @@
         </div>
     </footer>
 
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- Script para Rolagem Suave -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar Animações de Scroll (AOS)
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50,
+            });
+
+            // Parallax Script
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                document.querySelectorAll('.parallax-bg').forEach(el => {
+                    const speed = 0.4;
+                    el.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+
+            // Animador de Contadores Numéricos
+            const counters = document.querySelectorAll('.counter-value');
+            const observerOptions = { threshold: 0.5 };
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 2000; // 2 segundos
+                        const step = target / (duration / 16); // 60fps
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += step;
+                            if(current < target) {
+                                counter.innerText = Math.ceil(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCounter();
+                        obs.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+            counters.forEach(counter => observer.observe(counter));
+
             // Ajusta altura dependendo da barra de urgência
             const getNavOffset = () => {
                 const navbar = document.querySelector('nav');
