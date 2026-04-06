@@ -99,7 +99,7 @@
 
     <!-- Navbar -->
     <nav class="fixed top-8 w-full z-50 bg-brand-dark/95 backdrop-blur-md text-white border-b border-white/10 shadow-lg transition-all duration-300">
-        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="flex items-center justify-between h-20">
                 <!-- Logótipo -->
                 <div class="flex items-center gap-3 flex-shrink-0">
@@ -113,7 +113,6 @@
                     <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
                     <a href="#sobre" class="hover:text-brand-orange transition-colors">Sobre o desafio</a>
                     <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
-                    <!-- Link de Instrutores Removido -->
                     <a href="#local" class="hover:text-brand-orange transition-colors">Data e Local</a>
                     <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
                     <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="hover:text-brand-orange transition-colors text-white font-bold">Inscrições</a>
@@ -121,9 +120,21 @@
 
                 <!-- Botões Mobile -->
                 <div class="xl:hidden">
-                    <button class="text-white hover:text-brand-orange focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-orange focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
+                </div>
+            </div>
+
+            <!-- Menu Mobile Dropdown (Adicionado e corrigido) -->
+            <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brand-dark/95 backdrop-blur-xl border-b border-white/10 shadow-2xl flex-col py-6 px-4 space-y-4 xl:hidden">
+                <a href="#como-funciona" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Como funciona</a>
+                <a href="#sobre" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Sobre o desafio</a>
+                <a href="#local" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Data e Local</a>
+                <div class="pt-4 flex justify-center w-full">
+                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="mobile-link inline-block border-[2px] border-brand-orange bg-brand-orange text-white px-8 py-3 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-transparent hover:text-brand-orange transition-all duration-300">
+                        Inscrições
+                    </a>
                 </div>
             </div>
         </div>
@@ -132,7 +143,7 @@
     <!-- Hero Section -->
     <section id="inicio" class="relative w-full min-h-screen bg-brand-dark flex items-center pt-28 overflow-hidden">
         <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
-            <!-- NOVA IMAGEM DE FUNDO (Substituída aqui) -->
+            <!-- NOVA IMAGEM DE FUNDO -->
             <img src="https://drive.google.com/thumbnail?id=1fDUm09guuy5UZjYqD4jzQCdwYHqzaH0N&sz=w1920" alt="Resgate Veicular" class="w-full h-[120%] object-cover object-center relative -top-[10%] parallax-bg">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
@@ -890,6 +901,37 @@
                 });
             }, observerOptions);
             counters.forEach(counter => observer.observe(counter));
+
+            // --- Lógica do Menu Mobile ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if(mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                    
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    } else {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
 
             // Ajusta altura dependendo da barra de urgência
             const getNavOffset = () => {
