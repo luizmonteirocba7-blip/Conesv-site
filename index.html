@@ -976,35 +976,22 @@
         </div>
     </footer>
 
-    <div id="modal-overlay" class="fixed inset-0 z-[100] bg-brand-dark/80 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300 hidden">
-        <div id="inscricoes-modal" class="bg-white rounded-[40px] shadow-[0_20px_60px_rgba(0,0,0,0.3)] p-6 sm:p-10 md:p-14 w-full max-w-[620px] max-h-[90vh] overflow-y-auto text-center space-y-6 md:space-y-8 relative scale-90 transition-transform duration-300">
-            
-            <button id="modal-close" class="absolute top-6 right-6 text-gray-400 hover:text-brand-orange transition-all duration-300 hover:rotate-90 hover:scale-110">
+    <!-- Modal Em Breve -->
+    <div id="modal-em-breve" class="fixed inset-0 z-[100] bg-brand-dark/80 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 hidden">
+        <div class="bg-white rounded-[30px] shadow-2xl p-8 md:p-12 w-full max-w-[500px] text-center relative transform scale-90 transition-transform duration-300">
+            <button class="close-modal-btn absolute top-5 right-5 text-gray-400 hover:text-brand-orange transition-colors focus:outline-none">
                 <i class="fas fa-times text-2xl"></i>
             </button>
-
-            <h3 class="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-brand-dark tracking-wide">INSCRIÇÕES</h3>
-            
-            <p class="text-base md:text-lg text-gray-600 leading-relaxed max-w-md mx-auto">
-                Aguarde! Em breve você poderá garantir a participação da sua equipe em um dos maiores desafios de resgate do Brasil.
-            </p>
-            
-            <p class="text-base md:text-lg text-gray-600 font-medium">
-                Abertura prevista: <span class="font-bold text-gray-800">14 de junho de 2026</span>
-            </p>
-
-            <div class="inline-flex items-center gap-2 bg-brand-dark text-white text-sm md:text-base px-5 py-2.5 rounded-full shadow-md group">
-                <i class="fas fa-exclamation-triangle text-brand-yellow"></i>
-                Vagas <span class="font-bold text-white">limitadas</span>
+            <div class="w-20 h-20 bg-brand-orange/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-bullhorn text-brand-orange text-4xl"></i>
             </div>
-
-            <div class="pt-2">
-                <div class="inline-block bg-brand-orange hover:bg-orange-600 text-white font-bold py-4 px-10 text-sm md:text-base rounded-full shadow-lg transition-colors border-[6px] border-brand-orange relative cursor-not-allowed">
-                    Inscrever <span class="font-bold">equipe</span>
-                    <div class="absolute inset-0 rounded-full border-2 border-gray-100/30"></div>
-                </div>
-            </div>
-            
+            <h3 class="text-3xl font-black text-brand-dark uppercase tracking-wide mb-4">Em Breve</h3>
+            <p class="text-gray-600 font-medium text-base md:text-lg leading-relaxed mb-8">
+                As inscrições para o evento estarão disponíveis em breve. Fique atento às nossas atualizações!
+            </p>
+            <button class="close-modal-btn bg-brand-orange text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#c74413] transition-colors uppercase tracking-wide w-full sm:w-auto focus:outline-none">
+                Entendi
+            </button>
         </div>
     </div>
 
@@ -1026,10 +1013,9 @@
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
 
-                    // Se o link for para inscrições, abre o modal em vez de rolar
                     if (targetId === '#inscricoes') {
                         e.preventDefault();
-                        openInscricoesModal();
+                        openEmBreveModal();
                         return;
                     }
 
@@ -1050,38 +1036,44 @@
                 });
             });
 
-            // Lógica do Modal de Inscrições
-            const overlay = document.getElementById('modal-overlay');
-            const modal = document.getElementById('inscricoes-modal');
-            const closeBtn = document.getElementById('modal-close');
+            // Lógica do Modal Em Breve
+            const modalEmBreve = document.getElementById('modal-em-breve');
+            const modalContent = modalEmBreve ? modalEmBreve.querySelector('div') : null;
+            const closeBtns = document.querySelectorAll('.close-modal-btn');
 
-            function openInscricoesModal() {
-                overlay.classList.remove('hidden');
+            function openEmBreveModal() {
+                if(!modalEmBreve) return;
+                modalEmBreve.classList.remove('hidden');
                 setTimeout(() => {
-                    overlay.classList.remove('opacity-0', 'pointer-events-none');
-                    modal.classList.remove('scale-90');
+                    modalEmBreve.classList.remove('opacity-0', 'pointer-events-none');
+                    if(modalContent) modalContent.classList.remove('scale-90');
                 }, 10);
             }
 
-            function closeInscricoesModal() {
-                overlay.classList.add('opacity-0', 'pointer-events-none');
-                modal.classList.add('scale-90');
+            function closeEmBreveModal() {
+                if(!modalEmBreve) return;
+                modalEmBreve.classList.add('opacity-0', 'pointer-events-none');
+                if(modalContent) modalContent.classList.add('scale-90');
                 setTimeout(() => {
-                    overlay.classList.add('hidden');
+                    modalEmBreve.classList.add('hidden');
                 }, 300);
             }
 
-            closeBtn.addEventListener('click', closeInscricoesModal);
+            if(closeBtns.length > 0) {
+                closeBtns.forEach(btn => btn.addEventListener('click', closeEmBreveModal));
+            }
 
-            overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) {
-                    closeInscricoesModal();
-                }
-            });
+            if(modalEmBreve) {
+                modalEmBreve.addEventListener('click', function(e) {
+                    if (e.target === modalEmBreve) {
+                        closeEmBreveModal();
+                    }
+                });
+            }
 
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
-                    closeInscricoesModal();
+                if (e.key === 'Escape' && modalEmBreve && !modalEmBreve.classList.contains('hidden')) {
+                    closeEmBreveModal();
                 }
             });
 
