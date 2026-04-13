@@ -34,6 +34,7 @@
                         'wiggle': 'wiggle 1s ease-in-out infinite',
                         'bounce-gentle': 'bounceGentle 2s infinite',
                         'pulse-icon': 'pulseIcon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slow-pan': 'slowPan 25s alternate infinite ease-in-out',
                     },
                     keyframes: {
                         'glow': {
@@ -61,6 +62,10 @@
                         'pulseIcon': {
                             '0%, 100%': { transform: 'scale(1)' },
                             '50%': { transform: 'scale(1.15)' },
+                        },
+                        'slowPan': {
+                            '0%': { transform: 'scale(1.2) translate(0, 0)' },
+                            '100%': { transform: 'scale(1.4) translate(-3%, 2%)' },
                         }
                     }
                 }
@@ -788,103 +793,125 @@
         </div>
     </section>
 
-    <section id="patrocinadores" class="relative w-full py-20 md:py-32 bg-gray-50 overflow-hidden">
-        <div class="absolute inset-0 w-full h-full z-0 opacity-80 overflow-hidden">
-            <img src="https://drive.google.com/thumbnail?id=1yLx1N8HBEU2bXsSS4PXJAIwWVgVsQKEf&sz=w1920" alt="Fundo Patrocinadores" class="w-full h-[120%] relative -top-[10%] object-cover object-center opacity-70">
+    <section id="patrocinadores" class="relative w-full py-24 md:py-32 bg-gray-50 overflow-hidden">
+        <!-- Fundo sutil -->
+        <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+            <img src="https://drive.google.com/thumbnail?id=1yLx1N8HBEU2bXsSS4PXJAIwWVgVsQKEf&sz=w1920" alt="Fundo Patrocinadores" class="w-full h-[120%] relative -top-[10%] object-cover object-center opacity-[0.15] mix-blend-multiply">
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-50 via-white/80 to-gray-50"></div>
         </div>
 
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             
             <div class="text-center mb-16 md:mb-24" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-brand-orange uppercase tracking-wide">Patrocinadores</h2>
-                <p class="text-gray-600 mt-4 md:mt-6 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
-                    O evento conta com o apoio de parceiros comprometidos com a inovação, a<br class="hidden md:block">
-                    integração institucional e o desenvolvimento de soluções voltadas à segurança viária<br class="hidden md:block">
-                    e ao atendimento a emergências.
+                <span class="text-brand-orange font-bold tracking-widest uppercase text-sm md:text-base mb-2 block">Parceiros Oficiais</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-brand-dark uppercase tracking-tight">Patrocinadores</h2>
+                <div class="w-24 h-1.5 bg-brand-orange mx-auto mt-6 rounded-full"></div>
+                <p class="text-gray-500 mt-6 text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-3xl mx-auto">
+                    O evento conta com o apoio de parceiros comprometidos com a inovação, a integração institucional e o desenvolvimento de soluções voltadas à segurança viária e ao atendimento a emergências.
                 </p>
             </div>
 
-            <div class="w-full flex flex-col items-center gap-16 md:gap-20">
+            <div class="w-full flex flex-col items-center gap-10 md:gap-16">
                 
                 <!-- PATROCINADOR DIAMANTE -->
-                <div class="flex flex-col items-center w-full group mb-8" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="flex items-center gap-3 mb-8 md:mb-10 w-full justify-center">
-                        <div class="h-[2px] w-8 sm:w-12 md:w-24 bg-gradient-to-r from-transparent to-cyan-500"></div>
-                        <div class="flex items-center gap-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-black text-sm sm:text-lg md:text-2xl uppercase tracking-widest">
-                            <i class="fas fa-gem text-cyan-500 group-hover:animate-pulse-icon"></i> Diamante
+                <div class="w-full max-w-5xl group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="relative bg-white rounded-[2rem] md:rounded-[3rem] p-10 md:p-16 border border-cyan-100 shadow-[0_10px_40px_rgba(6,182,212,0.1)] hover:shadow-[0_20px_60px_rgba(6,182,212,0.2)] transition-all duration-500 flex flex-col items-center z-10 overflow-hidden">
+                        
+                        <!-- Imagem de Fundo Translúcida Corrigida (Maior, com movimento e mais visível) -->
+                        <img src="https://drive.google.com/thumbnail?id=1RSy6MX-WCIgV7sqOMGuVtied35tExQo3&sz=w1200" alt="Fundo Diamante" class="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none transform animate-slow-pan z-0">
+
+                        <!-- Brilho de fundo suave para não ofuscar a imagem -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-50/40 via-white/40 to-blue-50/40 pointer-events-none z-0"></div>
+                        
+                        <!-- Badge Diamante -->
+                        <div class="relative z-10 inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-2 rounded-full mb-10 md:mb-14 shadow-md transform -translate-y-2">
+                            <i class="fas fa-gem animate-pulse"></i>
+                            <span class="font-bold text-sm md:text-base uppercase tracking-widest">Cota Diamante</span>
                         </div>
-                        <div class="h-[2px] w-8 sm:w-12 md:w-24 bg-gradient-to-l from-transparent to-blue-600"></div>
+
+                        <a href="https://resgatecnica.com.br/" target="_blank" class="block relative w-full text-center z-10">
+                            <img src="https://drive.google.com/thumbnail?id=1OYkBj2S4wwsT1Ku4BslCIF-CCgKN0Ddu&sz=w1200" alt="Resgatecnica" class="h-28 sm:h-48 md:h-64 lg:h-80 w-auto mx-auto object-contain transform group-hover:scale-105 transition-all duration-500 relative z-10">
+                        </a>
                     </div>
-                    <a href="https://resgatecnica.com.br/" target="_blank" class="block relative group/logo w-full px-4 text-center">
-                        <div class="absolute inset-0 bg-cyan-400/10 rounded-full blur-3xl opacity-0 group-hover/logo:opacity-100 transition-opacity duration-700"></div>
-                        <img src="https://drive.google.com/thumbnail?id=1OYkBj2S4wwsT1Ku4BslCIF-CCgKN0Ddu&sz=w1200" alt="Resgatecnica" class="h-28 sm:h-56 md:h-72 lg:h-96 xl:h-[28rem] w-auto mx-auto object-contain drop-shadow-2xl transform group-hover/logo:scale-105 transition-all duration-500 relative z-10">
-                    </a>
                 </div>
 
                 <!-- PATROCINADOR OURO -->
-                <div class="flex flex-wrap justify-center items-center gap-16 md:gap-24 lg:gap-32 w-full mb-10 md:mb-16">
-                    
-                    <div class="flex flex-col items-center group w-full sm:w-auto" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex items-center gap-2 text-amber-500 font-black text-sm md:text-lg uppercase tracking-widest mb-6 md:mb-8">
-                            <i class="fas fa-medal group-hover:animate-pulse-icon"></i> Ouro
+                <div class="w-full max-w-4xl group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative bg-white rounded-[2rem] p-8 md:p-12 border border-amber-100 shadow-[0_10px_30px_rgba(245,158,11,0.08)] hover:shadow-[0_20px_50px_rgba(245,158,11,0.15)] transition-all duration-500 flex flex-col items-center z-10">
+                        
+                        <!-- Badge Ouro -->
+                        <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-600 px-5 py-1.5 rounded-full mb-8 md:mb-10">
+                            <i class="fas fa-medal"></i>
+                            <span class="font-bold text-xs md:text-sm uppercase tracking-widest">Cota Ouro</span>
                         </div>
-                        <a href="https://milwaukeetool.com.br/" target="_blank" class="block group/logo text-center">
-                            <img src="https://drive.google.com/thumbnail?id=1m8YE4ywZWg_5WhAF8urzBkl1iiJDO3_a&sz=w800" alt="Milwaukee" class="h-20 sm:h-24 md:h-32 lg:h-40 w-auto object-contain drop-shadow-xl transform group-hover/logo:scale-110 transition-all duration-300">
+
+                        <a href="https://milwaukeetool.com.br/" target="_blank" class="block w-full text-center">
+                            <img src="https://drive.google.com/thumbnail?id=1m8YE4ywZWg_5WhAF8urzBkl1iiJDO3_a&sz=w800" alt="Milwaukee" class="h-20 sm:h-28 md:h-36 lg:h-44 w-auto mx-auto object-contain transform group-hover:scale-110 transition-all duration-300">
                         </a>
                     </div>
-
                 </div>
 
                 <!-- PATROCINADORES PRATA -->
-                <div class="flex flex-wrap justify-center items-center gap-16 md:gap-24 lg:gap-32 w-full mb-10 md:mb-16">
-
-                    <div class="flex flex-col items-center group w-full sm:w-auto" data-aos="fade-up" data-aos-delay="400">
-                        <div class="flex items-center gap-2 text-gray-500 font-black text-xs md:text-base uppercase tracking-widest mb-5 md:mb-6">
-                            <i class="fas fa-shield-alt group-hover:animate-pulse-icon"></i> Prata
+                <div class="w-full max-w-5xl flex flex-col items-center">
+                    <!-- Título Discreto para a Seção -->
+                    <div class="flex items-center gap-3 mb-8 w-full justify-center opacity-70" data-aos="fade-up">
+                        <div class="h-px w-12 md:w-24 bg-gray-300"></div>
+                        <div class="flex items-center gap-2 text-gray-500 font-bold text-xs md:text-sm uppercase tracking-widest">
+                            <i class="fas fa-shield-alt"></i> Cota Prata
                         </div>
-                        <a href="https://drive.google.com/file/d/1n8M2nehe7dLCN51yomr-RPR8fmPgdsR9/view?usp=drive_link" target="_blank" class="block group/logo text-center">
-                            <img src="https://drive.google.com/thumbnail?id=1n8M2nehe7dLCN51yomr-RPR8fmPgdsR9&sz=w800" alt="GWM Canopus" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain drop-shadow-lg transform group-hover/logo:scale-110 transition-all duration-300">
-                        </a>
+                        <div class="h-px w-12 md:w-24 bg-gray-300"></div>
                     </div>
 
-                    <div class="flex flex-col items-center group w-full sm:w-auto" data-aos="fade-up" data-aos-delay="500">
-                        <div class="flex items-center gap-2 text-gray-500 font-black text-xs md:text-base uppercase tracking-widest mb-5 md:mb-6">
-                            <i class="fas fa-shield-alt group-hover:animate-pulse-icon"></i> Prata
+                    <div class="flex flex-col sm:flex-row flex-wrap justify-center items-stretch gap-6 md:gap-8 w-full">
+                        
+                        <!-- Prata 1 -->
+                        <div class="flex-1 min-w-[280px] max-w-sm group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                            <a href="https://drive.google.com/file/d/1n8M2nehe7dLCN51yomr-RPR8fmPgdsR9/view?usp=drive_link" target="_blank" class="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center h-full">
+                                <img src="https://drive.google.com/thumbnail?id=1n8M2nehe7dLCN51yomr-RPR8fmPgdsR9&sz=w800" alt="GWM Canopus" class="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500">
+                            </a>
                         </div>
-                        <a href="#" target="_blank" class="block group/logo text-center">
-                            <img src="https://drive.google.com/thumbnail?id=1cdg0o8y7Xk_uu4J5UNzcrEyqkaWguXP0&sz=w800" alt="Canopus" class="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain drop-shadow-lg transform group-hover/logo:scale-110 transition-all duration-300">
-                        </a>
-                    </div>
 
+                        <!-- Prata 2 -->
+                        <div class="flex-1 min-w-[280px] max-w-sm group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                            <a href="#" target="_blank" class="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex items-center justify-center h-full">
+                                <img src="https://drive.google.com/thumbnail?id=1cdg0o8y7Xk_uu4J5UNzcrEyqkaWguXP0&sz=w800" alt="Canopus" class="h-16 sm:h-20 md:h-24 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500">
+                            </a>
+                        </div>
+
+                    </div>
                 </div>
 
-                <!-- PATROCINADORES BRONZE (Todos na mesma seção) -->
-                <div class="flex flex-col items-center w-full" data-aos="fade-up" data-aos-delay="600">
-                    <div class="flex items-center gap-2 text-[#CD7F32] font-black text-sm md:text-lg uppercase tracking-widest mb-8 md:mb-12 group">
-                        <i class="fas fa-award group-hover:animate-pulse-icon"></i> Bronze
+                <!-- PATROCINADORES BRONZE -->
+                <div class="w-full max-w-6xl mt-6 md:mt-8 flex flex-col items-center">
+                    <!-- Título Discreto -->
+                    <div class="flex items-center gap-3 mb-8 w-full justify-center opacity-70" data-aos="fade-up">
+                        <div class="h-px w-12 md:w-24 bg-gray-300"></div>
+                        <div class="flex items-center gap-2 text-[#CD7F32] font-bold text-xs md:text-sm uppercase tracking-widest">
+                            <i class="fas fa-award"></i> Cota Bronze
+                        </div>
+                        <div class="h-px w-12 md:w-24 bg-gray-300"></div>
                     </div>
                     
-                    <!-- GRID / FLEX COM OS PATROCINADORES BRONZE -->
-                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 w-full max-w-5xl">
+                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 w-full">
                         
-                        <a href="#" target="_blank" class="block group/logo flex items-center justify-center w-28 sm:w-32 md:w-40 lg:w-48 h-16 sm:h-20 md:h-24">
-                            <img src="https://drive.google.com/thumbnail?id=1ok_wQYNbCuhnAgizjzlk8AcQy4XLRFgE&sz=w800" alt="Patrocinador Bronze 1" class="max-w-full max-h-full object-contain drop-shadow-md transform group-hover/logo:scale-110 transition-all duration-300">
+                        <a href="#" target="_blank" class="bg-white/60 hover:bg-white p-4 md:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center w-[140px] h-[90px] md:w-[180px] md:h-[110px] group" data-aos="fade-up" data-aos-delay="200">
+                            <img src="https://drive.google.com/thumbnail?id=1ok_wQYNbCuhnAgizjzlk8AcQy4XLRFgE&sz=w800" alt="Patrocinador Bronze 1" class="max-w-full max-h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300">
                         </a>
                         
-                        <a href="#" target="_blank" class="block group/logo flex items-center justify-center w-28 sm:w-32 md:w-40 lg:w-48 h-16 sm:h-20 md:h-24">
-                            <img src="https://drive.google.com/thumbnail?id=1p6_PrCw1uHquWcwQ9JtWzGnM2kMLVeg3&sz=w800" alt="Patrocinador Bronze 2" class="max-w-full max-h-full object-contain drop-shadow-md transform group-hover/logo:scale-110 transition-all duration-300">
+                        <a href="#" target="_blank" class="bg-white/60 hover:bg-white p-4 md:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center w-[140px] h-[90px] md:w-[180px] md:h-[110px] group" data-aos="fade-up" data-aos-delay="300">
+                            <img src="https://drive.google.com/thumbnail?id=1p6_PrCw1uHquWcwQ9JtWzGnM2kMLVeg3&sz=w800" alt="Patrocinador Bronze 2" class="max-w-full max-h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300">
                         </a>
                         
-                        <a href="#" target="_blank" class="block group/logo flex items-center justify-center w-28 sm:w-32 md:w-40 lg:w-48 h-16 sm:h-20 md:h-24">
-                            <img src="https://drive.google.com/thumbnail?id=1B5zic98i1PeQuwQ459Z-tFJjAxh4zr51&sz=w800" alt="Patrocinador Bronze 3" class="max-w-full max-h-full object-contain drop-shadow-md transform group-hover/logo:scale-110 transition-all duration-300">
+                        <a href="#" target="_blank" class="bg-white/60 hover:bg-white p-4 md:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center w-[140px] h-[90px] md:w-[180px] md:h-[110px] group" data-aos="fade-up" data-aos-delay="400">
+                            <img src="https://drive.google.com/thumbnail?id=1B5zic98i1PeQuwQ459Z-tFJjAxh4zr51&sz=w800" alt="Patrocinador Bronze 3" class="max-w-full max-h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300">
                         </a>
                         
-                        <a href="#" target="_blank" class="block group/logo flex items-center justify-center w-28 sm:w-32 md:w-40 lg:w-48 h-16 sm:h-20 md:h-24">
-                            <img src="https://drive.google.com/thumbnail?id=1764SXQwbl9mTcfeh_y2KQyN8H76z2OEU&sz=w800" alt="Patrocinador Bronze 4" class="max-w-full max-h-full object-contain drop-shadow-md transform group-hover/logo:scale-110 transition-all duration-300">
+                        <a href="#" target="_blank" class="bg-white/60 hover:bg-white p-4 md:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center w-[140px] h-[90px] md:w-[180px] md:h-[110px] group" data-aos="fade-up" data-aos-delay="500">
+                            <img src="https://drive.google.com/thumbnail?id=1764SXQwbl9mTcfeh_y2KQyN8H76z2OEU&sz=w800" alt="Patrocinador Bronze 4" class="max-w-full max-h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300">
                         </a>
                         
-                        <a href="#" target="_blank" class="block group/logo flex items-center justify-center w-28 sm:w-32 md:w-40 lg:w-48 h-16 sm:h-20 md:h-24">
-                            <img src="https://drive.google.com/thumbnail?id=1-Ck2NRlC0i61lV6mdlS7_iGnHmhwkRrK&sz=w800" alt="Patrocinador Bronze 5" class="max-w-full max-h-full object-contain drop-shadow-md transform group-hover/logo:scale-110 transition-all duration-300">
+                        <a href="#" target="_blank" class="bg-white/60 hover:bg-white p-4 md:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center w-[140px] h-[90px] md:w-[180px] md:h-[110px] group" data-aos="fade-up" data-aos-delay="600">
+                            <img src="https://drive.google.com/thumbnail?id=1-Ck2NRlC0i61lV6mdlS7_iGnHmhwkRrK&sz=w800" alt="Patrocinador Bronze 5" class="max-w-full max-h-full object-contain grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300">
                         </a>
 
                     </div>
@@ -892,44 +919,6 @@
 
             </div>
 
-            <div class="text-center mt-24 md:mt-32 mb-12 md:mb-16" data-aos="fade-up">
-                <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg font-medium mb-6 md:mb-8">
-                    Oportunidades de patrocínio ainda disponíveis. Apresente sua marca para um público<br class="hidden md:block">especializado e engajado.
-                </p>
-                <a href="#contato" class="inline-block bg-brand-orange text-white font-medium py-3 md:py-4 px-8 md:px-10 rounded-full shadow-[0_0_20px_rgba(227,82,25,0.4)] border-2 border-brand-dark uppercase tracking-wide text-sm md:text-base lg:text-lg hover:bg-[#c74413] transition-colors">
-                    SEJA UM <span class="font-black">PATROCINADOR</span>
-                </a>
-                <div class="mt-4 md:mt-6 text-brand-dark text-2xl md:text-3xl">
-                    <i class="fas fa-chevron-down animate-bounce-gentle"></i>
-                </div>
-            </div>
-
-            <div id="contato" class="text-center mt-12 md:mt-16 pb-8 md:pb-12" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-brand-dark uppercase tracking-wide mb-4 md:mb-6">CONTATO</h2>
-                <p class="text-gray-600 text-xs sm:text-sm md:text-base lg:text-lg font-medium leading-relaxed max-w-xl mx-auto mb-10 md:mb-12">
-                    Entre em contato com a organização para mais informações sobre o evento, inscrições<br class="hidden md:block">ou oportunidades de patrocínio.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-                    <div class="bg-brand-orange text-white rounded-2xl shadow-xl border-[3px] border-brand-dark flex items-center p-5 md:p-8 group" data-aos="fade-right" data-aos-delay="100">
-                        <div class="bg-white text-brand-dark w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center text-xl md:text-3xl mr-4 md:mr-6 flex-shrink-0 shadow-sm">
-                            <i class="fas fa-envelope group-hover:animate-wiggle"></i>
-                        </div>
-                        <div class="text-left overflow-hidden">
-                            <h4 class="font-black text-lg sm:text-xl md:text-2xl tracking-wide mb-1">Email</h4>
-                            <p class="text-white/95 text-[10px] sm:text-sm md:text-base truncate">conesvbr@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="bg-brand-orange text-white rounded-2xl shadow-xl border-[3px] border-brand-dark flex items-center p-5 md:p-8 group" data-aos="fade-left" data-aos-delay="200">
-                        <div class="bg-white text-brand-dark w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center text-xl md:text-3xl mr-4 md:mr-6 flex-shrink-0 shadow-sm">
-                            <i class="fas fa-phone-alt group-hover:animate-wiggle"></i>
-                        </div>
-                        <div class="text-left overflow-hidden">
-                            <h4 class="font-black text-lg sm:text-xl md:text-2xl tracking-wide mb-1">Telefone</h4>
-                            <p class="text-white/95 text-[10px] sm:text-sm md:text-base truncate">(65) 9621-0125</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
