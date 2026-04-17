@@ -5,21 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rescue Experience Challenge</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts (Montserrat) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,900;1,900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Configuração do Tailwind -->
     <script>
         tailwind.config = {
             theme: {
@@ -87,7 +82,6 @@
         details > summary::-webkit-details-marker { display: none; }
     </style>
 
-    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -103,11 +97,9 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1628534975027695&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
-</head>
+    </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
 
-    <!-- Barra de urgência fixa -->
     <div class="fixed top-0 w-full z-[60] bg-brand-orange text-white text-center py-2 px-4 text-xs sm:text-sm font-bold tracking-wide shadow-md flex justify-center items-center gap-2 flex-wrap">
         <span>Inscrições abertas até 14 de junho</span>
         <span class="hidden sm:inline">•</span>
@@ -115,17 +107,14 @@
         <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="hover:underline ml-2 flex items-center gap-1">Garantir minha vaga <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <!-- Navbar -->
     <nav class="fixed top-8 w-full z-50 bg-brand-dark/95 backdrop-blur-md text-white border-b border-white/10 shadow-lg transition-all duration-300">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="flex items-center justify-between h-20">
-                <!-- Logótipo -->
                 <div class="flex items-center gap-3 flex-shrink-0">
                     <img src="https://drive.google.com/thumbnail?id=1oD2CCnkWY_JJP_Glwn1Rzsi585ZeYlEr&sz=w400" alt="Logo Holmatro" class="h-8 md:h-10 w-auto object-contain">
                     <img src="https://drive.google.com/thumbnail?id=18i9k1WFEqwHLSejPQZjg9HyO7D4kESq1&sz=w800" alt="Rescue Experience" class="h-6 md:h-8 lg:h-10 w-auto object-contain">
                 </div>
                 
-                <!-- Links de Navegação -->
                 <div class="hidden xl:flex items-center text-[10px] uppercase xl:text-xs font-medium tracking-widest text-gray-300">
                     <a href="#como-funciona" class="hover:text-brand-orange transition-colors">Como funciona</a>
                     <div class="w-[2px] h-4 bg-brand-orange mx-3"></div>
@@ -136,7 +125,6 @@
                     <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="hover:text-brand-orange transition-colors text-white font-bold">Inscrições</a>
                 </div>
 
-                <!-- Botões Mobile -->
                 <div class="xl:hidden">
                     <button id="mobile-menu-btn" class="text-white hover:text-brand-orange focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
@@ -144,7 +132,6 @@
                 </div>
             </div>
 
-            <!-- Menu Mobile Dropdown -->
             <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brand-dark/95 backdrop-blur-xl border-b border-white/10 shadow-2xl flex-col py-6 px-4 space-y-4 xl:hidden">
                 <a href="#como-funciona" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Como funciona</a>
                 <a href="#sobre" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Sobre o desafio</a>
@@ -158,10 +145,8 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="inicio" class="relative w-full min-h-screen bg-brand-dark flex items-center pt-28 overflow-hidden">
         <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
-            <!-- NOVA IMAGEM DE FUNDO -->
             <img src="https://drive.google.com/thumbnail?id=1fDUm09guuy5UZjYqD4jzQCdwYHqzaH0N&sz=w1920" alt="Resgate Veicular" class="w-full h-[120%] object-cover object-center relative -top-[10%] parallax-bg">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
@@ -190,7 +175,6 @@
             </div>
         </div>
         
-        <!-- Divisória Diagonal -->
         <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-30 transform translate-y-1">
             <svg class="relative block w-full h-[40px] md:h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M1200 120H0V0l1200 120z" class="fill-brand-orange"></path>
@@ -198,7 +182,6 @@
         </div>
     </section>
 
-    <!-- FAIXA DIVISÓRIA -->
     <div class="bg-brand-orange w-full py-3 sm:py-4 relative z-30 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between items-center text-white text-xs sm:text-sm font-black uppercase tracking-widest gap-y-2">
@@ -210,10 +193,8 @@
         </div>
     </div>
 
-    <!-- Manifesto -->
     <section class="py-24 relative text-white text-center px-4 overflow-hidden">
         <div class="absolute inset-0 z-0 overflow-hidden">
-            <!-- VÍDEO DE FUNDO -->
             <video autoplay loop muted playsinline class="w-full h-[120%] relative -top-[10%] object-cover object-center grayscale opacity-80 parallax-bg">
                 <source src="https://res.cloudinary.com/db8vrcbof/video/upload/q_auto/f_auto/v1775263177/videoplayback_jnamww.mp4" type="video/mp4">
             </video>
@@ -235,7 +216,6 @@
         </div>
     </section>
 
-    <!-- Como Funciona -->
     <section id="como-funciona" class="py-24 bg-white relative">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -249,12 +229,10 @@
                 </p>
             </div>
 
-            <!-- NOVA GALERIA DE FOTOS APERFEIÇOADA -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
                 
-                <!-- Base 01 -->
                 <div class="relative overflow-hidden rounded-2xl group shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square cursor-default" data-aos="fade-up" data-aos-delay="0">
-                    <img src="https://drive.google.com/thumbnail?id=1VACbUf9Oe9wrg9K-O5Jir0lpA5ZoaSqD&sz=w800" alt="Operações de Entrada Forçada" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <img src="https://drive.google.com/thumbnail?id=1bACIL24KyDRtM9cXNgtaOWI5vhJxUjp3&sz=w800" alt="Operações de Entrada Forçada" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-brand-dark/50 group-hover:bg-brand-dark/30 transition-colors duration-500"></div>
                     <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10">
                         <p class="text-brand-orange font-black text-xs md:text-sm uppercase tracking-widest mb-1 drop-shadow-md">Base 01</p>
@@ -267,9 +245,8 @@
                     </div>
                 </div>
 
-                <!-- Base 02 -->
                 <div class="relative overflow-hidden rounded-2xl group shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square cursor-default" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://drive.google.com/thumbnail?id=1aE9fbWWQkJfGJdFnbTxQ3oPlLy744EEt&sz=w800" alt="Movimentação de Cargas com Sistemas Tripé, Bipé e Monopé" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <img src="https://drive.google.com/thumbnail?id=1tMJSkz4hkCXqVG6rmf_JgZFQSF2e1Bmv&sz=w800" alt="Movimentação de Cargas com Sistemas Tripé, Bipé e Monopé" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-brand-dark/50 group-hover:bg-brand-dark/30 transition-colors duration-500"></div>
                     <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10">
                         <p class="text-brand-orange font-black text-xs md:text-sm uppercase tracking-widest mb-1 drop-shadow-md">Base 02</p>
@@ -282,9 +259,8 @@
                     </div>
                 </div>
 
-                <!-- Base 03 -->
                 <div class="relative overflow-hidden rounded-2xl group shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square cursor-default" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://drive.google.com/thumbnail?id=1SwBXvL41cNlv3VR8am_vsGWuG8zKlum8&sz=w800" alt="Estabilização e Escoramento de Escavações em Vala" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <img src="https://drive.google.com/thumbnail?id=1D4ctIJBiO_f3MLWSFWoU4ON7jJiyfYnG&sz=w800" alt="Estabilização e Escoramento de Escavações em Vala" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-brand-dark/50 group-hover:bg-brand-dark/30 transition-colors duration-500"></div>
                     <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10">
                         <p class="text-brand-orange font-black text-xs md:text-sm uppercase tracking-widest mb-1 drop-shadow-md">Base 03</p>
@@ -297,9 +273,8 @@
                     </div>
                 </div>
 
-                <!-- Base 04 -->
                 <div class="relative overflow-hidden rounded-2xl group shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square cursor-default" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://drive.google.com/thumbnail?id=1YjgNGQ-qSBk0KCZ8FrQkdQnR6np6jNBW&sz=w800" alt="Escoramento e Estabilização de Estruturas Colapsadas" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <img src="https://drive.google.com/thumbnail?id=1SwBXvL41cNlv3VR8am_vsGWuG8zKlum8&sz=w800" alt="Escoramento e Estabilização de Estruturas Colapsadas" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-brand-dark/50 group-hover:bg-brand-dark/30 transition-colors duration-500"></div>
                     <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10">
                         <p class="text-brand-orange font-black text-xs md:text-sm uppercase tracking-widest mb-1 drop-shadow-md">Base 04</p>
@@ -312,9 +287,8 @@
                     </div>
                 </div>
 
-                <!-- Base 05 -->
                 <div class="relative overflow-hidden rounded-2xl group shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square cursor-default" data-aos="fade-up" data-aos-delay="0">
-                    <img src="https://drive.google.com/thumbnail?id=1XuoLuOAheCX0N01AVfhy8ieDJ8rzs7_K&sz=w800" alt="Desencarceramento Avançado em Caminhões" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <img src="https://drive.google.com/thumbnail?id=1M7o-39S4hMnTeOfL_grMbC9NMXXQ9Jcx&sz=w800" alt="Desencarceramento Avançado em Caminhões" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-brand-dark/50 group-hover:bg-brand-dark/30 transition-colors duration-500"></div>
                     <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10">
                         <p class="text-brand-orange font-black text-xs md:text-sm uppercase tracking-widest mb-1 drop-shadow-md">Base 05</p>
@@ -327,9 +301,8 @@
                     </div>
                 </div>
 
-                <!-- Base 06 -->
                 <div class="relative overflow-hidden rounded-2xl group shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square cursor-default" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://drive.google.com/thumbnail?id=1xXEB6DC37Dwx3FDikX_rokJub7Kwqacd&sz=w800" alt="Desencarceramento Avançado em Ônibus" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <img src="https://drive.google.com/thumbnail?id=1a7kPNtOUfBa2fm1F56sig8fZIx7N6pCL&sz=w800" alt="Desencarceramento Avançado em Ônibus" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-brand-dark/50 group-hover:bg-brand-dark/30 transition-colors duration-500"></div>
                     <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10">
                         <p class="text-brand-orange font-black text-xs md:text-sm uppercase tracking-widest mb-1 drop-shadow-md">Base 06</p>
@@ -342,9 +315,8 @@
                     </div>
                 </div>
 
-                <!-- Base 07 -->
                 <div class="relative overflow-hidden rounded-2xl group shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square cursor-default" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://drive.google.com/thumbnail?id=1w6xwp-Hpd9bKK3Xko1buBzgWzYlxD83A&sz=w800" alt="Estabilização e Elevação de Ônibus" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <img src="https://drive.google.com/thumbnail?id=1O7jozYhhKvJlwJncKUbyXL4T0T0LdFip&sz=w800" alt="Estabilização e Elevação de Ônibus" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-brand-dark/50 group-hover:bg-brand-dark/30 transition-colors duration-500"></div>
                     <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10">
                         <p class="text-brand-orange font-black text-xs md:text-sm uppercase tracking-widest mb-1 drop-shadow-md">Base 07</p>
@@ -357,9 +329,8 @@
                     </div>
                 </div>
 
-                <!-- Base 08 -->
                 <div class="relative overflow-hidden rounded-2xl group shadow-md hover:shadow-2xl transition-all duration-500 aspect-[4/3] sm:aspect-square cursor-default" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://drive.google.com/thumbnail?id=1p-YijXYzl6kwA2Wv-a4xz6NwoZsjDpYN&sz=w800" alt="Estabilização e Elevação de Caminhões" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    <img src="https://drive.google.com/thumbnail?id=1Z1yz4EKI2SnugYAmHzwvDRNnv7bw1M5c&sz=w800" alt="Estabilização e Elevação de Caminhões" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
                     <div class="absolute inset-0 bg-brand-dark/50 group-hover:bg-brand-dark/30 transition-colors duration-500"></div>
                     <div class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10">
                         <p class="text-brand-orange font-black text-xs md:text-sm uppercase tracking-widest mb-1 drop-shadow-md">Base 08</p>
@@ -374,7 +345,6 @@
 
             </div>
 
-            <!-- Blocos de Texto Secundários -->
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-brand-dark text-white p-8 rounded-2xl">
                     <h5 class="text-brand-orange font-black uppercase mb-2"><i class="fas fa-clipboard-check mr-2"></i> Metodologia</h5>
@@ -390,7 +360,6 @@
                 </div>
             </div>
 
-            <!-- Destaque Concessionárias -->
             <div class="mt-8 bg-brand-orange text-white p-8 rounded-2xl flex flex-col md:flex-row items-center gap-6">
                 <div class="text-5xl opacity-80"><i class="fas fa-hard-hat"></i></div>
                 <div>
@@ -404,12 +373,10 @@
         </div>
     </section>
 
-    <!-- Cards de Persona -->
     <section class="py-24 bg-gray-50 border-b border-gray-200">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 
-                <!-- Bombeiros -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-orange hover:-translate-y-2 transition-transform duration-300">
                     <i class="fas fa-fire-extinguisher text-5xl text-brand-orange mb-6"></i>
                     <h3 class="text-2xl font-black uppercase text-brand-dark mb-4">Bombeiros</h3>
@@ -418,7 +385,6 @@
                     </p>
                 </div>
 
-                <!-- Empresas de Resposta a Emergências -->
                 <div class="bg-brand-dark rounded-2xl p-8 shadow-lg border-t-4 border-brand-orange hover:-translate-y-2 transition-transform duration-300 text-white">
                     <i class="fas fa-truck-medical text-5xl text-brand-orange mb-6"></i>
                     <h3 class="text-2xl font-black uppercase mb-4">Empresas de Resposta a Emergências</h3>
@@ -427,7 +393,6 @@
                     </p>
                 </div>
 
-                <!-- Concessionárias -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-brand-orange hover:-translate-y-2 transition-transform duration-300">
                     <i class="fas fa-road text-5xl text-brand-orange mb-6"></i>
                     <h3 class="text-2xl font-black uppercase text-brand-dark mb-4">Concessionárias de Rodovias</h3>
@@ -446,7 +411,6 @@
         </div>
     </section>
 
-    <!-- Números -->
     <section class="py-16 bg-brand-dark text-white border-b border-white/10">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 text-center">
@@ -479,7 +443,6 @@
         </div>
     </section>
 
-    <!-- Sobre o Desafio -->
     <section id="sobre" class="py-24 bg-white relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -504,7 +467,6 @@
                 </div>
                 <div class="bg-gray-100 p-8 rounded-2xl border-l-4 border-brand-orange relative">
                     <i class="fas fa-quote-left text-4xl text-gray-300 absolute top-4 right-4"></i>
-                    <!-- Texto mantido, mas nome e entidade foram removidos conforme solicitado -->
                     <p class="text-xl font-medium text-brand-dark italic mb-6 relative z-10">
                         "O Holmatro Rescue Experience representa o padrão de capacitação que buscamos para os bombeiros do Brasil."
                     </p>
@@ -518,12 +480,9 @@
                 </p>
             </div>
 
-            <!-- Seção de Depoimentos (Vídeo e Texto) -->
             <div>
-                <!-- Depoimento Destaque em Vídeo -->
                 <div class="bg-white rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden mb-10">
                     <div class="grid md:grid-cols-2 gap-0">
-                        <!-- Coluna do Vídeo -->
                         <div class="relative bg-black h-full min-h-[300px] md:min-h-[400px] flex items-center justify-center">
                             <video 
                                 controls 
@@ -535,7 +494,6 @@
                             </video>
                         </div>
                         
-                        <!-- Coluna do Texto -->
                         <div class="p-8 md:p-12 flex flex-col justify-center bg-gray-50">
                             <div class="flex text-brand-yellow mb-4 text-xl">
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -558,7 +516,6 @@
                     </div>
                 </div>
 
-                <!-- Depoimentos em Texto Adicionais -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-white border border-gray-200 p-6 rounded-xl shadow-sm hover:-translate-y-1 transition-transform duration-300">
                         <div class="flex text-brand-yellow mb-3 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -575,12 +532,10 @@
         </div>
     </section>
 
-    <!-- Data e Local -->
     <section id="local" class="py-24 bg-gray-100 border-t border-gray-300 relative overflow-hidden">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-5 gap-12 items-start">
                 
-                <!-- Info Central (Esquerda) -->
                 <div class="lg:col-span-2">
                     <h2 class="text-4xl md:text-5xl font-black uppercase text-brand-dark mb-8">Data e Local</h2>
                     
@@ -603,7 +558,6 @@
                                     Abrir no Google Maps <i class="fas fa-external-link-alt text-xs"></i>
                                 </a>
                                 
-                                <!-- Mapa Embutido -->
                                 <div class="mt-4 w-full h-48 md:h-56 rounded-lg overflow-hidden border border-gray-200 shadow-inner">
                                     <iframe 
                                         src="https://maps.google.com/maps?q=Parque%20Novo%20Mato%20Grosso%20-%20Oficial%2C%20Coxip%C3%B3%20do%20Ouro%2C%20Cuiab%C3%A1%20-%20MT&t=&z=14&ie=UTF8&iwloc=&output=embed" 
@@ -630,9 +584,7 @@
                     </div>
                 </div>
 
-                <!-- Logística (Direita) -->
                 <div class="lg:col-span-3 grid sm:grid-cols-2 gap-6">
-                    <!-- Como Chegar -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
                         <h4 class="font-black uppercase text-brand-dark mb-4 flex items-center gap-2">
                             <i class="fas fa-plane text-brand-orange"></i> Como chegar
@@ -647,7 +599,6 @@
                         </ul>
                     </div>
 
-                    <!-- Hospedagem -->
                     <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
                         <h4 class="font-black uppercase text-brand-dark mb-4 flex items-center gap-2">
                             <i class="fas fa-bed text-brand-orange"></i> Onde se hospedar
@@ -662,7 +613,6 @@
                         </ul>
                     </div>
 
-                    <!-- Banner 10 estados -->
                     <div class="sm:col-span-2 bg-brand-orange/10 border border-brand-orange/30 p-6 rounded-xl text-center">
                         <p class="text-brand-dark font-medium">
                             10 estados já confirmaram presença no treinamento em anos anteriores.<br>
@@ -670,7 +620,6 @@
                         </p>
                     </div>
 
-                    <!-- NOVO: Vídeo em Loop sem áudio -->
                     <div class="sm:col-span-2 w-full h-full min-h-[280px] rounded-xl overflow-hidden shadow-sm relative border border-gray-200">
                         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
                             <source src="https://res.cloudinary.com/db8vrcbof/video/upload/q_auto/f_auto/v1775270816/videoplayback_2_to1wcn.mp4" type="video/mp4">
@@ -683,7 +632,6 @@
         </div>
     </section>
 
-    <!-- Inscrições -->
     <section id="inscricoes" class="py-24 relative bg-brand-dark text-white border-t-8 border-brand-orange">
         <div class="max-w-[60rem] mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -734,12 +682,10 @@
                 </a>
             </div>
 
-            <!-- FAQ -->
             <div class="max-w-3xl mx-auto">
                 <h3 class="text-2xl font-black uppercase text-center mb-8 border-b border-white/10 pb-4">Perguntas Frequentes</h3>
                 
                 <div class="space-y-4">
-                    <!-- Pergunta 1 -->
                     <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
                         <summary class="flex justify-between items-center font-bold p-5">
                             Preciso ter experiência prévia em resgate veicular?
@@ -752,7 +698,6 @@
                         </div>
                     </details>
 
-                    <!-- Pergunta 2 -->
                     <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
                         <summary class="flex justify-between items-center font-bold p-5">
                             O certificado tem validade institucional?
@@ -765,7 +710,6 @@
                         </div>
                     </details>
 
-                    <!-- Pergunta 3 -->
                     <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
                         <summary class="flex justify-between items-center font-bold p-5">
                             Posso inscrever uma equipe?
@@ -778,7 +722,6 @@
                         </div>
                     </details>
 
-                    <!-- Pergunta 4 -->
                     <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
                         <summary class="flex justify-between items-center font-bold p-5">
                             Como funciona o pagamento?
@@ -791,7 +734,6 @@
                         </div>
                     </details>
 
-                    <!-- Pergunta 5 -->
                     <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
                         <summary class="flex justify-between items-center font-bold p-5">
                             E se eu precisar cancelar?
@@ -804,7 +746,6 @@
                         </div>
                     </details>
 
-                    <!-- Pergunta 6 -->
                     <details class="group bg-white/5 border border-white/10 rounded-lg cursor-pointer">
                         <summary class="flex justify-between items-center font-bold p-5">
                             O que está incluso no valor da inscrição?
@@ -823,7 +764,6 @@
                 </div>
             </div>
 
-            <!-- Fechamento Inscrições -->
             <div class="mt-20 text-center">
                 <p class="text-2xl md:text-3xl font-light italic mb-8 text-gray-300 max-w-3xl mx-auto">
                     "Depois do Rescue Experience, minha referência de resgate mudou."
@@ -837,12 +777,10 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contatos" class="bg-[#111217] text-white pt-16 pb-8 border-t border-brand-orange">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-10 items-center mb-12 text-center md:text-left">
                 
-                <!-- Info Footer -->
                 <div>
                     <h3 class="text-2xl font-black uppercase tracking-widest mb-2">
                         Holmatro <br><span class="text-brand-orange">Rescue Experience</span>
@@ -850,7 +788,6 @@
                     <p class="text-gray-400 text-sm font-medium">24 a 26 de junho de 2026 • Cuiabá-MT</p>
                 </div>
 
-                <!-- Logos Placeholder -->
                 <div class="flex flex-col items-center justify-center gap-6">
                     <p class="text-sm uppercase tracking-widest text-gray-500 font-bold">Em parceria com</p>
                     <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
@@ -863,7 +800,6 @@
                     </div>
                 </div>
 
-                <!-- CTA Footer -->
                 <div class="md:text-right">
                     <p class="text-brand-orange font-bold uppercase mb-2">Inscrições até 14 de junho</p>
                     <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="inline-block bg-white text-brand-dark px-6 py-2 rounded-full font-bold uppercase text-sm hover:bg-gray-200 transition-colors">
@@ -880,10 +816,8 @@
         </div>
     </footer>
 
-    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Script para Rolagem Suave -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Inicializar Animações de Scroll (AOS)
