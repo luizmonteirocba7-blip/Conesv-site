@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio Nacional de Salvamento Veicular e Trauma | CONESV</title>
+    <meta name="description" content="Competição Nacional de Salvamento Veicular e Trauma. As melhores equipes do Brasil reunidas em cenários reais de resgate.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -55,33 +56,33 @@
         }
     </style>
 </head>
-<body class="bg-brand-dark text-gray-200 font-sans antialiased overflow-x-hidden w-full">
+<body class="bg-brand-dark text-gray-200 font-sans antialiased overflow-x-hidden w-full selection:bg-brand-orange selection:text-white">
 
-    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur-md text-white border-b border-white/10 shadow-lg transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-lg text-white border-b border-white/5 shadow-lg transition-all duration-300">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-3 flex-shrink-0">
-                    <img src="https://drive.google.com/thumbnail?id=1wWx7jfa0lFTVWapfnHntJZaNqohQe_ZA&sz=w400" alt="Logo" class="h-8 sm:h-10 w-auto object-contain">
+                <div class="flex items-center gap-3 flex-shrink-0 cursor-pointer hover:opacity-90 transition-opacity" onclick="window.scrollTo(0,0)">
+                    <img src="https://drive.google.com/thumbnail?id=1wWx7jfa0lFTVWapfnHntJZaNqohQe_ZA&sz=w400" alt="Logo CONESV" class="h-8 sm:h-10 w-auto object-contain">
                     <span class="font-black text-xl sm:text-2xl tracking-wider uppercase">CONESV</span>
                 </div>
                 
                 <div class="hidden lg:flex items-center text-xs xl:text-sm font-semibold tracking-wider space-x-6">
-                    <a href="index.html" class="hover:text-brand-orange transition-colors uppercase text-gray-300">Início</a>
-                    <a href="#sobre" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300">Sobre</a>
-                    <a href="#como-funciona" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300">Como Funciona</a>
-                    <a href="#participantes" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300">Participantes</a>
-                    <a href="#timetable" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300">Timetable</a>
-                    <a href="#equipes" class="hover:text-brand-orange transition-colors uppercase text-gray-300">Equipes</a>
+                    <a href="index.html" class="hover:text-brand-orange transition-colors uppercase text-gray-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-orange hover:after:w-full after:transition-all after:duration-300">Início</a>
+                    <a href="#sobre" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-orange hover:after:w-full after:transition-all after:duration-300">Sobre</a>
+                    <a href="#como-funciona" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-orange hover:after:w-full after:transition-all after:duration-300">Como Funciona</a>
+                    <a href="#participantes" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-orange hover:after:w-full after:transition-all after:duration-300">Participantes</a>
+                    <a href="#timetable" class="hover:text-brand-orange transition-colors uppercase nav-tab-link text-gray-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-orange hover:after:w-full after:transition-all after:duration-300">Timetable</a>
+                    <a href="#equipes" class="hover:text-brand-orange transition-colors uppercase text-gray-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-brand-orange hover:after:w-full after:transition-all after:duration-300">Equipes</a>
                 </div>
 
                 <div class="hidden lg:flex gap-4">
-                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="inline-block border-[2px] border-brand-orange bg-brand-orange text-white px-6 py-2 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-transparent hover:text-brand-orange transition-all duration-300">
+                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" rel="noopener noreferrer" class="inline-block border-[2px] border-brand-orange bg-brand-orange text-white px-6 py-2 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-transparent hover:text-brand-orange transition-all duration-300 hover:shadow-[0_0_15px_rgba(227,82,25,0.4)] hover:-translate-y-0.5">
                         Inscreva sua Equipe
                     </a>
                 </div>
                 
                 <div class="lg:hidden">
-                    <button id="mobile-menu-btn" class="text-white hover:text-brand-orange focus:outline-none p-2">
+                    <button id="mobile-menu-btn" aria-label="Alternar menu" class="text-white hover:text-brand-orange focus:outline-none p-2 transition-colors">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -95,7 +96,7 @@
                 <a href="#timetable" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Timetable</a>
                 <a href="#equipes" class="mobile-link block w-full text-center text-white hover:text-brand-orange transition-colors uppercase font-bold tracking-wider py-2">Equipes</a>
                 <div class="pt-4 flex justify-center w-full">
-                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="mobile-link inline-block border-[2px] border-brand-orange bg-brand-orange text-white px-8 py-3 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-transparent hover:text-brand-orange transition-all duration-300">
+                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" rel="noopener noreferrer" class="mobile-link inline-block border-[2px] border-brand-orange bg-brand-orange text-white px-8 py-3 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-transparent hover:text-brand-orange transition-all duration-300 shadow-lg">
                         Inscreva sua Equipe
                     </a>
                 </div>
@@ -116,29 +117,28 @@
                 poster="https://drive.google.com/thumbnail?id=1EWWHrxqL-960BgHjc9-6vJdYhOIUT9oB&sz=w1920"
             >
                 <source src="https://res.cloudinary.com/db8vrcbof/video/upload/q_auto/f_auto/v1775089245/video-fundo.mp4_r0ch3w.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos HTML5.
             </video>
             <div class="absolute inset-0 hero-overlay pointer-events-none"></div>
         </div>
 
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-20 flex flex-col justify-center h-full py-16 sm:py-20">
             <div class="w-full lg:w-[80%] xl:w-[65%]">
-                <div class="inline-block bg-brand-orange text-white font-bold px-3 sm:px-4 py-1.5 rounded mb-4 sm:mb-6 text-xs sm:text-sm tracking-widest uppercase shadow-lg border border-brand-orange/50" data-aos="fade-down">
+                <div class="inline-block bg-gradient-to-r from-brand-orange to-[#ff6b35] text-white font-bold px-3 sm:px-4 py-1.5 rounded mb-4 sm:mb-6 text-xs sm:text-sm tracking-widest uppercase shadow-lg border border-brand-orange/50" data-aos="fade-down">
                     CONESV | Competição Nacional
                 </div>
                 
                 <h1 class="text-white leading-[1.1] sm:leading-[1.05] tracking-tight mb-6" data-aos="fade-up" data-aos-delay="100">
-                    <span class="block text-3xl sm:text-5xl lg:text-6xl font-black uppercase drop-shadow-lg break-words">Desafio Nacional de</span>
-                    <span class="block text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-black text-brand-orange uppercase drop-shadow-lg mt-2 break-words">Salvamento Veicular e Trauma</span>
+                    <span class="block text-4xl sm:text-5xl lg:text-6xl font-black uppercase drop-shadow-lg break-words">Desafio Nacional de</span>
+                    <span class="block text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-[#ff8c5a] uppercase drop-shadow-lg mt-2 break-words">Salvamento Veicular e Trauma</span>
                 </h1>
                 
                 <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 font-bold text-white text-xs sm:text-sm md:text-base mb-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-3 bg-white/10 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg backdrop-blur-sm border border-white/20 w-fit">
-                        <i class="fas fa-calendar-alt text-brand-orange text-lg sm:text-xl"></i>
+                    <div class="flex items-center gap-3 bg-white/10 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg backdrop-blur-md border border-white/10 w-fit hover:bg-white/15 transition-colors cursor-default">
+                        <i class="fas fa-calendar-alt text-brand-orange text-lg sm:text-xl drop-shadow"></i>
                         <span>24 A 26 DE JUNHO DE 2026</span>
                     </div>
-                    <div class="flex items-center gap-3 bg-white/10 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg backdrop-blur-sm border border-white/20 w-fit">
-                        <i class="fas fa-map-marker-alt text-brand-orange text-lg sm:text-xl"></i>
+                    <div class="flex items-center gap-3 bg-white/10 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg backdrop-blur-md border border-white/10 w-fit hover:bg-white/15 transition-colors cursor-default">
+                        <i class="fas fa-map-marker-alt text-brand-orange text-lg sm:text-xl drop-shadow"></i>
                         <span>CUIABÁ - MT</span>
                     </div>
                 </div>
@@ -148,17 +148,17 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row flex-wrap gap-4" data-aos="zoom-in" data-aos-delay="400">
-                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="bg-brand-orange text-center hover:bg-orange-600 text-white rounded-full px-6 sm:px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300 w-full sm:w-auto shadow-md">
+                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-brand-orange to-[#e64a10] text-center text-white rounded-full px-6 sm:px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300 w-full sm:w-auto shadow-[0_0_15px_rgba(227,82,25,0.3)] hover:shadow-[0_0_25px_rgba(227,82,25,0.6)] hover:-translate-y-1">
                         Inscreva Sua Equipe
                     </a>
-                    <a href="https://drive.google.com/file/d/1ix8Fzdrao7gDp8LWxW9chgaliU-WdjSU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-transparent text-center border-[2px] border-white/20 text-white hover:border-white hover:bg-white hover:text-brand-dark rounded-full px-6 sm:px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300 w-full sm:w-auto">
+                    <a href="https://drive.google.com/file/d/1ix8Fzdrao7gDp8LWxW9chgaliU-WdjSU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-transparent text-center border-[2px] border-white/30 text-white hover:border-white hover:bg-white hover:text-brand-dark rounded-full px-6 sm:px-8 py-3.5 text-sm md:text-base uppercase font-black transition-all duration-300 w-full sm:w-auto hover:-translate-y-1 hover:shadow-xl backdrop-blur-sm">
                         Ver Regulamento
                     </a>
                 </div>
             </div>
         </div>
         
-        <div class="absolute bottom-0 w-full bg-[#111217] text-white text-center py-3 sm:py-4 px-2 border-t border-brand-orange z-20 shadow-2xl">
+        <div class="absolute bottom-0 w-full bg-[#111217]/95 backdrop-blur-sm text-white text-center py-3 sm:py-4 px-2 border-t border-brand-orange/50 z-20 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
             <p class="text-[10px] sm:text-xs md:text-base tracking-widest font-light uppercase">
                 Corpo de <span class="font-bold">Bombeiros Militar</span> do Estado de Mato Grosso
             </p>
@@ -168,23 +168,23 @@
     <div class="relative w-full bg-brand-dark overflow-hidden border-t border-brand-orange/30">
         <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
             <div class="absolute inset-0 bg-brand-dark/80 z-10 backdrop-blur-[3px]"></div>
-            <img src="https://drive.google.com/thumbnail?id=1EWWHrxqL-960BgHjc9-6vJdYhOIUT9oB&sz=w1920" alt="Fundo Textura" class="w-full h-[120%] relative -top-[10%] object-cover object-center z-0">
+            <img src="https://drive.google.com/thumbnail?id=1EWWHrxqL-960BgHjc9-6vJdYhOIUT9oB&sz=w1920" alt="Fundo Textura" class="w-full h-[120%] relative -top-[10%] object-cover object-center z-0 opacity-40">
         </div>
 
         <section id="detalhes-desafio" class="pt-16 sm:pt-20 pb-12 relative z-20">
             
             <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 w-full overflow-x-auto pb-4 hide-scrollbar" data-aos="fade-down">
-                <div class="flex flex-nowrap sm:flex-wrap items-center justify-start sm:justify-center bg-brand-dark/80 backdrop-blur-md border border-white/10 rounded-xl p-2 shadow-xl gap-2 w-max sm:w-fit mx-auto min-w-full sm:min-w-0">
-                    <button class="tab-btn active px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-brand-orange bg-white/10 shadow-sm border border-white/5 whitespace-nowrap" data-target="tab-sobre">
+                <div class="flex flex-nowrap sm:flex-wrap items-center justify-start sm:justify-center bg-brand-dark/80 backdrop-blur-md border border-white/10 rounded-xl p-2 shadow-xl gap-2 w-max sm:w-fit mx-auto min-w-full sm:min-w-0 ring-1 ring-white/5">
+                    <button class="tab-btn active px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-brand-orange bg-white/10 shadow-sm border border-white/10 whitespace-nowrap" data-target="tab-sobre">
                         Sobre
                     </button>
-                    <button class="tab-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 whitespace-nowrap" data-target="tab-como">
+                    <button class="tab-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 whitespace-nowrap border border-transparent" data-target="tab-como">
                         Como Funciona
                     </button>
-                    <button class="tab-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 whitespace-nowrap" data-target="tab-participantes">
+                    <button class="tab-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 whitespace-nowrap border border-transparent" data-target="tab-participantes">
                         Participantes
                     </button>
-                    <button class="tab-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 whitespace-nowrap" data-target="tab-timetable">
+                    <button class="tab-btn px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-black text-xs sm:text-sm md:text-lg uppercase tracking-widest transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5 whitespace-nowrap border border-transparent" data-target="tab-timetable">
                         Timetable
                     </button>
                 </div>
@@ -194,21 +194,22 @@
                 
                 <div id="tab-sobre" class="tab-content block animate-fade-in py-4 sm:py-8">
                     <div class="text-center mb-8 sm:mb-10 flex flex-col items-center">
-                        <div class="bg-brand-orange text-white font-medium text-2xl sm:text-3xl md:text-5xl px-6 sm:px-8 py-2 md:py-3 rounded-xl sm:rounded-2xl inline-block transform -rotate-3 mb-1 shadow-sm tracking-wide transition-all duration-300">
+                        <div class="bg-brand-orange text-white font-medium text-2xl sm:text-3xl md:text-5xl px-6 sm:px-8 py-2 md:py-3 rounded-xl sm:rounded-2xl inline-block transform -rotate-3 mb-1 shadow-md tracking-wide transition-all duration-300 hover:rotate-0 hover:scale-105">
                             SOBRE O
                         </div>
-                        <h2 class="text-4xl sm:text-6xl md:text-[7rem] font-black text-white uppercase tracking-tighter leading-none mt-2 drop-shadow-sm">
+                        <h2 class="text-4xl sm:text-6xl md:text-[7rem] font-black text-white uppercase tracking-tighter leading-none mt-2 drop-shadow-lg">
                             DESAFIO
                         </h2>
                     </div>
                     
-                    <div class="max-w-4xl mx-auto space-y-4 sm:space-y-6 text-gray-600 text-base sm:text-lg md:text-xl font-light leading-relaxed text-center bg-white p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-2xl border border-gray-100 transition-shadow duration-500">
+                    <div class="max-w-4xl mx-auto space-y-4 sm:space-y-6 text-gray-600 text-base sm:text-lg md:text-xl font-light leading-relaxed text-center bg-white p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-gray-100 transition-all duration-500 hover:-translate-y-1">
                         <p>
-                            O <strong class="text-brand-dark">Desafio Nacional de Salvamento Veicular e Trauma</strong> é uma competição que ocorre em todo o país e atrai competidores internacionais.
+                            O <strong class="text-brand-dark font-bold">Desafio Nacional de Salvamento Veicular e Trauma</strong> é uma competição que ocorre em todo o país e atrai competidores internacionais.
                         </p>
                         <p>
-                            Durante a prova, os participantes lidam com <span class="font-bold text-white bg-brand-orange px-2 sm:px-3 py-1 rounded inline-block mt-1 sm:mt-0 shadow-md cursor-default">cenários simulados</span>, abordando desencarceramento, estabilização veicular e atendimento médico às vítimas.
+                            Durante a prova, os participantes lidam com <span class="font-bold text-white bg-gradient-to-r from-brand-orange to-[#ff6b35] px-3 py-1 rounded inline-block mt-1 sm:mt-0 shadow-md cursor-default transition-transform hover:scale-105">cenários simulados</span>, abordando desencarceramento, estabilização veicular e atendimento médico às vítimas.
                         </p>
+                        <div class="w-16 h-1 bg-gray-200 mx-auto mt-6 mb-2 rounded-full"></div>
                         <p class="text-xl sm:text-2xl font-medium italic mt-6 sm:mt-8 text-brand-dark">
                             "Mais do que uma competição, promove o aprimoramento, troca de experiências e fortalecimento das práticas que salvam vidas."
                         </p>
@@ -222,12 +223,12 @@
                     </div>
 
                     <div class="text-center mb-8 sm:mb-12">
-                        <div class="inline-block bg-brand-orange text-white font-bold text-sm sm:text-lg md:text-xl px-4 sm:px-6 py-2.5 rounded-xl shadow-lg tracking-wide transition-transform duration-300">
+                        <div class="inline-block bg-gradient-to-r from-brand-orange to-[#ff6b35] text-white font-bold text-sm sm:text-lg md:text-xl px-4 sm:px-6 py-2.5 rounded-xl shadow-[0_10px_20px_rgba(227,82,25,0.2)] tracking-wide transition-transform duration-300 hover:scale-105 cursor-default">
                             Cenários realistas. Tempo limitado. Decisões críticas.
                         </div>
                     </div>
 
-                    <div class="max-w-5xl mx-auto text-center bg-white p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-2xl border border-gray-100 transition-shadow duration-500">
+                    <div class="max-w-5xl mx-auto text-center bg-white p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-gray-100 transition-shadow duration-500">
                         <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-4">
                             As equipes enfrentarão diferentes cenários simulados de acidentes veiculares, com vítimas e situações que exigem resposta rápida, segura e eficiente.
                         </p>
@@ -235,28 +236,28 @@
                             Cada prova será cronometrada e acompanhada por avaliadores especializados, que irão pontuar aspectos técnicos e operacionais.
                         </p>
                         
-                        <div class="inline-block bg-brand-dark text-white font-bold text-lg sm:text-xl px-5 sm:px-6 py-2 sm:py-2.5 rounded-xl mb-8 sm:mb-10 shadow-md tracking-wide">
+                        <div class="inline-block bg-brand-dark text-white font-bold text-lg sm:text-xl px-5 sm:px-6 py-2 sm:py-2.5 rounded-xl mb-8 sm:mb-10 shadow-lg tracking-wide">
                             Categorias do desafio:
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-left">
-                            <div class="bg-gray-50 border-gray-100 border-l-4 border-l-brand-orange p-5 sm:p-6 lg:p-8 rounded-xl shadow-sm flex flex-col sm:flex-row gap-4 sm:gap-5 items-center sm:items-start text-center sm:text-left transition-all duration-300">
-                                <div class="w-12 sm:w-14 h-12 sm:h-14 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 transition-transform duration-300 shadow-md">
+                            <div class="group bg-gray-50 border border-gray-100 border-l-4 border-l-brand-orange p-5 sm:p-6 lg:p-8 rounded-xl shadow-sm hover:shadow-xl flex flex-col sm:flex-row gap-4 sm:gap-5 items-center sm:items-start text-center sm:text-left transition-all duration-300 hover:-translate-y-1">
+                                <div class="w-12 sm:w-14 h-12 sm:h-14 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 transition-transform duration-500 shadow-md group-hover:scale-110 group-hover:rotate-12">
                                     <i class="fas fa-car-crash"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-black text-lg sm:text-xl text-brand-dark uppercase transition-colors">Salvamento Veicular</h3>
-                                    <p class="text-gray-600 mt-2 text-sm sm:text-base">Foco no desencarceramento, criação de acessos rápidos e manuseio de ferramentas hidráulicas de forma precisa e segura.</p>
+                                    <h3 class="font-black text-lg sm:text-xl text-brand-dark uppercase transition-colors group-hover:text-brand-orange">Salvamento Veicular</h3>
+                                    <p class="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">Foco no desencarceramento, criação de acessos rápidos e manuseio de ferramentas hidráulicas de forma precisa e segura.</p>
                                 </div>
                             </div>
 
-                            <div class="bg-gray-50 border-gray-100 border-l-4 border-l-brand-dark p-5 sm:p-6 lg:p-8 rounded-xl shadow-sm flex flex-col sm:flex-row gap-4 sm:gap-5 items-center sm:items-start text-center sm:text-left transition-all duration-300">
-                                <div class="w-12 sm:w-14 h-12 sm:h-14 bg-brand-dark text-white rounded-full flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 transition-all duration-300 shadow-md">
+                            <div class="group bg-gray-50 border border-gray-100 border-l-4 border-l-brand-dark p-5 sm:p-6 lg:p-8 rounded-xl shadow-sm hover:shadow-xl flex flex-col sm:flex-row gap-4 sm:gap-5 items-center sm:items-start text-center sm:text-left transition-all duration-300 hover:-translate-y-1">
+                                <div class="w-12 sm:w-14 h-12 sm:h-14 bg-brand-dark text-white rounded-full flex items-center justify-center text-xl sm:text-2xl flex-shrink-0 transition-all duration-500 shadow-md group-hover:scale-110 group-hover:-rotate-12">
                                     <i class="fas fa-star-of-life text-brand-orange transition-colors"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-black text-lg sm:text-xl text-brand-dark uppercase transition-colors">Atendimento ao Trauma</h3>
-                                    <p class="text-gray-600 mt-2 text-sm sm:text-base">Foco na estabilização clínica, manutenção de vias aéreas e extração segura da vítima respeitando o suporte básico e avançado de vida.</p>
+                                    <h3 class="font-black text-lg sm:text-xl text-brand-dark uppercase transition-colors group-hover:text-brand-orange">Atendimento ao Trauma</h3>
+                                    <p class="text-gray-600 mt-2 text-sm sm:text-base leading-relaxed">Foco na estabilização clínica, manutenção de vias aéreas e extração segura da vítima respeitando o suporte básico e avançado de vida.</p>
                                 </div>
                             </div>
                         </div>
@@ -269,23 +270,23 @@
                         <div class="w-16 sm:w-24 h-1.5 sm:h-2 bg-brand-orange mx-auto mt-3 sm:mt-4 rounded-full"></div>
                     </div>
 
-                    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-2xl border border-gray-100 transition-shadow duration-500">
+                    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-gray-100 transition-shadow duration-500">
                         <ul class="space-y-3 sm:space-y-4 mb-8">
-                            <li class="flex items-center gap-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-50 p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 cursor-default">
-                                <i class="fas fa-check-circle text-brand-orange text-lg sm:text-xl shrink-0 transition-transform duration-300"></i> Corpos de Bombeiros Militares
+                            <li class="group flex items-center gap-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-50 p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-brand-orange/30 cursor-default">
+                                <i class="fas fa-check-circle text-brand-orange text-lg sm:text-xl shrink-0 transition-transform duration-300 group-hover:scale-110"></i> Corpos de Bombeiros Militares
                             </li>
-                            <li class="flex items-center gap-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-50 p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 cursor-default">
-                                <i class="fas fa-check-circle text-brand-orange text-lg sm:text-xl shrink-0 transition-transform duration-300"></i> Corpos de Bombeiros Voluntários
+                            <li class="group flex items-center gap-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-50 p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-brand-orange/30 cursor-default">
+                                <i class="fas fa-check-circle text-brand-orange text-lg sm:text-xl shrink-0 transition-transform duration-300 group-hover:scale-110"></i> Corpos de Bombeiros Voluntários
                             </li>
-                            <li class="flex items-center gap-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-50 p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 cursor-default">
-                                <i class="fas fa-check-circle text-brand-orange text-lg sm:text-xl shrink-0 transition-transform duration-300"></i> Concessionárias de Rodovias
+                            <li class="group flex items-center gap-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-50 p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-brand-orange/30 cursor-default">
+                                <i class="fas fa-check-circle text-brand-orange text-lg sm:text-xl shrink-0 transition-transform duration-300 group-hover:scale-110"></i> Concessionárias de Rodovias
                             </li>
-                            <li class="flex items-center gap-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-50 p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 cursor-default">
-                                <i class="fas fa-check-circle text-brand-orange text-lg sm:text-xl shrink-0 transition-transform duration-300"></i> Órgãos públicos e privados de resgate
+                            <li class="group flex items-center gap-3 text-base sm:text-lg font-medium text-gray-700 bg-gray-50 p-3 sm:p-4 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-brand-orange/30 cursor-default">
+                                <i class="fas fa-check-circle text-brand-orange text-lg sm:text-xl shrink-0 transition-transform duration-300 group-hover:scale-110"></i> Órgãos públicos e privados de resgate
                             </li>
                         </ul>
 
-                        <div class="bg-brand-orange/10 border-l-4 border-brand-orange p-4 sm:p-5 rounded-r-xl text-brand-dark text-sm sm:text-base font-semibold transition-all flex items-start gap-3">
+                        <div class="bg-brand-orange/10 border-l-4 border-brand-orange p-4 sm:p-5 rounded-r-xl text-brand-dark text-sm sm:text-base font-semibold transition-all flex items-start gap-3 hover:bg-brand-orange/15">
                             <i class="fas fa-info-circle mt-0.5 sm:mt-1 text-brand-orange text-lg sm:text-xl shrink-0"></i> 
                             <span>As equipes devem ser compostas por profissionais devidamente capacitados e ativos em suas instituições.</span>
                         </div>
@@ -298,9 +299,9 @@
                         <div class="w-16 sm:w-24 h-1.5 sm:h-2 bg-brand-orange mx-auto mt-3 sm:mt-4 rounded-full"></div>
                     </div>
 
-                    <div class="max-w-3xl mx-auto bg-white p-6 sm:p-10 md:p-16 rounded-[2rem] shadow-2xl border border-gray-100 flex flex-col items-center text-center transition-shadow duration-500">
-                        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-orange/10 rounded-full flex items-center justify-center mb-4 sm:mb-6 transition-colors duration-500">
-                            <i class="fas fa-calendar-alt text-brand-orange text-2xl sm:text-3xl transition-colors duration-500"></i>
+                    <div class="max-w-3xl mx-auto bg-white p-6 sm:p-10 md:p-16 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-gray-100 flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-orange/10 rounded-full flex items-center justify-center mb-4 sm:mb-6 transition-transform duration-500 hover:scale-110 hover:rotate-12 cursor-default">
+                            <i class="fas fa-calendar-alt text-brand-orange text-2xl sm:text-3xl"></i>
                         </div>
                         <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-brand-dark uppercase mb-3 sm:mb-4">Em Breve</h3>
                         <p class="text-gray-500 text-base sm:text-lg font-medium leading-relaxed">
@@ -313,16 +314,16 @@
         </section>
 
         <section id="equipes" class="pb-16 sm:pb-24 relative z-20 pt-6 sm:pt-10">
-            <div class="w-full bg-brand-dark/80 backdrop-blur-sm py-4 md:py-5 mb-10 sm:mb-16 flex justify-center items-center shadow-md border-y border-white/10 px-4 text-center" data-aos="fade-down">
+            <div class="w-full bg-brand-dark/90 backdrop-blur-md py-5 md:py-6 mb-10 sm:mb-16 flex justify-center items-center shadow-lg border-y border-white/10 px-4 text-center" data-aos="fade-down">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl text-white uppercase tracking-widest break-words">
-                    <span class="font-light">Equipes</span> <span class="font-black text-brand-orange">Confirmadas</span>
+                    <span class="font-light">Equipes</span> <span class="font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-[#ff8c5a]">Confirmadas</span>
                 </h2>
             </div>
 
             <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white p-6 sm:p-10 md:p-16 rounded-[2rem] shadow-2xl border border-gray-100 max-w-3xl mx-auto flex flex-col items-center text-center transition-shadow duration-500" data-aos="fade-up">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-orange/10 rounded-full flex items-center justify-center mb-4 sm:mb-6 transition-colors duration-500">
-                        <i class="fas fa-hourglass-half text-brand-orange text-2xl sm:text-3xl transition-colors duration-500"></i>
+                <div class="bg-white p-6 sm:p-10 md:p-16 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-gray-100 max-w-3xl mx-auto flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1" data-aos="fade-up">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 bg-brand-orange/10 rounded-full flex items-center justify-center mb-4 sm:mb-6 transition-transform duration-500 hover:scale-110 cursor-default">
+                        <i class="fas fa-hourglass-half text-brand-orange text-2xl sm:text-3xl animate-pulse"></i>
                     </div>
                     <h3 class="text-xl sm:text-2xl md:text-3xl font-black text-brand-dark uppercase mb-3 sm:mb-4">Em breve mais informações!!!</h3>
                     <p class="text-gray-500 text-base sm:text-lg font-medium leading-relaxed">
@@ -332,24 +333,29 @@
             </div>
         </section>
     </div>
+    
     <section class="w-full bg-brand-dark text-white border-y border-white/10 relative overflow-hidden">
-        <div class="absolute right-0 top-0 h-full w-1/3 bg-brand-orange opacity-20 transform skew-x-12 translate-x-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-brand-orange/20 to-transparent transform skew-x-12 translate-x-10 pointer-events-none"></div>
 
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10 flex flex-col md:flex-row items-center md:items-start justify-between gap-8 sm:gap-10 text-center md:text-left">
             <div data-aos="fade-right">
                 <h2 class="text-2xl sm:text-3xl md:text-5xl font-black uppercase mb-4 tracking-wide transition-colors">Data e Local</h2>
                 <div class="flex flex-col gap-3 sm:gap-2 mt-4 items-center md:items-start">
-                    <div class="flex items-center gap-3 sm:gap-4 text-lg sm:text-xl md:text-2xl font-bold cursor-default">
-                        <i class="fas fa-calendar-check text-brand-orange w-6 sm:w-8 text-center"></i>
+                    <div class="group flex items-center gap-3 sm:gap-4 text-lg sm:text-xl md:text-2xl font-bold cursor-default">
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center transition-colors group-hover:bg-brand-orange/20">
+                            <i class="fas fa-calendar-check text-brand-orange text-center"></i>
+                        </div>
                         <span>24 A 26 DE JUNHO DE 2026</span>
                     </div>
-                    <div class="flex items-center gap-3 sm:gap-4 text-lg sm:text-xl md:text-2xl font-light cursor-default text-left">
-                        <i class="fas fa-map-marker-alt text-brand-orange w-6 sm:w-8 text-center shrink-0"></i>
+                    <div class="group flex items-center gap-3 sm:gap-4 text-lg sm:text-xl md:text-2xl font-light cursor-default text-left mt-2">
+                        <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 transition-colors group-hover:bg-brand-orange/20">
+                            <i class="fas fa-map-marker-alt text-brand-orange text-center"></i>
+                        </div>
                         <span>Parque Novo Mato Grosso <br><strong class="font-bold">Cuiabá - MT</strong></span>
                     </div>
                 </div>
             </div>
-            <div class="bg-brand-gray/50 p-5 sm:p-6 rounded-xl border border-white/10 w-full md:max-w-md backdrop-blur-sm transition-all duration-300 shadow-lg mt-4 md:mt-0" data-aos="fade-left">
+            <div class="bg-brand-gray/40 p-5 sm:p-6 rounded-2xl border border-white/10 w-full md:max-w-md backdrop-blur-md transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_10px_40px_rgba(227,82,25,0.1)] hover:bg-brand-gray/50 mt-4 md:mt-0" data-aos="fade-left">
                 <i class="fas fa-info-circle text-brand-orange text-xl sm:text-2xl mb-2 sm:mb-3 inline-block"></i>
                 <p class="text-gray-300 font-medium leading-relaxed text-sm sm:text-base text-left">
                     O desafio acontece dentro da programação oficial do <strong class="text-white transition-colors">2º Congresso Nacional de Emergências e Segurança Viária (CONESV)</strong>.
@@ -360,30 +366,26 @@
 
     <section id="inscricoes" class="py-16 sm:py-24 relative overflow-hidden bg-gray-50">
         <div class="absolute inset-0 w-full h-full z-0 overflow-hidden">
-            <div class="absolute inset-0 bg-white/80 z-10"></div>
-            <img src="https://drive.google.com/thumbnail?id=1gROvFXlamAkpC94R2LgHsfO-etUT_MTz&sz=w1920" alt="Fundo Inscrições" class="w-full h-[120%] relative -top-[10%] object-cover object-center lg:object-right z-0 opacity-50">
+            <div class="absolute inset-0 bg-white/85 backdrop-blur-[2px] z-10"></div>
+            <img src="https://drive.google.com/thumbnail?id=1gROvFXlamAkpC94R2LgHsfO-etUT_MTz&sz=w1920" alt="Fundo Inscrições" class="w-full h-[120%] relative -top-[10%] object-cover object-center lg:object-right z-0 opacity-40 mix-blend-multiply">
         </div>
 
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-20 flex justify-center">
-            <div class="w-full max-w-3xl flex flex-col items-center text-center bg-white/90 border border-gray-100 backdrop-blur-md p-6 sm:p-8 md:p-14 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl transition-shadow duration-500" data-aos="zoom-in">
+            <div class="w-full max-w-3xl flex flex-col items-center text-center bg-white/95 border border-white backdrop-blur-lg p-6 sm:p-8 md:p-14 rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.1)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(227,82,25,0.15)]" data-aos="zoom-in">
                 <h2 class="text-4xl sm:text-5xl md:text-[5rem] font-black text-brand-dark uppercase mb-3 sm:mb-4 tracking-tighter">Inscrições</h2>
                 
                 <p class="text-gray-600 text-base sm:text-lg md:text-xl font-medium mb-4 sm:mb-6 max-w-md leading-relaxed">
                     Garanta a participação da sua equipe em um dos maiores desafios de resgate do Brasil.
                 </p>
-                
-                <p class="text-gray-600 text-sm sm:text-base md:text-lg font-medium mb-6">
-                    As inscrições estarão disponíveis <span class="block sm:inline font-black text-brand-orange mt-1 sm:mt-0">em breve</span>.
-                </p>
 
                 <div class="mb-8 sm:mb-10 w-full sm:w-auto">
-                    <span class="inline-flex w-full sm:w-auto justify-center items-center bg-brand-dark text-white text-xs sm:text-sm md:text-base px-5 sm:px-6 py-2.5 sm:py-2 rounded-full shadow-md tracking-wide transition-transform duration-300">
+                    <span class="inline-flex w-full sm:w-auto justify-center items-center bg-brand-dark text-white text-xs sm:text-sm md:text-base px-5 sm:px-6 py-2.5 sm:py-2 rounded-full shadow-md tracking-wide transition-transform duration-300 hover:scale-105 cursor-default">
                         <i class="fas fa-exclamation-triangle text-brand-yellow mr-2"></i> Vagas <span class="font-bold ml-1">limitadas</span>
                     </span>
                 </div>
 
-                <div class="inline-block border-[2px] border-brand-dark rounded-full p-1.5 transition-transform duration-300 bg-white w-full sm:w-auto shadow-md">
-                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" class="block sm:inline-block bg-brand-orange text-white text-lg sm:text-xl md:text-2xl px-6 sm:px-10 py-3.5 sm:py-4 rounded-full shadow-md transition-colors w-full sm:w-auto hover:bg-orange-600">
+                <div class="inline-block border-[2px] border-brand-dark/10 rounded-full p-1.5 transition-all duration-300 bg-white w-full sm:w-auto shadow-lg hover:border-brand-orange/30">
+                    <a href="https://web.eventogyn.com.br/event/2conesv/site/content/inscricoes" target="_blank" rel="noopener noreferrer" class="block sm:inline-block bg-gradient-to-r from-brand-orange to-[#e64a10] text-white text-lg sm:text-xl md:text-2xl px-6 sm:px-10 py-3.5 sm:py-4 rounded-full shadow-md transition-all duration-300 w-full sm:w-auto hover:shadow-[0_0_20px_rgba(227,82,25,0.4)] hover:scale-[1.02]">
                         <span class="font-bold">Inscrever</span> <span class="font-light">equipe</span>
                     </a>
                 </div>
@@ -391,23 +393,30 @@
         </div>
     </section>
 
-    <footer class="bg-[#111217] border-t border-brand-orange text-white pt-12 sm:pt-16 pb-6 sm:pb-8 overflow-hidden">
-        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="bg-[#111217] border-t border-brand-orange/50 text-gray-300 pt-14 sm:pt-16 pb-6 sm:pb-8 overflow-hidden relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-brand-orange to-transparent opacity-50"></div>
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8 sm:gap-10 mb-10 sm:mb-12">
                 
-                <div class="text-center md:text-left cursor-default" data-aos="fade-right">
-                    <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-widest mb-1 sm:mb-2 text-brand-orange transition-transform duration-300 inline-block">CONESV</h3>
+                <div class="text-center md:text-left cursor-default group" data-aos="fade-right">
+                    <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-widest mb-1 sm:mb-2 text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-[#ff8c5a] transition-transform duration-300 inline-block group-hover:scale-105">CONESV</h3>
                     <p class="text-gray-400 text-xs sm:text-sm font-medium uppercase tracking-wide">Desafio Nacional de Salvamento Veicular e Trauma</p>
                 </div>
 
                 <div class="text-center md:text-right" data-aos="fade-left">
-                    <h4 class="text-lg sm:text-xl font-bold uppercase mb-3 sm:mb-4">Contato</h4>
-                    <div class="flex flex-col gap-2 sm:gap-3">
-                        <a href="mailto:conesvbr@gmail.com" class="flex items-center justify-center md:justify-end gap-2 sm:gap-3 text-gray-400 transition-colors text-sm sm:text-base hover:text-brand-orange">
-                            <i class="fas fa-envelope text-brand-orange"></i> conesvbr@gmail.com
+                    <h4 class="text-lg sm:text-xl font-bold uppercase mb-3 sm:mb-4 text-white">Contato</h4>
+                    <div class="flex flex-col gap-3">
+                        <a href="mailto:conesvbr@gmail.com" class="group flex items-center justify-center md:justify-end gap-2 sm:gap-3 text-gray-400 transition-colors text-sm sm:text-base hover:text-white">
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-colors group-hover:bg-brand-orange">
+                                <i class="fas fa-envelope text-brand-orange group-hover:text-white transition-colors"></i>
+                            </div>
+                            conesvbr@gmail.com
                         </a>
-                        <a href="tel:+556596210125" class="flex items-center justify-center md:justify-end gap-2 sm:gap-3 text-gray-400 transition-colors text-sm sm:text-base hover:text-brand-orange">
-                            <i class="fas fa-phone-alt text-brand-orange"></i> +55 65 9621-0125
+                        <a href="tel:+556596210125" class="group flex items-center justify-center md:justify-end gap-2 sm:gap-3 text-gray-400 transition-colors text-sm sm:text-base hover:text-white">
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition-colors group-hover:bg-brand-orange">
+                                <i class="fas fa-phone-alt text-brand-orange group-hover:text-white transition-colors"></i>
+                            </div>
+                            +55 65 9621-0125
                         </a>
                     </div>
                 </div>
@@ -448,9 +457,11 @@
                     if (mobileMenu.classList.contains('hidden')) {
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
                     } else {
                         icon.classList.remove('fa-bars');
                         icon.classList.add('fa-times');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'true');
                     }
                 });
 
@@ -461,6 +472,7 @@
                         const icon = mobileMenuBtn.querySelector('i');
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
                     });
                 });
             }
@@ -471,8 +483,8 @@
 
             function activateTab(targetId) {
                 tabBtns.forEach(btn => {
-                    btn.classList.remove('text-brand-orange', 'bg-white/10', 'active', 'border', 'border-white/5');
-                    btn.classList.add('text-gray-400');
+                    btn.classList.remove('text-brand-orange', 'bg-white/10', 'active', 'border-white/10');
+                    btn.classList.add('text-gray-400', 'border-transparent');
                 });
                 tabContents.forEach(content => {
                     content.classList.remove('block');
@@ -481,8 +493,8 @@
 
                 const activeBtn = document.querySelector(`.tab-btn[data-target="${targetId}"]`);
                 if(activeBtn) {
-                    activeBtn.classList.add('text-brand-orange', 'bg-white/10', 'active', 'border', 'border-white/5');
-                    activeBtn.classList.remove('text-gray-400');
+                    activeBtn.classList.add('text-brand-orange', 'bg-white/10', 'active', 'border-white/10');
+                    activeBtn.classList.remove('text-gray-400', 'border-transparent');
                 }
                 const activeContent = document.getElementById(targetId);
                 if(activeContent) {
